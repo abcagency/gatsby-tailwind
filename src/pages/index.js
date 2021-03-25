@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import React from "react";
+import { Link, graphql } from 'gatsby';
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import catAndHumanIllustration from "../images/cat-and-human-illustration.svg";
 
-function IndexPage() {
-  return (
+const IndexPage = ({ data }) => (
     <Layout>
       <SEO
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
@@ -13,31 +14,46 @@ function IndexPage() {
       />
 
       <section className="text-center">
-        <img
-          alt="Cat and human sitting on a couch"
-          className="block w-1/2 mx-auto mb-8"
-          src={catAndHumanIllustration}
-        />
-
-        <h2 className="inline-block p-3 mb-4 text-2xl font-bold bg-yellow-400">
-          Hey there! Welcome to your first Gatsby site.
-        </h2>
-
-        <p className="leading-loose">
-          This is a barebones starter for Gatsby styled using{` `}
-          <a
-            className="font-bold text-gray-900 no-underline"
-            href="https://tailwindcss.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tailwind CSS
-          </a>
-          , a utility-first CSS framework.
-        </p>
+        <ul>
+          {data.allDatoCmsBlogPost.edges.map(({ node: blogPost }) => (
+            <li key={blogPost.id}>
+              <h2>{blogPost.title}</h2>
+              <p>{blogPost.excerpt}</p>
+              <p>
+                <Link to={`/blog/${blogPost.slug}`}>
+                  <GatsbyImage image={blogPost.image.gatsbyImageData} />
+                </Link>
+              </p>
+            </li>
+          ))}
+        </ul>
       </section>
     </Layout>
-  );
-}
+);
 
 export default IndexPage;
+
+export const query = graphql`
+  query IndexQuery {
+    allDatoCmsBlogPost {
+      edges {
+        node {
+          id
+          slug
+          title
+          image {
+            gatsbyImageData(
+              width: 1280,
+              placeholder: BLURRED,
+              forceBlurhash: false
+            )
+          }
+          excerpt
+          categories {
+            name
+          }
+        }
+      }
+    }
+  }
+`;
