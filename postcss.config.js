@@ -1,3 +1,4 @@
+// const tailwind = require(`tailwindcss`)
 const tailwind = require(`@tailwindcss/jit`)
 const autoprefixer = require(`autoprefixer`)
 const cssnano = require(`cssnano`)

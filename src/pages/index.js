@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, graphql } from 'gatsby';
+import { Link, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout";
@@ -18,8 +18,9 @@ const IndexPage = ({ data }) => (
 			<div dangerouslySetInnerHTML={{ __html: data.datoCmsHomepage.usp }} className="text-sm text-gray-600" />
 		</div>
 
-		<Carousel content={data.datoCmsHomepage.sections} />
-
+		<div id="carousel">
+			<Carousel content={data.datoCmsHomepage.sections} />
+		</div>
 
 		<section className="mt-36 max-w-3xl mx-auto">
 			<h2 className="mb-4 text-center text-2xl font-bold">Recent posts</h2>

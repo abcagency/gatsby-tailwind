@@ -16,7 +16,7 @@ function NextButton(props) {
 			style={{ ...style, display: "block" }}
 			onClick={onClick}
 		>
-			<Icon icon={arrowRightDropCircle} height="1rem" width="1rem" color="#666" />
+			<Icon icon={arrowRightDropCircle} height="1.5rem" width="1.5rem" color="#666" />
 		</button>
 	);
  }
@@ -29,7 +29,7 @@ function NextButton(props) {
 			style={{ ...style, display: "block" }}
 			onClick={onClick}
 		>
-			<Icon icon={arrowLeftDropCircle} height="1rem" width="1rem" color="#666" />
+			<Icon icon={arrowLeftDropCircle} height="1.5rem" width="1.5rem" color="#666" />
 		</button>
 	);
  }

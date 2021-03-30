@@ -1,7 +1,11 @@
 import { graphql, useStaticQuery, Link } from "gatsby";
 import React, { useState } from "react";
+// import { AnchorLink } from "gatsby-plugin-anchor-links";
+import * as Scroll from 'react-scroll';
 
 function Header() {
+	let ScrollLink = Scroll.Link;
+
   const [isExpanded, toggleExpansion] = useState(false);
   const { site } = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -14,10 +18,10 @@ function Header() {
   `);
 
   return (
-    <header className="bg-indigo-700">
+    <header className="bg-indigo-700 sticky top-0 z-50 shadow-lg">
       <div className="flex flex-wrap items-center justify-between max-w-4xl p-4 mx-auto md:p-8">
         <Link to="/">
-          <h1 className="text-white no-underline">{site.siteMetadata.title}</h1>
+          <h1 className="text-2xl text-white font-bold no-underline">{site.siteMetadata.title}</h1>
         </Link>
 
         <button
@@ -50,13 +54,26 @@ function Header() {
             },
           ].map((link) => (
             <Link
-              className="block mt-4 text-white no-underline md:inline-block md:mt-0 md:ml-6"
+              className="block mt-4 text-indigo-200 no-underline md:inline-block md:mt-0 md:ml-6 border-b-2 border-transparent hover:text-white transition-colors"
               key={link.title}
               to={link.route}
             >
               {link.title}
             </Link>
           ))}
+					<ScrollLink
+						className="block mt-4 text-indigo-200 no-underline md:inline-block md:mt-0 md:ml-6 border-b-2 border-transparent transition-colors"
+						activeClass="!text-white !border-white"
+						href="#carousel"
+						to="carousel"
+						spy={true}
+						hashSpy={true}
+						smooth={true}
+						offset={-25}
+						duration={250}
+						>
+						Carousel
+					</ScrollLink>
         </nav>
       </div>
     </header>
