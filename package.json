@@ -6,6 +6,7 @@
   "dependencies": {
     "@iconify/icons-mdi": "^1.1.13",
     "@iconify/react": "^1.1.4",
+    "formik": "^2.2.6",
     "gatsby": "^3.1.1",
     "gatsby-plugin-image": "^1.1.2",
     "gatsby-plugin-manifest": "^3.1.0",
@@ -24,7 +25,8 @@
     "react-scroll": "^1.8.2",
     "react-slick": "^0.28.1",
     "react-tracking": "^8.1.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "yup": "^0.32.9"
   },
   "keywords": [
     "gatsby",
