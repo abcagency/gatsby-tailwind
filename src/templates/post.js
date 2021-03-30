@@ -14,7 +14,11 @@ const PostPage = ({ data }) => (
         <h1 className="mb-4 text-5xl font-bold">{data.datoCmsBlogPost.title}</h1>
         <p className="text-xl text-gray-500">{data.datoCmsBlogPost.excerpt}</p>
 
-			<Figure content={data.datoCmsBlogPost} />
+			<Figure
+				image={data.datoCmsBlogPost.image.gatsbyImageData}
+				title={data.datoCmsBlogPost.image.title}
+				alt={data.datoCmsBlogPost.image.alt}
+			/>
       </div>
 
 			<StructuredText
@@ -22,7 +26,13 @@ const PostPage = ({ data }) => (
 				renderBlock={({ record }) => {
 					switch (record.__typename) {
 						case "DatoCmsImage":
-							return <Figure content={record} />
+							return (
+								<Figure
+									image={record.image.gatsbyImageData}
+									title={record.image.title}
+									alt={record.image.alt}
+								/>
+							)
 						default:
 							return null;
 					}
@@ -41,32 +51,32 @@ export const query = graphql`
       title
       excerpt
       image {
-				alt
-				title
-				gatsbyImageData(
-					width: 1280,
-					placeholder: BLURRED,
-					forceBlurhash: false
-				)
-			}
-			content {
-				value
-				blocks {
+			alt
+			title
+			gatsbyImageData(
+				width: 1280,
+				placeholder: BLURRED,
+				forceBlurhash: false
+			)
+		}
+		content {
+			value
+			blocks {
           __typename
           ... on DatoCmsImage {
             id: originalId
             image {
-							alt
-							title
-							gatsbyImageData(
-								width: 1280,
-								placeholder: BLURRED,
-								forceBlurhash: false
-							)
+					alt
+					title
+					gatsbyImageData(
+						width: 1280,
+						placeholder: BLURRED,
+						forceBlurhash: false
+					)
             }
           }
         }
-			}
+		}
     }
   }
 `
