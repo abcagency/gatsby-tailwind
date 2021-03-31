@@ -12,11 +12,12 @@ function NextButton(props) {
 	const { className, style, onClick } = props;
 	return (
 		<button
-			className={className}
+		className={`${className} !right-1.5 z-10 opacity-60 hover:focus:!opacity-95 transition-opacity`}
 			style={{ ...style, display: "block" }}
 			onClick={onClick}
 		>
-			<Icon icon={arrowRightDropCircle} height="1.5rem" width="1.5rem" color="#666" />
+			<Icon icon={arrowRightDropCircle} height="1.5rem" width="1.5rem" color="#fff" />
+			<span className={"sr-only"}>Next slide</span>
 		</button>
 	);
  }
@@ -25,11 +26,12 @@ function NextButton(props) {
 	const { className, style, onClick } = props;
 	return (
 		<button
-			className={className}
+			className={`${className} !left-1.5 z-10 opacity-60 hover:focus:opacity-95 transition-opacity`}
 			style={{ ...style, display: "block" }}
 			onClick={onClick}
 		>
-			<Icon icon={arrowLeftDropCircle} height="1.5rem" width="1.5rem" color="#666" />
+			<Icon icon={arrowLeftDropCircle} height="1.5rem" width="1.5rem" color="#fff" />
+			<span className={"sr-only"}>Previous slide</span>
 		</button>
 	);
  }
@@ -49,6 +51,12 @@ export default class Carousel extends Component {
 		};
 		return (
 			<>
+			<style>
+				{`.slick-arrow::before {
+					display: none;
+					visibility: hidden;
+				}`}
+			</style>
 				<Slider {...settings}>
 					{content.map((slide) => (
 						<div key={slide.id}>

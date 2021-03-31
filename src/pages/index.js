@@ -28,7 +28,10 @@ const IndexPage = ({ data }) => (
 				{data.allDatoCmsBlogPost.edges.map(({ node: blogPost }) => (
 					<li key={blogPost.id} className="py-6 mb-6 border-b border-gray-200 px-4">
 						<Link to={`/posts/${blogPost.slug}`} className="block">
-							<GatsbyImage image={blogPost.image.gatsbyImageData} alt={blogPost.image.alt} />
+							<GatsbyImage
+								image={blogPost.image.gatsbyImageData}
+								alt={blogPost.image.alt}
+							/>
 							<h3 className="text-xl mt-2 mb-4">{blogPost.title}</h3>
 							<p>{blogPost.excerpt}</p>
 						</Link>
@@ -57,7 +60,8 @@ export const query = graphql`
 						gatsbyImageData(
 							width: 1280,
 							placeholder: BLURRED,
-							forceBlurhash: false
+							forceBlurhash: false,
+							layout: FULL_WIDTH
 						)
 					}
 				}
@@ -72,7 +76,7 @@ export const query = graphql`
           image {
 						alt
             gatsbyImageData(
-              width: 1280,
+              width: 736,
               placeholder: BLURRED,
               forceBlurhash: false
             )

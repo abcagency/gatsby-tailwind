@@ -3,7 +3,7 @@ import React from "react";
 function Figure({ children, title, alt }) {
   return (
 		<>
-			<figure className="border border-gray-200 my-8 -mx-6">
+			<figure className="border border-gray-200 my-8">
 				<div className="pt-2 px-2">
 					{children}
 				</div>

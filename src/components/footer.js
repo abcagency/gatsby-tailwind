@@ -7,7 +7,7 @@ function Footer() {
 	let ScrollLink = Scroll.Link;
 
 	return (
-		<footer className="p-4 mt-4 bg-gray-200 text-center text-xs text-gray-500">
+		<footer className="p-4 mt-4 bg-gray-100 text-center text-xs text-gray-700">
 			<div className="container mx-auto flex justify-between items-center">
 				<p className="m-0">
 					© {new Date().getFullYear()}. Built with
@@ -16,7 +16,7 @@ function Footer() {
 				</p>
 
 				<ScrollLink
-					className="text-gray-400 hover:text-gray-800 transition-colors p-2"
+					className="text-gray-700 hover:text-gray-900 transition-colors p-2"
 					href="#top"
 					to="top"
 					smooth={true}
