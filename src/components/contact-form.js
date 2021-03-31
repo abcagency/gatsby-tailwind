@@ -23,7 +23,8 @@ const ContactForm = () => (
 			email: '',
 			message: '',
 			transportation: [],
-			state: ''
+			state: '',
+			favoriteColor: 'pink'
 		}}
 		validationSchema={validationSchema}
 		onSubmit={async (values, { setSubmitting }) => {
@@ -111,7 +112,7 @@ const ContactForm = () => (
 								<span className="ml-2">Green</span>
 							</label>
 							<label className="inline-flex items-center mb-3">
-								<Field type="radio" name="favoriteColor" value="pink" className="rounded-full h-5 w-5 text-pink-500" checked />
+								<Field type="radio" name="favoriteColor" value="pink" className="rounded-full h-5 w-5 text-pink-500" />
 								<span className="ml-2">Pink</span>
 							</label>
 							<label className="inline-flex items-center mb-3">

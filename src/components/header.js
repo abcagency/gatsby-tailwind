@@ -69,7 +69,7 @@ function Header() {
 						spy={true}
 						hashSpy={true}
 						smooth={true}
-						offset={-25}
+						offset={-100}
 						duration={250}
 						>
 						Carousel
