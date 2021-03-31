@@ -15,6 +15,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-eslint`,
     `gatsby-plugin-react-helmet`,
+		`gatsby-plugin-transition-link`,
 		`gatsby-plugin-image`,
 		{
       resolve: `gatsby-source-filesystem`,
@@ -68,5 +69,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`
   ],
 };

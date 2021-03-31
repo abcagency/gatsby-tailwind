@@ -1,4 +1,5 @@
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
+import Link from "gatsby-plugin-transition-link/AniLink";
 import React, { useState } from "react";
 import * as Scroll from 'react-scroll';
 
@@ -19,7 +20,11 @@ function Header() {
   return (
     <header className="bg-indigo-700 sticky top-0 z-50 shadow-lg">
       <div className="flex flex-wrap items-center justify-between max-w-4xl p-4 mx-auto md:p-8">
-        <Link to="/">
+        <Link
+					to="/"
+					paintDrip
+					hex="#1D4ED8"
+				>
           <h1 className="text-2xl text-white font-bold no-underline">{site.siteMetadata.title}</h1>
         </Link>
 
@@ -56,6 +61,8 @@ function Header() {
               className="block mt-4 text-indigo-200 no-underline md:inline-block md:mt-0 md:ml-6 border-b-2 border-transparent hover:text-white transition-colors"
               key={link.title}
               to={link.route}
+							paintDrip
+							hex="#1D4ED8"
             >
               {link.title}
             </Link>
