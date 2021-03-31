@@ -4,13 +4,13 @@ import { Icon } from "@iconify/react";
 import Home from "@iconify/icons-mdi/home";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import abductionIllustration from "../images/abduction-illustration.svg";
 
 function NotFoundPage() {
   return (
     <Layout>
-      <SEO title="404: Not found" />
+      <Seo title="404: Not found" />
       <div>
         <img
           alt="Ghost getting abducted by aliens"

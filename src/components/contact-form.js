@@ -84,16 +84,16 @@ const ContactForm = () => (
 						<ErrorMessage name="transportation" component="span" className="inline-block text-red-500 uppercase text-xs font-bold ml-1" />
 
 						<div role="group" aria-labelledby="transportation-group-title" className="flex flex-col items-start">
-							<label className="inline-flex items-center mb-3">
-								<Field type="checkbox" name="transportation" value="car" className="rounded h-5 w-5 text-indigo-700 border-gray-800" />
+							<label htmlFor="transportationCar" className="inline-flex items-center mb-3">
+								<Field type="checkbox" id="transportationCar" name="transportation" value="car" className="rounded h-5 w-5 text-indigo-700 border-gray-800" />
 								<span className="ml-2">Car</span>
 							</label>
-							<label className="inline-flex items-center mb-3">
-								<Field type="checkbox" name="transportation" value="boat" className="rounded h-5 w-5 text-indigo-700 border-gray-800" />
+							<label htmlFor="transportationBoat" className="inline-flex items-center mb-3">
+								<Field type="checkbox" id="transportationBoat" name="transportation" value="boat" className="rounded h-5 w-5 text-indigo-700 border-gray-800" />
 								<span className="ml-2">Boat</span>
 							</label>
-							<label className="inline-flex items-center">
-								<Field type="checkbox" name="transportation" value="plane" className="rounded h-5 w-5 text-indigo-700 border-gray-800" />
+							<label htmlFor="transportationPlane" className="inline-flex items-center">
+								<Field type="checkbox" id="transportationPlane" name="transportation" value="plane" className="rounded h-5 w-5 text-indigo-700 border-gray-800" />
 								<span className="ml-2">Plane</span>
 							</label>
 						</div>
@@ -103,24 +103,24 @@ const ContactForm = () => (
 						<h2 id="favorite-color-group-title" className="inline-block text-xs uppercase font-bold mb-2">Favorite color</h2>
 
 						<div role="group" aria-labelledby="favorite-color-group-title" className="flex flex-col items-start">
-							<label className="inline-flex items-center mb-3">
-								<Field type="radio" name="favoriteColor" value="blue" className="rounded-full h-5 w-5 text-blue-700" />
+							<label htmlFor="favoriteColorBlue" className="inline-flex items-center mb-3">
+								<Field type="radio" id="favoriteColorBlue" name="favoriteColor" value="blue" className="rounded-full h-5 w-5 text-blue-700" />
 								<span className="ml-2">Blue</span>
 							</label>
-							<label className="inline-flex items-center mb-3">
-								<Field type="radio" name="favoriteColor" value="green" className="rounded-full h-5 w-5 text-green-600" />
+							<label htmlFor="favoriteColorGreen" className="inline-flex items-center mb-3">
+								<Field type="radio" id="favoriteColorGreen" name="favoriteColor" value="green" className="rounded-full h-5 w-5 text-green-600" />
 								<span className="ml-2">Green</span>
 							</label>
-							<label className="inline-flex items-center mb-3">
-								<Field type="radio" name="favoriteColor" value="pink" className="rounded-full h-5 w-5 text-pink-500" />
+							<label htmlFor="favoriteColorPink" className="inline-flex items-center mb-3">
+								<Field type="radio" id="favoriteColorPink" name="favoriteColor" value="pink" className="rounded-full h-5 w-5 text-pink-500" />
 								<span className="ml-2">Pink</span>
 							</label>
-							<label className="inline-flex items-center mb-3">
-								<Field type="radio" name="favoriteColor" value="red" className="rounded-full h-5 w-5 text-red-600" />
+							<label htmlFor="favoriteColorRed" className="inline-flex items-center mb-3">
+								<Field type="radio" id="favoriteColorRed" name="favoriteColor" value="red" className="rounded-full h-5 w-5 text-red-600" />
 								<span className="ml-2">Red</span>
 							</label>
-							<label className="inline-flex items-center">
-								<Field type="radio" name="favoriteColor" value="yellow" className="rounded-full h-5 w-5 text-yellow-400" />
+							<label htmlFor="favoriteColorYellow" className="inline-flex items-center">
+								<Field type="radio" id="favoriteColorYellow" name="favoriteColor" value="yellow" className="rounded-full h-5 w-5 text-yellow-400" />
 								<span className="ml-2">Yellow</span>
 							</label>
 						</div>

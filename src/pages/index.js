@@ -3,12 +3,12 @@ import { Link, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import Carousel from "../components/carousel";
 
 const IndexPage = ({ data }) => (
 	<Layout>
-		<SEO
+		<Seo
 			keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
 			title="Home"
 		/>

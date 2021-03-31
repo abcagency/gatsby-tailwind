@@ -1,13 +1,13 @@
 import React from "react";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import ContactForm from "../components/contact-form";
 
 function ContactPage() {
   return (
     <Layout>
-      <SEO
+      <Seo
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="Contact"
       />
@@ -16,7 +16,7 @@ function ContactPage() {
 			</div>
 
 			<section className="w-10/12 m-auto">
-      	<ContactForm />
+				<ContactForm />
 			</section>
     </Layout>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import Layout from "../components/layout";
 import Figure from "../components/figure";
 import VideoPlayer from "../components/video-player";
@@ -9,7 +9,7 @@ import VideoPlayer from "../components/video-player";
 function AboutPage() {
   return (
     <Layout>
-      <SEO
+      <Seo
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="About"
       />

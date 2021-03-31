@@ -1,7 +1,7 @@
 import React from "react";
 import ReactPlayer from "react-player/lazy";
 
-{/*
+/*
 Responsive video player using react-player
 @url: https://github.com/CookPete/react-player
 
@@ -10,7 +10,7 @@ Responsive video player using react-player
 @playerOptions: Use to pass in any extra options to react-player
 @containerClasses: Pass extra classes to the container element
 @aspectRatio: Set player aspect ratio (Default: 16x9)
-*/}
+*/
 
 function VideoPlayer({ url, placeholder, playerOptions, containerClasses, aspectRatio }) {
 	return (
