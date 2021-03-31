@@ -32,15 +32,12 @@ function VideoPlayer({ url, placeholder, playerOptions, containerClasses, aspect
 			}
 
 			<ReactPlayer
-				className="absolute inset-y-0 left-0 w-full h-full border-0"
+				className="absolute inset-y-0 left-0 w-full h-full border-0 my-0"
 				url={url}
 				light={placeholder}
 				width="100%"
 				height="100%"
-				volume={1}
-				muted={true}
-				autoPlay={true}
-				playsinline={true}
+				playing={true}
 				{...playerOptions}
 			/>
 		</div>

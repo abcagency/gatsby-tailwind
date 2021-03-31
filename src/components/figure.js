@@ -7,7 +7,7 @@ function Figure({ children, title, alt }) {
 				<div className="pt-2 px-2">
 					{children}
 				</div>
-				<figcaption className="bg-gray-100 p-2 text-center text-gray-500 text-xs">
+				<figcaption className="border-t border-gray-200 p-2 text-center !text-sm !text-gray-600 !mt-0">
 					{title ? title : alt}
 				</figcaption>
 			</figure>

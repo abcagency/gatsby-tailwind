@@ -23,6 +23,7 @@ const PostPage = ({ data }) => (
 			</Figure>
       </div>
 
+		<section className="prose md:prose-lg lg:prose-xl prose-indigo mx-auto">
 			<StructuredText
 				data={data.datoCmsBlogPost.content}
 				renderBlock={({ record }) => {
@@ -33,7 +34,11 @@ const PostPage = ({ data }) => (
 									title={record.image.title}
 									alt={record.image.alt}
 								>
-									<GatsbyImage image={record.image.gatsbyImageData} alt={record.image.alt} />
+									<GatsbyImage
+										image={record.image.gatsbyImageData}
+										alt={record.image.alt}
+										imgClassName="!my-0"
+									/>
 								</Figure>
 							)
 						default:
@@ -41,6 +46,7 @@ const PostPage = ({ data }) => (
 					}
 				}}
 			/>
+		</section>
     </article>
   </Layout>
 )
