@@ -4,6 +4,8 @@ module.exports = {
     "./public/**/*.html",
     "./src/**/*.{js,jsx,ts,tsx,vue}",
   ],
-  // https://github.com/tailwindlabs/tailwindcss-forms
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
+  plugins: [
+		require("@tailwindcss/forms"),
+		require("@tailwindcss/typography")
+	],
 };

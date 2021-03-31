@@ -1,7 +1,8 @@
 import React from "react"
-import { HelmetDatoCms } from "gatsby-source-datocms"
 import { StructuredText } from 'react-datocms';
+import { HelmetDatoCms } from "gatsby-source-datocms"
 import { graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Figure from "../components/figure"
@@ -15,10 +16,11 @@ const PostPage = ({ data }) => (
         <p className="text-xl text-gray-500">{data.datoCmsBlogPost.excerpt}</p>
 
 			<Figure
-				image={data.datoCmsBlogPost.image.gatsbyImageData}
 				title={data.datoCmsBlogPost.image.title}
 				alt={data.datoCmsBlogPost.image.alt}
-			/>
+			>
+				<GatsbyImage image={data.datoCmsBlogPost.image.gatsbyImageData} alt={data.datoCmsBlogPost.image.alt} />
+			</Figure>
       </div>
 
 			<StructuredText
@@ -28,10 +30,11 @@ const PostPage = ({ data }) => (
 						case "DatoCmsImage":
 							return (
 								<Figure
-									image={record.image.gatsbyImageData}
 									title={record.image.title}
 									alt={record.image.alt}
-								/>
+								>
+									<GatsbyImage image={record.image.gatsbyImageData} alt={record.image.alt} />
+								</Figure>
 							)
 						default:
 							return null;

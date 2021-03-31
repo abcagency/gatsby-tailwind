@@ -37,6 +37,10 @@ function VideoPlayer({ url, placeholder, playerOptions, containerClasses, aspect
 				light={placeholder}
 				width="100%"
 				height="100%"
+				volume={1}
+				muted={true}
+				autoPlay={true}
+				playsinline={true}
 				{...playerOptions}
 			/>
 		</div>

@@ -3,6 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import SEO from "../components/seo";
 import Layout from "../components/layout";
+import Figure from "../components/figure";
 import VideoPlayer from "../components/video-player";
 
 function AboutPage() {
@@ -17,19 +18,22 @@ function AboutPage() {
 				<h1 className="text-4xl font-bold mb-3">About</h1>
 			</div>
 
-			<StaticImage
-				src="../images/dog.jpg"
-				alt="A dog wrapped in a blanket in the woods"
-				placeholder="blurred"
-				className="mb-6"
-			/>
+			<Figure
+				title="A dog wrapped in a blanket in the woods"
+			>
+				<StaticImage
+					src="../images/dog.jpg"
+					alt="A dog wrapped in a blanket in the woods"
+					placeholder="blurred"
+				/>
+			</Figure>
 
       <section className="max-w-3xl mx-auto">
 				<p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat ultrices nunc, id tempor erat luctus in. Aliquam euismod convallis dignissim. Mauris ac tristique metus. Praesent id faucibus arcu, cursus pretium nisi. Nam et turpis sed arcu porttitor pretium. Proin varius commodo arcu ut iaculis. Vestibulum congue rhoncus sem iaculis sodales. Donec ipsum lacus, sodales quis sapien ac, dictum facilisis nibh. Morbi eget porttitor ipsum. Phasellus vitae lacus nunc. Maecenas turpis ligula, hendrerit vitae leo auctor, finibus interdum sapien. Nam molestie, augue in ornare imperdiet, turpis mauris ultricies magna, et sagittis nulla dui vitae libero. In dignissim nisi non erat dapibus auctor. Praesent mattis felis eget tellus facilisis, eget pharetra risus malesuada. Sed eleifend tristique leo, non ultrices velit pellentesque at. Praesent lobortis ac odio sed viverra.</p>
 
 				<VideoPlayer
 					containerClasses="my-10"
-					url='https://cdn.flowplayer.com/6c7629eb-c3af-4165-80d3-96cce8c83f78/v-e75ffaba-bbde-4409-bfbc-2297e657240c_original.mp4'
+					url='https://cdn.flowplayer.com/6c7629eb-c3af-4165-80d3-96cce8c83f78/hls/e75ffaba-bbde-4409-bfbc-2297e657240c/playlist.m3u8'
 					placeholder="https://cdn.flowplayer.com/6c7629eb-c3af-4165-80d3-96cce8c83f78/i/v-i-e75ffaba-bbde-4409-bfbc-2297e657240c-1.jpg"
 					playerOptions={{
 						controls: true
