@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
+import Link from "gatsby-plugin-transition-link/AniLink";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout";
@@ -27,7 +28,12 @@ const IndexPage = ({ data }) => (
 			<ol>
 				{data.allDatoCmsBlogPost.edges.map(({ node: blogPost }) => (
 					<li key={blogPost.id} className="py-6 mb-6 border-b border-gray-200 px-4">
-						<Link to={`/posts/${blogPost.slug}`} className="block">
+						<Link
+							to={`/posts/${blogPost.slug}`}
+							className="block"
+							paintDrip
+							hex="#1D4ED8"
+						>
 							<GatsbyImage
 								image={blogPost.image.gatsbyImageData}
 								alt={blogPost.image.alt}
