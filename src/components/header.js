@@ -1,6 +1,5 @@
 import { graphql, useStaticQuery, Link } from "gatsby";
 import React, { useState } from "react";
-// import { AnchorLink } from "gatsby-plugin-anchor-links";
 import * as Scroll from 'react-scroll';
 
 function Header() {

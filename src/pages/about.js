@@ -28,7 +28,7 @@ function AboutPage() {
 				/>
 			</Figure>
 
-      <section className="prose md:prose-lg lg:prose-xl prose-indigo mx-auto">
+      <section className="prose prose-sm md:prose-lg lg:prose-xl prose-indigo mx-auto">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat ultrices nunc, id tempor erat luctus in. Aliquam euismod convallis dignissim. Mauris ac tristique metus. Praesent id faucibus arcu, cursus pretium nisi. Nam et turpis sed arcu porttitor pretium. Proin varius commodo arcu ut iaculis. Vestibulum congue rhoncus sem iaculis sodales. Donec ipsum lacus, sodales quis sapien ac, dictum facilisis nibh. Morbi eget porttitor ipsum. Phasellus vitae lacus nunc. Maecenas turpis ligula, hendrerit vitae leo auctor, finibus interdum sapien. Nam molestie, augue in ornare imperdiet, turpis mauris ultricies magna, et sagittis nulla dui vitae libero. In dignissim nisi non erat dapibus auctor. Praesent mattis felis eget tellus facilisis, eget pharetra risus malesuada. Sed eleifend tristique leo, non ultrices velit pellentesque at. Praesent lobortis ac odio sed viverra.</p>
 
 			<VideoPlayer

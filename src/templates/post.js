@@ -23,7 +23,7 @@ const PostPage = ({ data }) => (
 			</Figure>
       </div>
 
-		<section className="prose md:prose-lg lg:prose-xl prose-indigo mx-auto">
+		<section className="prose prose-sm md:prose-lg lg:prose-xl prose-indigo mx-auto">
 			<StructuredText
 				data={data.datoCmsBlogPost.content}
 				renderBlock={({ record }) => {

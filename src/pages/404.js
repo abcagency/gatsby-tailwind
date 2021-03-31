@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "gatsby";
+import { Icon } from "@iconify/react";
+import Home from "@iconify/icons-mdi/home";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -14,9 +17,20 @@ function NotFoundPage() {
           className="block mx-auto w-1/2"
           src={abductionIllustration}
         />
-        <h2 className="bg-yellow-400 text-2xl font-bold inline-block my-8 p-3">
-          Looks like this page is a ghost that got abducted by aliens...
-        </h2>
+
+				<div className="bg-pink-200 text-center rounded-lg px-3 py-5">
+					<h2 className="text-gray-800 text-xl font-bold">
+						Looks like this page is a ghost that got abducted by aliens...
+					</h2>
+
+					<Link
+						className="inline-block mt-4 px-4 py-2 rounded-md bg-white text-sm font-bold text-indigo-700 no-underline hover:bg-indigo-700 hover:text-white transition-colors"
+						to="/"
+					>
+						<Icon icon={Home} height="1.25rem" width="1.25rem" className="inline-block -mt-0.5 mr-1" />
+						Head home
+					</Link>
+				</div>
       </div>
     </Layout>
   );
