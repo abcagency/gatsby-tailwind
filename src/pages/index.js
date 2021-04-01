@@ -16,8 +16,10 @@ const IndexPage = ({ data }) => (
 		/>
 
 		<div className="bg-gray-100 py-6 px-4 mb-4 text-center">
-			<h1 className="text-6xl font-bold mb-6">{data.datoCmsHomepage.jumbotron}</h1>
-			<div dangerouslySetInnerHTML={{ __html: data.datoCmsHomepage.usp }} className="text-gray-700" />
+			<div className="container mx-auto">
+				<h1 className="text-6xl font-bold mb-6">{data.datoCmsHomepage.jumbotron}</h1>
+				<div dangerouslySetInnerHTML={{ __html: data.datoCmsHomepage.usp }} className="text-gray-700" />
+			</div>
 		</div>
 
 		<div id="carousel">
