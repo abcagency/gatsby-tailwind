@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*
+	Sticky nav / gatsby-plugin-transition-link fixes
+	position: sticky doesn't work when parents have overflow-x: auto | scroll | hidden
+*/
+
+.tl-edges {
+	@apply overflow-visible;
+}
+
+.tl-wrapper-status--entering,
+.tl-wrapper-status--exiting {
+	@apply overflow-x-hidden;
+}
