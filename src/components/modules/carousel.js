@@ -52,10 +52,7 @@ export default class Carousel extends Component {
 		return (
 			<>
 			<style>
-				{`.slick-arrow::before {
-					display: none;
-					visibility: hidden;
-				}`}
+				{`.slick-arrow::before { display: none; visibility: hidden; }`}
 			</style>
 				<Slider {...settings}>
 					{content.map((slide) => (
