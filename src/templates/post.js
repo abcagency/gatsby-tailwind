@@ -1,93 +1,108 @@
-import React from "react"
-import { StructuredText } from 'react-datocms';
-import { HelmetDatoCms } from "gatsby-source-datocms"
-import { graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import React from 'react'
+import { StructuredText } from 'react-datocms'
+import { HelmetDatoCms } from 'gatsby-source-datocms'
+import { graphql } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-import Layout from "../components/layout/layout"
-import Figure from "../components/modules/figure"
+import Layout from '../components/layout/layout'
+import Figure from '../components/modules/figure'
 
 const PostPage = ({ data }) => (
-  <Layout>
-    <article className="px-8">
-      <HelmetDatoCms seo={data.datoCmsBlogPost.seoMetaTags} />
-      <div className="my-8">
-        <h1 className="mb-4 text-5xl font-bold">{data.datoCmsBlogPost.title}</h1>
-        <p className="text-xl text-gray-500">{data.datoCmsBlogPost.excerpt}</p>
+	<Layout>
+		<article className="px-8">
+			<HelmetDatoCms seo={data.datoCmsBlogPost.seoMetaTags} />
+			<div className="my-8">
+				<h1 className="mb-4 text-5xl font-bold">{data.datoCmsBlogPost.title}</h1>
+				<p className="text-xl text-gray-500">{data.datoCmsBlogPost.excerpt}</p>
 
-			<Figure
-				title={data.datoCmsBlogPost.image.title}
-				alt={data.datoCmsBlogPost.image.alt}
-			>
-				<GatsbyImage image={data.datoCmsBlogPost.image.gatsbyImageData} alt={data.datoCmsBlogPost.image.alt} />
-			</Figure>
-      </div>
+				<Figure title={data.datoCmsBlogPost.image.title} alt={data.datoCmsBlogPost.image.alt}>
+					<GatsbyImage image={data.datoCmsBlogPost.image.gatsbyImageData} alt={data.datoCmsBlogPost.image.alt} />
+				</Figure>
+			</div>
 
-		<section className="prose prose-sm md:prose-lg lg:prose-xl prose-indigo mx-auto">
-			<StructuredText
-				data={data.datoCmsBlogPost.content}
-				renderBlock={({ record }) => {
-					switch (record.__typename) {
-						case "DatoCmsImage":
-							return (
-								<Figure
-									title={record.image.title}
-									alt={record.image.alt}
-								>
-									<GatsbyImage
-										image={record.image.gatsbyImageData}
-										alt={record.image.alt}
-										imgClassName="!my-0"
-									/>
-								</Figure>
-							)
-						default:
-							return null;
-					}
-				}}
-			/>
-		</section>
-    </article>
-  </Layout>
+			<section className="prose prose-sm md:prose-lg lg:prose-xl prose-indigo mx-auto">
+				<StructuredText
+					data={data.datoCmsBlogPost.content}
+					renderInlineRecord={({ record }) => {
+						switch (record.__typename) {
+							case 'DatoCmsBlogPost':
+								return <a href={`/posts/${record.slug}`}>{record.title}</a>
+							case 'DatoCmsBlogCategory':
+								return <a href={`/posts/category/${record.slug}`}>{record.name}</a>
+							default:
+								return null
+						}
+					}}
+					renderLinkToRecord={({ record, children }) => {
+						switch (record.__typename) {
+							case 'DatoCmsBlogPost':
+								return <a href={`/posts/${record.slug}`}>{record.title}</a>
+							case 'DatoCmsBlogCategory':
+								return <a href={`/posts/category/${record.slug}`}>{record.name}</a>
+							default:
+								return null
+						}
+					}}
+					renderBlock={({ record }) => {
+						switch (record.__typename) {
+							case 'DatoCmsImage':
+								return (
+									<Figure title={record.image.title} alt={record.image.alt}>
+										<GatsbyImage image={record.image.gatsbyImageData} alt={record.image.alt} imgClassName="!my-0" />
+									</Figure>
+								)
+							default:
+								return null
+						}
+					}}
+				/>
+			</section>
+		</article>
+	</Layout>
 )
 
 export const query = graphql`
-  query PostQuery($slug: String!) {
-    datoCmsBlogPost(slug: { eq: $slug }) {
-      seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTags
-      }
-      title
-      excerpt
-      image {
-			alt
+	query PostQuery($slug: String!) {
+		datoCmsBlogPost(slug: { eq: $slug }) {
+			seoMetaTags {
+				...GatsbyDatoCmsSeoMetaTags
+			}
 			title
-			gatsbyImageData(
-				width: 1280,
-				placeholder: BLURRED,
-				forceBlurhash: false
-			)
+			excerpt
+			image {
+				alt
+				title
+				gatsbyImageData(width: 1280, placeholder: BLURRED, forceBlurhash: false)
+			}
+			content {
+				value
+				blocks {
+					__typename
+					... on DatoCmsImage {
+						id: originalId
+						image {
+							alt
+							title
+							gatsbyImageData(width: 1280, placeholder: BLURRED, forceBlurhash: false)
+						}
+					}
+				}
+				links {
+					__typename
+					... on DatoCmsBlogPost {
+						id: originalId
+						slug
+						title
+					}
+					... on DatoCmsBlogCategory {
+						id: originalId
+						slug
+						name
+					}
+				}
+			}
 		}
-		content {
-			value
-			blocks {
-          __typename
-          ... on DatoCmsImage {
-            id: originalId
-            image {
-					alt
-					title
-					gatsbyImageData(
-						width: 1280,
-						placeholder: BLURRED,
-						forceBlurhash: false
-					)
-            }
-          }
-        }
-		}
-    }
-  }
+	}
 `
 
 export default PostPage
