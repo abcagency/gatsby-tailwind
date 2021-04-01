@@ -11,7 +11,7 @@ module.exports = {
     title: `Gatsby Starter Tailwind`,
     description: `Gatsby starter styled with Tailwind`,
     author: `@abc_Creative`,
-		siteUrl: `gatsbytailwind.gatsbyjs.io`
+		siteUrl: `https://gatsbytailwind.gatsbyjs.io/`
   },
   plugins: [
     `gatsby-plugin-eslint`,
