@@ -9,7 +9,7 @@ function Layout({ children }) {
 		<div className="relative" id="top">
 			<Header />
 
-			<main className="container mx-auto">
+			<main>
 				{children}
 			</main>
 

@@ -3,15 +3,15 @@ import Link from "gatsby-plugin-transition-link/AniLink";
 import { Icon } from "@iconify/react";
 import Home from "@iconify/icons-mdi/home";
 
-import Layout from "../components/layout";
-import Seo from "../components/seo";
+import Layout from "../components/layout/layout";
+import Seo from "../components/util/seo";
 import abductionIllustration from "../images/abduction-illustration.svg";
 
 function NotFoundPage() {
   return (
     <Layout>
       <Seo title="404: Not found" />
-      <div>
+      <div className="container mx-auto">
         <img
           alt="Ghost getting abducted by aliens"
           className="block mx-auto w-1/2"

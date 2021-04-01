@@ -1,8 +1,8 @@
 import React from "react";
 
-import Layout from "../components/layout";
-import Seo from "../components/seo";
-import ContactForm from "../components/contact-form";
+import Layout from "../components/layout/layout";
+import Seo from "../components/util/seo";
+import ContactForm from "../components/modules/contact-form";
 
 function ContactPage() {
   return (
@@ -15,7 +15,7 @@ function ContactPage() {
 				<h1 className="text-4xl font-bold mb-3">Contact</h1>
 			</div>
 
-			<section className="w-10/12 m-auto">
+			<section className="container mx-auto">
 				<ContactForm />
 			</section>
     </Layout>

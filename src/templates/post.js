@@ -4,8 +4,8 @@ import { HelmetDatoCms } from "gatsby-source-datocms"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
-import Figure from "../components/figure"
+import Layout from "../components/layout/layout"
+import Figure from "../components/modules/figure"
 
 const PostPage = ({ data }) => (
   <Layout>

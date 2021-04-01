@@ -19,7 +19,7 @@ function Header() {
 
   return (
     <header className="bg-indigo-700 sticky top-0 z-50 shadow-lg">
-      <div className="flex flex-wrap items-center justify-between max-w-4xl p-4 mx-auto md:p-8">
+      <div className="flex flex-wrap items-center justify-between container p-4 mx-auto md:p-8">
         <Link
 					to="/"
 					paintDrip

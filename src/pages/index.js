@@ -3,9 +3,10 @@ import { graphql } from "gatsby";
 import Link from "gatsby-plugin-transition-link/AniLink";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-import Layout from "../components/layout";
-import Seo from "../components/seo";
-import Carousel from "../components/carousel";
+import Layout from "../components/layout/layout";
+import Seo from "../components/util/seo";
+import Carousel from "../components/modules/carousel";
+import Content from "../components/util/content";
 
 const IndexPage = ({ data }) => (
 	<Layout>
@@ -15,8 +16,8 @@ const IndexPage = ({ data }) => (
 		/>
 
 		<div className="bg-gray-100 py-6 px-4 mb-4 text-center">
-			<h1 className="text-4xl font-bold mb-3">{data.datoCmsHomepage.jumbotron}</h1>
-			<div dangerouslySetInnerHTML={{ __html: data.datoCmsHomepage.usp }} className="text-sm text-gray-600" />
+			<h1 className="text-6xl font-bold mb-6">{data.datoCmsHomepage.jumbotron}</h1>
+			<div dangerouslySetInnerHTML={{ __html: data.datoCmsHomepage.usp }} className="text-gray-700" />
 		</div>
 
 		<div id="carousel">
@@ -24,7 +25,7 @@ const IndexPage = ({ data }) => (
 		</div>
 
 		<section className="mt-36 max-w-3xl mx-auto">
-			<h2 className="mb-4 text-center text-2xl font-bold">Recent posts</h2>
+			<h2 className="mb-4 text-center text-4xl font-bold text-gray-900">Recent posts</h2>
 			<ol>
 				{data.allDatoCmsBlogPost.edges.map(({ node: blogPost }) => (
 					<li key={blogPost.id} className="py-6 mb-6 border-b border-gray-200 px-4">
@@ -38,8 +39,10 @@ const IndexPage = ({ data }) => (
 								image={blogPost.image.gatsbyImageData}
 								alt={blogPost.image.alt}
 							/>
-							<h3 className="text-xl mt-2 mb-4">{blogPost.title}</h3>
-							<p>{blogPost.excerpt}</p>
+							<Content className="mt-4">
+								<h3 className="text-xl mb-4">{blogPost.title}</h3>
+								<p>{blogPost.excerpt}</p>
+							</Content>
 						</Link>
 					</li>
 				))}
@@ -80,7 +83,7 @@ export const query = graphql`
           slug
           title
           image {
-						alt
+				alt
             gatsbyImageData(
               width: 736,
               placeholder: BLURRED,
