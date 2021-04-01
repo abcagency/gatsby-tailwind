@@ -1,12 +1,12 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Link from "gatsby-plugin-transition-link/AniLink";
-import { GatsbyImage } from "gatsby-plugin-image";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Link from 'gatsby-plugin-transition-link/AniLink';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-import Layout from "../components/layout/layout";
-import Seo from "../components/util/seo";
-import Carousel from "../components/modules/carousel";
-import Content from "../components/util/content";
+import Layout from '../components/layout/layout';
+import Seo from '../components/util/seo';
+import Carousel from '../components/modules/carousel';
+import Content from '../components/util/content';
 
 const IndexPage = ({ data }) => (
 	<Layout>
@@ -56,7 +56,7 @@ const IndexPage = ({ data }) => (
 export default IndexPage;
 
 export const query = graphql`
-  query IndexQuery {
+	query IndexQuery {
 		datoCmsHomepage {
 			jumbotron
 			usp
@@ -78,26 +78,26 @@ export const query = graphql`
 				}
 			}
 		}
-    allDatoCmsBlogPost {
-      edges {
-        node {
-          id
-          slug
-          title
-          image {
+		allDatoCmsBlogPost {
+			edges {
+				node {
+					id
+					slug
+					title
+					image {
 				alt
-            gatsbyImageData(
-              width: 736,
-              placeholder: BLURRED,
-              forceBlurhash: false
-            )
-          }
-          excerpt
-          categories {
-            name
-          }
-        }
-      }
-    }
-  }
+						gatsbyImageData(
+							width: 736,
+							placeholder: BLURRED,
+							forceBlurhash: false
+						)
+					}
+					excerpt
+					categories {
+						name
+					}
+				}
+			}
+		}
+	}
 `;

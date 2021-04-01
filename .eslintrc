@@ -3,14 +3,14 @@
 		"graphql": true,
 		"__PATH_PREFIX__": true
 	},
-  // https://eslint.org/docs/user-guide/configuring#specifying-environments
-  "env": {
-    "browser": true,
-    "node": true
-  },
-  // https://github.com/babel/babel-eslint
-  // "parser": "babel-eslint",
-  "parser": "@babel/eslint-parser",
+	// https://eslint.org/docs/user-guide/configuring#specifying-environments
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	// https://github.com/babel/babel-eslint
+	// "parser": "babel-eslint",
+	"parser": "@babel/eslint-parser",
 	"parserOptions": {
 		"ecmaVersion": 2020,
 		"sourceType": "module",
@@ -23,20 +23,20 @@
 		"requireConfigFile": false
 	},
 	"plugins": ["graphql"],
-  "settings": {
+	"settings": {
 		"react": {
 			"version": "detect"
 		}
-  },
-  "extends": [
+	},
+	"extends": [
 		// https://eslint.org/docs/rules/
-    "eslint:recommended",
-    // https://github.com/yannickcr/eslint-plugin-react#recommended
-    "plugin:react/recommended",
+		"eslint:recommended",
+		// https://github.com/yannickcr/eslint-plugin-react#recommended
+		"plugin:react/recommended",
 		"react-app",
-    // https://github.com/benmosher/eslint-plugin-import
-    "plugin:import/recommended"
-  ],
+		// https://github.com/benmosher/eslint-plugin-import
+		"plugin:import/recommended"
+	],
 	"rules": {
 		// https://eslint.org/docs/2.0.0/rules/strict
 		"strict": 0,

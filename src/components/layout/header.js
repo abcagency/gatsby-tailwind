@@ -1,23 +1,23 @@
-import { graphql, useStaticQuery } from "gatsby";
-import Link from "gatsby-plugin-transition-link/AniLink";
-import React, { useState } from "react";
+import { graphql, useStaticQuery } from 'gatsby';
+import Link from 'gatsby-plugin-transition-link/AniLink';
+import React, { useState } from 'react';
 import * as Scroll from 'react-scroll';
 
 function Header() {
 	let ScrollLink = Scroll.Link;
 
-  const [isExpanded, toggleExpansion] = useState(false);
-  const { site } = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+	const [isExpanded, toggleExpansion] = useState(false);
+	const { site } = useStaticQuery(graphql`
+		query SiteTitleQuery {
+			site {
+				siteMetadata {
+					title
+				}
+			}
+		}
+	`);
 
-  return (
+	return (
 		<header className="bg-indigo-700 sticky top-0 z-50 shadow-lg">
 			<div className="flex flex-wrap items-center justify-between container p-4 mx-auto md:p-8">
 				<Link
@@ -83,7 +83,7 @@ function Header() {
 				</nav>
 			</div>
 		</header>
-  );
+	);
 }
 
 export default Header;

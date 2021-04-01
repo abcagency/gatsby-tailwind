@@ -1,10 +1,10 @@
-import React from "react";
-import * as Scroll from 'react-scroll';
-import { Icon } from "@iconify/react";
-import arrowCollapseUp from "@iconify/icons-mdi/arrow-collapse-up";
+import React from 'react'
+import * as Scroll from 'react-scroll'
+import { Icon } from '@iconify/react'
+import arrowCollapseUp from '@iconify/icons-mdi/arrow-collapse-up'
 
 function Footer() {
-	let ScrollLink = Scroll.Link;
+	let ScrollLink = Scroll.Link
 
 	return (
 		<footer className="p-4 mt-4 bg-gray-100 text-center text-xs text-gray-700">
@@ -22,13 +22,13 @@ function Footer() {
 					smooth={true}
 					offset={-25}
 					duration={250}
-					>
+				>
 					<span className="sr-only">To the top!</span>
 					<Icon icon={arrowCollapseUp} height="1rem" width="1rem" />
 				</ScrollLink>
 			</div>
 		</footer>
-	);
+	)
 }
 
-export default Footer;
+export default Footer
