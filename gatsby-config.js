@@ -99,6 +99,13 @@ module.exports = {
 									priority: 1,
 								}
 							default:
+								if (node.path.indexOf('posts/') >= 0) {
+									return {
+										url: `${site.siteMetadata.siteUrl}${node.path}`,
+										changefreq: `weekly`,
+										priority: 0.8,
+									}	
+								}
 								return {
 									url: `${site.siteMetadata.siteUrl}${node.path}`,
 									changefreq: `monthly`,

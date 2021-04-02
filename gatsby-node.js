@@ -3,7 +3,6 @@ const path = require('path');
 exports.createPages = async ({ graphql, actions }) => {
 	const { createPage } = actions
 
-	// eslint-disable-next-line
 	const createBlogsPosts = new Promise((resolve, reject) => {
 		try {
 			graphql(`
@@ -16,10 +15,9 @@ exports.createPages = async ({ graphql, actions }) => {
 				}
 			`).then(res => {
 				const posts = res.data.allDatoCmsBlogPost.nodes
-				// eslint-disable-next-line
 				posts.map(post => {
 					const { slug } = post
-					createPage({
+					return createPage({
 						path: `/posts/${slug}`,
 						component: path.resolve("./src/templates/post.js"),
 						context: {
@@ -34,6 +32,5 @@ exports.createPages = async ({ graphql, actions }) => {
 		}
 	});
 
-	// eslint-disable-next-line
 	return Promise.all([createBlogsPosts]);
 }
