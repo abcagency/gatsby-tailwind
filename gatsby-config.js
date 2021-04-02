@@ -70,6 +70,43 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-offline`,
-		`gatsby-plugin-sitemap`
+		{
+			resolve: `gatsby-plugin-sitemap`,
+			options: {
+				query: `
+					{
+						site {
+							siteMetadata {
+								siteUrl
+							}
+						}
+
+						allSitePage {
+							nodes {
+								path
+							}
+						}
+				}`,
+				serialize: ({ site, allSitePage }) =>
+					allSitePage.nodes.map(node => {
+						switch (node.path) {
+							case '':
+							case ' ':
+							case '/':
+								return {
+									url: `${site.siteMetadata.siteUrl}${node.path}`,
+									changefreq: `daily`,
+									priority: 1,
+								}
+							default:
+								return {
+									url: `${site.siteMetadata.siteUrl}${node.path}`,
+									changefreq: `monthly`,
+									priority: 0.5,
+								}
+						}
+					})
+			}
+		}
 	],
 };
