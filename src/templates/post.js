@@ -77,9 +77,7 @@ export const query = graphql`
 			title
 			excerpt
 			image {
-				alt
-				title
-				gatsbyImageData(width: 1280, placeholder: BLURRED, forceBlurhash: false)
+				...imageFields
 			}
 			content {
 				value
@@ -88,9 +86,7 @@ export const query = graphql`
 					... on DatoCmsImage {
 						id: originalId
 						image {
-							alt
-							title
-							gatsbyImageData(width: 1280, placeholder: BLURRED, forceBlurhash: false)
+							...imageFields
 						}
 					}
 				}
@@ -109,6 +105,12 @@ export const query = graphql`
 				}
 			}
 		}
+	}
+
+	fragment imageFields on DatoCmsFileField {
+		alt
+		title
+		gatsbyImageData(width: 1280, placeholder: BLURRED, forceBlurhash: false)
 	}
 `
 
