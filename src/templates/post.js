@@ -28,9 +28,9 @@ function PostPage({ data }) {
 						renderInlineRecord={({ record }) => {
 							switch (record.__typename) {
 								case 'DatoCmsBlogPost':
-									return <a href={`/posts/${record.slug}`}>{record.title}</a>
+									return <p><a href={`/posts/${record.slug}`}>{record.title}</a></p>
 								case 'DatoCmsBlogCategory':
-									return <a href={`/posts/category/${record.slug}`}>{record.name}</a>
+									return <p><a href={`/posts/category/${record.slug}`}>{record.name}</a></p>
 								default:
 									return null
 							}
@@ -38,9 +38,9 @@ function PostPage({ data }) {
 						renderLinkToRecord={({ record, children }) => {
 							switch (record.__typename) {
 								case 'DatoCmsBlogPost':
-									return <a href={`/posts/${record.slug}`}>{record.title}</a>
+									return <a href={`/posts/${record.slug}`} className="!text-red-700">{children}</a>
 								case 'DatoCmsBlogCategory':
-									return <a href={`/posts/category/${record.slug}`}>{record.name}</a>
+									return <a href={`/posts/category/${record.slug}`}>{children}</a>
 								default:
 									return null
 							}
