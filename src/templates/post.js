@@ -1,59 +1,62 @@
-import React from 'react'
-import { StructuredText } from 'react-datocms'
-import { HelmetDatoCms } from 'gatsby-source-datocms'
-import { graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import React from 'react';
+import { StructuredText } from 'react-datocms';
+import { HelmetDatoCms } from 'gatsby-source-datocms';
+import { graphql } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-import Layout from '../components/layout/layout'
-import Figure from '../components/modules/figure'
+import Layout from '../components/layout/layout';
+import Figure from '../components/modules/figure';
 
 function PostPage({ data }) {
-	const blogPost = data.datoCmsBlogPost;
+	const { title, excerpt, image, content } = data.datoCmsBlogPost;
 	return(
 		<Layout>
-			<article className="px-8">
+			<article className="px-4">
 				<HelmetDatoCms seo={data.seoMetaTags} />
 				<div className="my-8">
-					<h1 className="mb-4 text-5xl font-bold">{blogPost.title}</h1>
-					<p className="text-xl text-gray-500">{blogPost.excerpt}</p>
+					<h1 className="mb-4 text-5xl font-bold">{title}</h1>
+					<p className="text-xl text-gray-500">{excerpt}</p>
 
-					<Figure title={blogPost.image.title} alt={blogPost.image.alt}>
-						<GatsbyImage image={blogPost.image.gatsbyImageData} alt={blogPost.image.alt} />
+					<Figure title={image.title} alt={image.alt}>
+						<GatsbyImage image={image.gatsbyImageData} alt={image.alt} />
 					</Figure>
 				</div>
 
 				<section className="prose prose-sm md:prose-lg lg:prose-xl prose-indigo mx-auto">
 					<StructuredText
-						data={blogPost.content}
+						data={content}
 						renderInlineRecord={({ record }) => {
+							const { slug, title, name } = record;
 							switch (record.__typename) {
 								case 'DatoCmsBlogPost':
-									return <p><a href={`/posts/${record.slug}`}>{record.title}</a></p>
+									return <p><a href={`/posts/${slug}`}>{title}</a></p>
 								case 'DatoCmsBlogCategory':
-									return <p><a href={`/posts/category/${record.slug}`}>{record.name}</a></p>
+									return <p><a href={`/posts/category/${slug}`}>{name}</a></p>
 								default:
 									return null
 							}
 						}}
 						renderLinkToRecord={({ record, children }) => {
+							const { slug } = record;
 							switch (record.__typename) {
 								case 'DatoCmsBlogPost':
-									return <a href={`/posts/${record.slug}`} className="!text-red-700">{children}</a>
+									return <a href={`/posts/${slug}`} className="!text-red-700">{children}</a>
 								case 'DatoCmsBlogCategory':
-									return <a href={`/posts/category/${record.slug}`}>{children}</a>
+									return <a href={`/posts/category/${slug}`}>{children}</a>
 								default:
 									return null
 							}
 						}}
 						renderBlock={({ record }) => {
-							const image = record.image;
 							switch (record.__typename) {
-								case 'DatoCmsImage':
+								case 'DatoCmsImage': {
+									const { title, alt, gatsbyImageData } = record.image;
 									return (
-										<Figure title={image.title} alt={image.alt}>
-											<GatsbyImage image={image.gatsbyImageData} alt={image.alt} imgClassName="!my-0" />
+										<Figure title={title} alt={alt}>
+											<GatsbyImage image={gatsbyImageData} alt={alt} imgClassName="!my-0" />
 										</Figure>
 									)
+								}
 								default:
 									return null
 							}

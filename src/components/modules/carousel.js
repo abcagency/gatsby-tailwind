@@ -1,18 +1,18 @@
-import React, { Component } from "react";
-import { GatsbyImage } from "gatsby-plugin-image"
-import Slider from "react-slick";
-import { Icon } from "@iconify/react";
-import arrowLeftDropCircle from "@iconify/icons-mdi/arrow-left-drop-circle";
-import arrowRightDropCircle from "@iconify/icons-mdi/arrow-right-drop-circle";
+import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import Slider from 'react-slick';
+import { Icon } from '@iconify/react';
+import arrowLeftDropCircle from '@iconify/icons-mdi/arrow-left-drop-circle';
+import arrowRightDropCircle from '@iconify/icons-mdi/arrow-right-drop-circle';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 function NextButton(props) {
 	const { className, style, onClick } = props;
 	return (
 		<button
-		className={`${className} !right-1.5 z-10 opacity-60 hover:focus:!opacity-95 transition-opacity`}
+			className={`${className} !right-1.5 z-10 opacity-60 hover:focus:!opacity-95 transition-opacity`}
 			style={{ ...style, display: "block" }}
 			onClick={onClick}
 		>
@@ -36,9 +36,8 @@ function NextButton(props) {
 	);
  }
 
-export default class Carousel extends Component {
-	render() {
-		const { content } = this.props;
+function Carousel(props) {
+		const { content } = props;
 
 		const settings = {
 			dots: true,
@@ -49,6 +48,7 @@ export default class Carousel extends Component {
 			nextArrow: <NextButton />,
 			prevArrow: <PrevButton />
 		};
+
 		return (
 			<>
 			<style>
@@ -67,6 +67,7 @@ export default class Carousel extends Component {
 					))}
 				</Slider>
 			</>
-		);
+		)
 	}
- }
+
+export default Carousel

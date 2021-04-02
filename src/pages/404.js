@@ -3,8 +3,8 @@ import Link from 'gatsby-plugin-transition-link/AniLink';
 import { Icon } from '@iconify/react';
 import Home from '@iconify/icons-mdi/home';
 
-import Layout from '../components/layout/layout';
 import Seo from '../components/util/seo';
+import Layout from '../components/layout/layout';
 import abductionIllustration from '../images/abduction-illustration.svg';
 
 function NotFoundPage() {

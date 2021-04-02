@@ -1,7 +1,7 @@
-import React from 'react'
-import * as Scroll from 'react-scroll'
-import { Icon } from '@iconify/react'
-import arrowCollapseUp from '@iconify/icons-mdi/arrow-collapse-up'
+import React from 'react';
+import * as Scroll from 'react-scroll';
+import { Icon } from '@iconify/react';
+import arrowCollapseUp from '@iconify/icons-mdi/arrow-collapse-up';
 
 function Footer() {
 	let ScrollLink = Scroll.Link
@@ -10,9 +10,7 @@ function Footer() {
 		<footer className="p-4 mt-4 bg-gray-100 text-center text-xs text-gray-700">
 			<div className="container mx-auto flex justify-between items-center">
 				<p className="m-0">
-					© {new Date().getFullYear()}. Built with
-					{` `}
-					<a href="https://www.gatsbyjs.com">Gatsby</a>
+					© {new Date().getFullYear()}. <a href="https://abccreative.com">AB&amp;C</a>
 				</p>
 
 				<ScrollLink

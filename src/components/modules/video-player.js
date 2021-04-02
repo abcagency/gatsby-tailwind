@@ -1,5 +1,5 @@
-import React from "react";
-import ReactPlayer from "react-player/lazy";
+import React from 'react';
+import ReactPlayer from 'react-player/lazy';
 
 /*
 Responsive video player using react-player

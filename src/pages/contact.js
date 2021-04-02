@@ -15,7 +15,7 @@ function ContactPage() {
 				<h1 className="text-4xl font-bold mb-3">Contact</h1>
 			</div>
 
-			<section className="container mx-auto">
+			<section className="container px-4 mx-auto">
 				<ContactForm />
 			</section>
 		</Layout>

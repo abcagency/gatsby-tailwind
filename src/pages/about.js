@@ -18,7 +18,7 @@ function AboutPage() {
 				<h1 className="text-4xl font-bold mb-3">About</h1>
 			</div>
 
-			<div className="container mx-auto">
+			<div className="container px-4 mx-auto">
 				<Figure
 					title="A dog wrapped in a blanket in the woods"
 				>
