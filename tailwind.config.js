@@ -1,5 +1,6 @@
 // See https://tailwindcss.com/docs/configuration for details
 module.exports = {
+	darkMode: 'media',
 	purge: [
 		"./public/**/*.html",
 		"./src/**/*.{js,jsx,ts,tsx,vue}",

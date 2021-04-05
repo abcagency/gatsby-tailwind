@@ -52,7 +52,7 @@ function ContactForm() {
 								type="text"
 								name="name"
 								placeholder="First and Last Name"
-								className={`w-full rounded-md ${
+								className={`w-full rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
 									touched.name && errors.name ? "border-red-500" : "border-gray-800"
 								}`}
 							/>
@@ -72,7 +72,7 @@ function ContactForm() {
 								type="email"
 								name="email"
 								placeholder="user@domain.com"
-								className={`w-full rounded-md ${
+								className={`w-full rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
 									touched.email && errors.email ? "border-red-500" : "border-gray-800"
 								}`}
 							/>
@@ -86,15 +86,15 @@ function ContactForm() {
 
 							<div role="group" aria-labelledby="transportation-group-title" className="flex flex-col items-start">
 								<label htmlFor="transportationCar" className="inline-flex items-center mb-3">
-									<Field type="checkbox" id="transportationCar" name="transportation" value="car" className="rounded h-5 w-5 text-indigo-700 border-gray-800" />
+									<Field type="checkbox" id="transportationCar" name="transportation" value="car" className="rounded h-5 w-5 text-indigo-700 border-gray-800 dark:bg-gray-700 focus:dark:bg-white transition-colors" />
 									<span className="ml-2">Car</span>
 								</label>
 								<label htmlFor="transportationBoat" className="inline-flex items-center mb-3">
-									<Field type="checkbox" id="transportationBoat" name="transportation" value="boat" className="rounded h-5 w-5 text-indigo-700 border-gray-800" />
+									<Field type="checkbox" id="transportationBoat" name="transportation" value="boat" className="rounded h-5 w-5 text-indigo-700 border-gray-800 dark:bg-gray-700 focus:dark:bg-white transition-colors" />
 									<span className="ml-2">Boat</span>
 								</label>
 								<label htmlFor="transportationPlane" className="inline-flex items-center">
-									<Field type="checkbox" id="transportationPlane" name="transportation" value="plane" className="rounded h-5 w-5 text-indigo-700 border-gray-800" />
+									<Field type="checkbox" id="transportationPlane" name="transportation" value="plane" className="rounded h-5 w-5 text-indigo-700 border-gray-800 dark:bg-gray-700 focus:dark:bg-white transition-colors" />
 									<span className="ml-2">Plane</span>
 								</label>
 							</div>
@@ -105,23 +105,23 @@ function ContactForm() {
 
 							<div role="group" aria-labelledby="favorite-color-group-title" className="flex flex-col items-start">
 								<label htmlFor="favoriteColorBlue" className="inline-flex items-center mb-3">
-									<Field type="radio" id="favoriteColorBlue" name="favoriteColor" value="blue" className="rounded-full h-5 w-5 text-blue-700" />
+									<Field type="radio" id="favoriteColorBlue" name="favoriteColor" value="blue" className="rounded-full h-5 w-5 text-blue-700 border-gray-800 dark:bg-gray-700 focus:dark:bg-white transition-colors" />
 									<span className="ml-2">Blue</span>
 								</label>
 								<label htmlFor="favoriteColorGreen" className="inline-flex items-center mb-3">
-									<Field type="radio" id="favoriteColorGreen" name="favoriteColor" value="green" className="rounded-full h-5 w-5 text-green-600" />
+									<Field type="radio" id="favoriteColorGreen" name="favoriteColor" value="green" className="rounded-full h-5 w-5 text-green-600 border-gray-800 dark:bg-gray-700 focus:dark:bg-white transition-colors" />
 									<span className="ml-2">Green</span>
 								</label>
 								<label htmlFor="favoriteColorPink" className="inline-flex items-center mb-3">
-									<Field type="radio" id="favoriteColorPink" name="favoriteColor" value="pink" className="rounded-full h-5 w-5 text-pink-500" />
+									<Field type="radio" id="favoriteColorPink" name="favoriteColor" value="pink" className="rounded-full h-5 w-5 text-pink-500 border-gray-800 dark:bg-gray-700 focus:dark:bg-white transition-colors" />
 									<span className="ml-2">Pink</span>
 								</label>
 								<label htmlFor="favoriteColorRed" className="inline-flex items-center mb-3">
-									<Field type="radio" id="favoriteColorRed" name="favoriteColor" value="red" className="rounded-full h-5 w-5 text-red-600" />
+									<Field type="radio" id="favoriteColorRed" name="favoriteColor" value="red" className="rounded-full h-5 w-5 text-red-600 border-gray-800 dark:bg-gray-700 focus:dark:bg-white transition-colors" />
 									<span className="ml-2">Red</span>
 								</label>
 								<label htmlFor="favoriteColorYellow" className="inline-flex items-center">
-									<Field type="radio" id="favoriteColorYellow" name="favoriteColor" value="yellow" className="rounded-full h-5 w-5 text-yellow-400" />
+									<Field type="radio" id="favoriteColorYellow" name="favoriteColor" value="yellow" className="rounded-full h-5 w-5 text-yellow-400 border-gray-800 dark:bg-gray-700 focus:dark:bg-white transition-colors" />
 									<span className="ml-2">Yellow</span>
 								</label>
 							</div>
@@ -142,7 +142,7 @@ function ContactForm() {
 							<Field
 								as="select"
 								name="state"
-								className={`w-full rounded-md ${
+								className={`w-full rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
 									touched.name && errors.name ? "border-red-500" : "border-gray-800"
 								}`}
 							>
@@ -218,7 +218,7 @@ function ContactForm() {
 							name="message"
 							placeholder="Say something..."
 							rows="8"
-							className={`w-full rounded-md ${
+							className={`w-full rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
 								touched.message && errors.message ? "border-red-500" : "border-gray-800"
 							}`}
 						/>

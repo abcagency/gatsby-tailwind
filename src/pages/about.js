@@ -14,7 +14,7 @@ function AboutPage() {
 				title="About"
 			/>
 
-			<div className="bg-gray-100 py-6 px-4 mb-6 text-center">
+			<div className="bg-gray-100 dark:bg-gray-700 py-6 px-4 mb-6 text-center">
 				<h1 className="text-4xl font-bold mb-3">About</h1>
 			</div>
 
@@ -29,7 +29,7 @@ function AboutPage() {
 					/>
 				</Figure>
 
-				<section className="prose prose-sm md:prose-lg lg:prose-xl prose-indigo mx-auto">
+				<section className="prose prose-sm md:prose-lg lg:prose-xl prose-indigo mx-auto dark:!text-white">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat ultrices nunc, id tempor erat luctus in. Aliquam euismod convallis dignissim. Mauris ac tristique metus. Praesent id faucibus arcu, cursus pretium nisi. Nam et turpis sed arcu porttitor pretium. Proin varius commodo arcu ut iaculis. Vestibulum congue rhoncus sem iaculis sodales. Donec ipsum lacus, sodales quis sapien ac, dictum facilisis nibh. Morbi eget porttitor ipsum. Phasellus vitae lacus nunc. Maecenas turpis ligula, hendrerit vitae leo auctor, finibus interdum sapien. Nam molestie, augue in ornare imperdiet, turpis mauris ultricies magna, et sagittis nulla dui vitae libero. In dignissim nisi non erat dapibus auctor. Praesent mattis felis eget tellus facilisis, eget pharetra risus malesuada. Sed eleifend tristique leo, non ultrices velit pellentesque at. Praesent lobortis ac odio sed viverra.</p>
 
 					<VideoPlayer
@@ -43,7 +43,7 @@ function AboutPage() {
 
 					<p>Nunc ultricies fringilla purus sed consectetur. Mauris ornare, urna vel commodo rhoncus, nunc lorem cursus sapien, a iaculis dolor ex sed dolor. Pellentesque vitae lacus id purus dignissim tempus aliquam ac arcu. Pellentesque accumsan ornare sapien sed semper. Suspendisse consectetur et arcu et commodo. Proin cursus ex libero, sed commodo mi viverra eget. Praesent tempor metus sit amet diam pellentesque mattis tempor vitae quam. Ut tincidunt justo nec nisi congue, volutpat facilisis arcu ullamcorper. Aliquam dignissim arcu ipsum, sed eleifend lacus malesuada a. Suspendisse condimentum erat tortor, vitae lacinia sapien posuere sit amet. Maecenas eget euismod ante, a pharetra elit.</p>
 
-					<h2>A cool heading</h2>
+					<h2 className="dark:!text-gray-400">A cool heading</h2>
 
 					<p>Ut porttitor imperdiet ligula eget ultricies. Nullam at congue turpis. Etiam id nisi vel augue volutpat faucibus a bibendum elit. Sed volutpat, neque sit amet tincidunt aliquam, nisi velit sagittis eros, id interdum lacus dui sit amet quam. Nunc in elit libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est in sapien pretium vestibulum. Proin varius orci quis ultrices fringilla. Nullam interdum mi in est pharetra consequat. Aenean pellentesque sapien quam, at commodo lorem scelerisque sit amet. Quisque finibus sit amet eros et varius. Fusce et dui in felis consequat ornare. Cras ac quam imperdiet, molestie dui a, vulputate leo.</p>
 

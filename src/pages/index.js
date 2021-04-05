@@ -16,10 +16,10 @@ function IndexPage({ data }) {
 				title="Home"
 			/>
 
-			<div className="bg-gray-100 py-20 px-4 text-center">
+			<div className="bg-gray-100 dark:bg-gray-700 py-20 px-4 text-center">
 				<div className="container mx-auto">
 					<h1 className="text-6xl font-bold mb-6">{data.datoCmsHomepage.jumbotron}</h1>
-					<div dangerouslySetInnerHTML={{ __html: data.datoCmsHomepage.usp }} className="text-gray-700" />
+					<div dangerouslySetInnerHTML={{ __html: data.datoCmsHomepage.usp }} className="text-gray-700 dark:text-gray-300" />
 				</div>
 			</div>
 
@@ -28,10 +28,10 @@ function IndexPage({ data }) {
 			</div>
 
 			<section className="mt-36 max-w-3xl mx-auto">
-				<h2 className="mb-4 text-center text-4xl font-bold text-gray-900">Recent posts</h2>
+				<h2 className="mb-4 text-center text-4xl font-bold text-gray-900 dark:text-gray-400">Recent posts</h2>
 				<ol>
 					{data.allDatoCmsBlogPost.edges.map(({ node: blogPost }) => (
-						<li key={blogPost.id} className="py-6 mb-6 border-b border-gray-200 px-4">
+						<li key={blogPost.id} className="py-6 mb-6 border-b border-gray-200 dark:border-gray-700 px-4">
 							<Link
 								to={`/posts/${blogPost.slug}`}
 								className="block"
@@ -42,8 +42,8 @@ function IndexPage({ data }) {
 									image={blogPost.image.gatsbyImageData}
 									alt={blogPost.image.alt}
 								/>
-								<Content className="mt-4">
-									<h3 className="text-xl mb-4">{blogPost.title}</h3>
+								<Content className="mt-4 dark:text-gray-400">
+									<h3 className="text-xl mb-4 dark:!text-white">{blogPost.title}</h3>
 									<p>{blogPost.excerpt}</p>
 								</Content>
 							</Link>

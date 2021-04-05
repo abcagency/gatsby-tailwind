@@ -6,7 +6,7 @@ import Footer from './footer';
 
 function Layout({ children }) {
 	return (
-		<div className="relative" id="top">
+		<div className="relative dark:bg-gray-800 dark:text-white" id="top">
 			<Header />
 
 			<main>

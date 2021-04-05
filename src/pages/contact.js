@@ -11,7 +11,7 @@ function ContactPage() {
 				keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
 				title="Contact"
 			/>
-			<div className="bg-gray-100 py-6 px-4 mb-6 text-center">
+			<div className="bg-gray-100 dark:bg-gray-700 py-6 px-4 mb-6 text-center">
 				<h1 className="text-4xl font-bold mb-3">Contact</h1>
 			</div>
 

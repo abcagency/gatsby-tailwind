@@ -1,9 +1,9 @@
-require("dotenv").config({
+require(`dotenv`).config({
 	path: `.env.${process.env.NODE_ENV}`,
 });
 
-const resolveConfig = require("tailwindcss/resolveConfig");
-const tailwindConfig = require("./tailwind.config.js");
+const resolveConfig = require(`tailwindcss/resolveConfig`);
+const tailwindConfig = require(`./tailwind.config.js`);
 const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
@@ -16,6 +16,15 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-eslint`,
 		`gatsby-plugin-react-helmet`,
+		{
+			resolve: `gatsby-plugin-use-dark-mode`,
+			options: {
+				classNameDark: `dark-mode`,
+				classNameLight: `light-mode`,
+				storageKey: `darkMode`,
+				minify: true
+			},
+		},
 		`gatsby-plugin-transition-link`,
 		`gatsby-plugin-image`,
 		{
@@ -32,7 +41,7 @@ module.exports = {
 				short_name: `starter`,
 				start_url: `/`,
 				background_color: fullConfig.theme.colors.white,
-				theme_color: fullConfig.theme.colors.indigo["700"],
+				theme_color: fullConfig.theme.colors.indigo[`700`],
 				display: `minimal-ui`,
 				icon: `src/images/tailwind-icon.png`,
 			},
@@ -111,7 +120,7 @@ module.exports = {
 										url: `${site.siteMetadata.siteUrl}${node.path}`,
 										changefreq: `weekly`,
 										priority: 0.8,
-									}	
+									}
 								}
 								return {
 									url: `${site.siteMetadata.siteUrl}${node.path}`,

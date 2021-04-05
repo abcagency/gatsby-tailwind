@@ -5,8 +5,8 @@ import * as Scroll from 'react-scroll';
 
 function Header() {
 	let ScrollLink = Scroll.Link;
-
 	const [isExpanded, toggleExpansion] = useState(false);
+
 	const { site } = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
@@ -18,7 +18,7 @@ function Header() {
 	`);
 
 	return (
-		<header className="bg-indigo-700 sticky top-0 z-50 shadow-lg">
+		<header className="bg-indigo-700 dark:bg-gray-900 dark:text-white sticky top-0 z-50 shadow-lg">
 			<div className="flex flex-wrap items-center justify-between container p-4 mx-auto md:p-8">
 				<Link
 					to="/"

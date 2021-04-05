@@ -22,7 +22,7 @@
 		},
 		"requireConfigFile": false
 	},
-	"plugins": ["graphql"],
+	"plugins": ["graphql", "react-hooks"],
 	"settings": {
 		"react": {
 			"version": "detect"
@@ -136,6 +136,8 @@
 		"jsx-a11y/role-has-required-aria-props": 1,
 		"jsx-a11y/role-supports-aria-props": 1,
 		"jsx-a11y/scope": 1,
-		"jsx-a11y/tabindex-no-positive": 1
+		"jsx-a11y/tabindex-no-positive": 1,
+		"react-hooks/rules-of-hooks": 2,
+    	"react-hooks/exhaustive-deps": 1
 	}
 }
