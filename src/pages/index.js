@@ -35,7 +35,6 @@ function IndexPage({ data }) {
 							<Link
 								to={`/posts/${blogPost.slug}`}
 								className="block"
-								paintDrip
 								hex="#1D4ED8"
 							>
 								<GatsbyImage

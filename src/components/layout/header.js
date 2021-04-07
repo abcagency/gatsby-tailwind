@@ -22,7 +22,6 @@ function Header() {
 			<div className="flex flex-wrap items-center justify-between container p-4 mx-auto md:p-8">
 				<Link
 					to="/"
-					paintDrip
 					hex="#1D4ED8"
 				>
 					<h1 className="text-2xl text-white font-bold no-underline">{site.siteMetadata.title}</h1>
@@ -61,7 +60,6 @@ function Header() {
 							className="block mt-4 text-indigo-200 no-underline md:inline-block md:mt-0 md:ml-6 border-b-2 border-transparent hover:text-white transition-colors"
 							key={link.title}
 							to={link.route}
-							paintDrip
 							hex="#1D4ED8"
 						>
 							{link.title}
