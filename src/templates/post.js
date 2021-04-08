@@ -28,44 +28,44 @@ function PostPage({ data }) {
 						renderInlineRecord={({ record }) => {
 							const { slug, title, name } = record;
 							switch (record.__typename) {
-								case 'DatoCmsBlogPost':
-									return <p><a href={`/posts/${slug}`}>{title}</a></p>
-								case 'DatoCmsBlogCategory':
-									return <p><a href={`/posts/category/${slug}`}>{name}</a></p>
-								default:
-									return null
+							case 'DatoCmsBlogPost':
+								return <p><a href={`/posts/${slug}`}>{title}</a></p>;
+							case 'DatoCmsBlogCategory':
+								return <p><a href={`/posts/category/${slug}`}>{name}</a></p>;
+							default:
+								return null;
 							}
 						}}
 						renderLinkToRecord={({ record, children }) => {
 							const { slug } = record;
 							switch (record.__typename) {
-								case 'DatoCmsBlogPost':
-									return <a href={`/posts/${slug}`} className="!text-red-700">{children}</a>
-								case 'DatoCmsBlogCategory':
-									return <a href={`/posts/category/${slug}`}>{children}</a>
-								default:
-									return null
+							case 'DatoCmsBlogPost':
+								return <a href={`/posts/${slug}`} className="!text-red-700">{children}</a>;
+							case 'DatoCmsBlogCategory':
+								return <a href={`/posts/category/${slug}`}>{children}</a>;
+							default:
+								return null;
 							}
 						}}
 						renderBlock={({ record }) => {
 							switch (record.__typename) {
-								case 'DatoCmsImage': {
-									const { title, alt, gatsbyImageData } = record.image;
-									return (
-										<Figure title={title} alt={alt}>
-											<GatsbyImage image={gatsbyImageData} alt={alt} imgClassName="!my-0" />
-										</Figure>
-									)
-								}
-								default:
-									return null
+							case 'DatoCmsImage': {
+								const { title, alt, gatsbyImageData } = record.image;
+								return (
+									<Figure title={title} alt={alt}>
+										<GatsbyImage image={gatsbyImageData} alt={alt} imgClassName="!my-0" />
+									</Figure>
+								);
+							}
+							default:
+								return null;
 							}
 						}}
 					/>
 				</section>
 			</article>
 		</Layout>
-	)
+	);
 }
 
 export const query = graphql`
@@ -112,6 +112,6 @@ export const query = graphql`
 		title
 		gatsbyImageData(width: 1280, placeholder: BLURRED, forceBlurhash: false)
 	}
-`
+`;
 
-export default PostPage
+export default PostPage;

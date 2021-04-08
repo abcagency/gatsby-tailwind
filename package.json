@@ -44,11 +44,9 @@
 	"license": "0BSD",
 	"scripts": {
 		"analyze:lint": "eslint --ext .jsx --ext .js .",
-		"analyze:prettier": "prettier --list-different \"**/*.{css,js,jsx,json,md}\"",
-		"analyze": "npm run analyze:lint && npm run analyze:prettier",
+		"analyze": "npm run analyze:lint",
 		"fix:lint": "eslint --ext .jsx --ext .js . --fix",
-		"fix:prettier": "prettier --write \"**/*.{css,js,jsx,json,md}\"",
-		"fix": "npm run fix:lint && npm run fix:prettier",
+		"fix": "npm run fix:lint",
 		"build": "gatsby build",
 		"develop": "gatsby develop",
 		"dev": "npm run develop",
@@ -76,7 +74,6 @@
 		"eslint-plugin-react-hooks": "^4.2.0",
 		"gatsby-plugin-eslint": "2.0.8",
 		"postcss": "8.2.8",
-		"prettier": "2.2.1",
 		"tailwindcss": "^2.0.4"
 	},
 	"repository": {

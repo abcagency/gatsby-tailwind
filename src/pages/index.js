@@ -51,7 +51,7 @@ function IndexPage({ data }) {
 				</ol>
 			</section>
 		</Layout>
-	)
+	);
 }
 
 export default IndexPage;

@@ -1,7 +1,7 @@
 const path = require('path');
 
 exports.createPages = async ({ graphql, actions }) => {
-	const { createPage } = actions
+	const { createPage } = actions;
 
 	const createBlogsPosts = new Promise((resolve, reject) => {
 		try {
@@ -14,23 +14,23 @@ exports.createPages = async ({ graphql, actions }) => {
 					}
 				}
 			`).then(res => {
-				const posts = res.data.allDatoCmsBlogPost.nodes
+				const posts = res.data.allDatoCmsBlogPost.nodes;
 				posts.map(post => {
-					const { slug } = post
+					const { slug } = post;
 					return createPage({
 						path: `/posts/${slug}`,
-						component: path.resolve("./src/templates/post.js"),
+						component: path.resolve('./src/templates/post.js'),
 						context: {
 							slug
 						}
-					})
-				})
-				resolve()
-			})
+					});
+				});
+				resolve();
+			});
 		} catch (error) {
-			reject(error)
+			reject(error);
 		}
 	});
 
 	return Promise.all([createBlogsPosts]);
-}
+};

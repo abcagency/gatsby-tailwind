@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 import arrowCollapseUp from '@iconify/icons-mdi/arrow-collapse-up';
 
 function Footer() {
-	let ScrollLink = Scroll.Link
+	let ScrollLink = Scroll.Link;
 
 	return (
 		<footer className="p-4 mt-4 bg-gray-100 text-gray-700 dark:bg-gray-900 dark:text-gray-400 text-center text-xs">
@@ -26,7 +26,7 @@ function Footer() {
 				</ScrollLink>
 			</div>
 		</footer>
-	)
+	);
 }
 
-export default Footer
+export default Footer;

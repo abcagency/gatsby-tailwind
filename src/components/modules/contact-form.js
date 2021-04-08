@@ -234,7 +234,7 @@ function ContactForm() {
 				</Form>
 			)}
 		</Formik>
-	)
+	);
 }
 
 export default ContactForm;

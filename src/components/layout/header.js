@@ -49,13 +49,13 @@ function Header() {
 					{[
 						{
 							route: `/about`,
-							title: `About`,
+							title: `About`
 						},
 						{
 							route: `/contact`,
-							title: `Contact`,
-						},
-					].map((link) => (
+							title: `Contact`
+						}
+					].map(link => (
 						<Link
 							className="block mt-4 text-indigo-200 no-underline md:inline-block md:mt-0 md:ml-6 border-b-2 border-transparent hover:text-white transition-colors"
 							key={link.title}

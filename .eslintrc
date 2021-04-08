@@ -40,6 +40,30 @@
 	"rules": {
 		// https://eslint.org/docs/2.0.0/rules/strict
 		"strict": 0,
+		"semi": [
+			"error",
+			"always"
+		],
+		"comma-dangle": ["error", "never"],
+		"arrow-parens": [
+			"error",
+			"as-needed"
+		],
+		"object-curly-spacing": [
+			"error",
+			"always"
+		],
+		"space-in-parens": [
+			"error",
+			"never"
+		],
+		"no-multiple-empty-lines": [
+			"error",
+			{
+				"max": 1
+			}
+		],
+		"prefer-arrow-callback": [ "error", { "allowNamedFunctions": true } ],
 		"react/prop-types": "off",
 		"import/no-webpack-loader-syntax": [0],
 		"react/jsx-pascal-case": [
@@ -138,6 +162,6 @@
 		"jsx-a11y/scope": 1,
 		"jsx-a11y/tabindex-no-positive": 1,
 		"react-hooks/rules-of-hooks": 2,
-    	"react-hooks/exhaustive-deps": 1
+		"react-hooks/exhaustive-deps": 1
 	}
 }

@@ -13,61 +13,59 @@ function NextButton(props) {
 	return (
 		<button
 			className={`${className} !right-1.5 z-10 opacity-60 hover:focus:!opacity-95 transition-opacity`}
-			style={{ ...style, display: "block" }}
+			style={{ ...style, display: 'block' }}
 			onClick={onClick}
 		>
 			<Icon icon={arrowRightDropCircle} height="1.5rem" width="1.5rem" color="#fff" />
-			<span className={"sr-only"}>Next slide</span>
+			<span className={'sr-only'}>Next slide</span>
 		</button>
 	);
- }
+}
 
- function PrevButton(props) {
+function PrevButton(props) {
 	const { className, style, onClick } = props;
 	return (
 		<button
 			className={`${className} !left-1.5 z-10 opacity-60 hover:focus:opacity-95 transition-opacity`}
-			style={{ ...style, display: "block" }}
+			style={{ ...style, display: 'block' }}
 			onClick={onClick}
 		>
 			<Icon icon={arrowLeftDropCircle} height="1.5rem" width="1.5rem" color="#fff" />
-			<span className={"sr-only"}>Previous slide</span>
+			<span className={'sr-only'}>Previous slide</span>
 		</button>
 	);
- }
+}
 
 function Carousel(props) {
-		const { content } = props;
+	const { content } = props;
 
-		const settings = {
-			dots: true,
-			infinite: true,
-			speed: 500,
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			nextArrow: <NextButton />,
-			prevArrow: <PrevButton />
-		};
+	const settings = {
+		dots: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		nextArrow: <NextButton />,
+		prevArrow: <PrevButton />
+	};
 
-		return (
-			<>
-			<style>
-				{`.slick-arrow::before { display: none; visibility: hidden; }`}
-			</style>
-				<Slider {...settings}>
-					{content.map((slide) => (
-						<div key={slide.id}>
-							{
-								<>
-									<h2 className="text-lg text-center p-2 bg-gray-800 text-white">{slide.title}</h2>
-									<GatsbyImage image={slide.image.gatsbyImageData} alt="" />
-								</>
-							}
-						</div>
-					))}
-				</Slider>
-			</>
-		)
-	}
+	return (
+		<>
+			<style>{`.slick-arrow::before { display: none; visibility: hidden; }`}</style>
+			<Slider {...settings}>
+				{content.map(slide => (
+					<div key={slide.id}>
+						{
+							<>
+								<h2 className="text-lg text-center p-2 bg-gray-800 text-white">{slide.title}</h2>
+								<GatsbyImage image={slide.image.gatsbyImageData} alt="" />
+							</>
+						}
+					</div>
+				))}
+			</Slider>
+		</>
+	);
+}
 
-export default Carousel
+export default Carousel;

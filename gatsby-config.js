@@ -1,5 +1,5 @@
 require(`dotenv`).config({
-	path: `.env.${process.env.NODE_ENV}`,
+	path: `.env.${process.env.NODE_ENV}`
 });
 
 const resolveConfig = require(`tailwindcss/resolveConfig`);
@@ -23,7 +23,7 @@ module.exports = {
 				classNameLight: `light-mode`,
 				storageKey: `darkMode`,
 				minify: true
-			},
+			}
 		},
 		`gatsby-plugin-transition-link`,
 		`gatsby-plugin-image`,
@@ -43,11 +43,11 @@ module.exports = {
 				background_color: fullConfig.theme.colors.white,
 				theme_color: fullConfig.theme.colors.indigo[`700`],
 				display: `minimal-ui`,
-				icon: `src/images/tailwind-icon.png`,
-			},
+				icon: `src/images/tailwind-icon.png`
+			}
 		},
 		{
-			resolve: `gatsby-plugin-postcss`,
+			resolve: `gatsby-plugin-postcss`
 		},
 		{
 			resolve: `gatsby-source-datocms`,
@@ -72,16 +72,16 @@ module.exports = {
 				// Setup locale fallbacks
 				// In this example, if some field value is missing in Italian, fall back to English
 				localeFallbacks: {
-					it: ['en'],
-				},
-			},
+					it: ['en']
+				}
+			}
 		},
 		{
 			resolve: `gatsby-plugin-nprogress`,
 			options: {
 				color: `tomato`,
-				showSpinner: true,
-			},
+				showSpinner: true
+			}
 		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
@@ -112,24 +112,24 @@ module.exports = {
 								return {
 									url: `${site.siteMetadata.siteUrl}${node.path}`,
 									changefreq: `daily`,
-									priority: 1,
-								}
+									priority: 1
+								};
 							default:
 								if (node.path.indexOf('posts/') >= 0) {
 									return {
 										url: `${site.siteMetadata.siteUrl}${node.path}`,
 										changefreq: `weekly`,
-										priority: 0.8,
-									}
+										priority: 0.8
+									};
 								}
 								return {
 									url: `${site.siteMetadata.siteUrl}${node.path}`,
 									changefreq: `monthly`,
-									priority: 0.5,
-								}
+									priority: 0.5
+								};
 						}
 					})
 			}
 		}
-	],
+	]
 };

@@ -26,7 +26,7 @@ function VideoPlayer({ url, placeholder, playerOptions, containerClasses, aspect
 					'21x9': <span className="block pt-[42.86%]" aria-hidden="true"></span>,
 					'16x9': <span className="block pt-[56.25%]" aria-hidden="true"></span>,
 					'4x3': <span className="block pt-[75%]" aria-hidden="true"></span>,
-					'1x1': <span className="block pt-[100%]" aria-hidden="true"></span>,
+					'1x1': <span className="block pt-[100%]" aria-hidden="true"></span>
 				}[aspectRatio]
 				|| <span className="block pt-[56.25%]" aria-hidden="true"></span>
 			}
