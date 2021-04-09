@@ -3,6 +3,7 @@ import { StructuredText } from 'react-datocms';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import Link from 'gatsby-plugin-transition-link/AniLink';
 
 import Layout from '../components/layout/layout';
 import Figure from '../components/modules/figure';
@@ -29,9 +30,21 @@ function PostPage({ data }) {
 							const { slug, title, name } = record;
 							switch (record.__typename) {
 							case 'DatoCmsBlogPost':
-								return <p><a href={`/posts/${slug}`}>{title}</a></p>;
+								return <Link
+									to={`/posts/${slug}`}
+									className="!text-red-700"
+									hex="#1D4ED8"
+								>
+									{title}
+								</Link>;
 							case 'DatoCmsBlogCategory':
-								return <p><a href={`/posts/category/${slug}`}>{name}</a></p>;
+								return <Link
+									to={`/posts/category/${slug}`}
+									className="!text-red-700"
+									hex="#1D4ED8"
+								>
+									{name}
+								</Link>;
 							default:
 								return null;
 							}
@@ -40,9 +53,20 @@ function PostPage({ data }) {
 							const { slug } = record;
 							switch (record.__typename) {
 							case 'DatoCmsBlogPost':
-								return <a href={`/posts/${slug}`} className="!text-red-700">{children}</a>;
+								return <Link
+									to={`/posts/${slug}`}
+									hex="#1D4ED8"
+								>
+									{children}
+								</Link>;
 							case 'DatoCmsBlogCategory':
-								return <a href={`/posts/category/${slug}`}>{children}</a>;
+								return <Link
+									to={`/posts/category/${slug}`}
+									className="!text-red-700"
+									hex="#1D4ED8"
+								>
+									{children}
+								</Link>;
 							default:
 								return null;
 							}

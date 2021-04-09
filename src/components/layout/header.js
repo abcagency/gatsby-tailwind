@@ -75,7 +75,7 @@ function Header() {
 						smooth={true}
 						offset={-100}
 						duration={250}
-						>
+					>
 						Carousel
 					</ScrollLink>
 				</nav>

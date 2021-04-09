@@ -42,6 +42,6 @@ function VideoPlayer({ url, placeholder, playerOptions, containerClasses, aspect
 			/>
 		</div>
 	);
- }
+}
 
- export default VideoPlayer;
+export default VideoPlayer;
