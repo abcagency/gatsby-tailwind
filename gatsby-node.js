@@ -1,7 +1,9 @@
 const path = require('path');
 
 exports.createPages = async ({ graphql, actions }) => {
-	const { createPage } = actions;
+	const { createPage, createRedirect } = actions;
+
+	createRedirect({ fromPath: "/old-url", toPath: "/about", isPermanent: true });
 
 	const createBlogsPosts = new Promise((resolve, reject) => {
 		try {
