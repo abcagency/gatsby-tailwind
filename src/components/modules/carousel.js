@@ -8,7 +8,7 @@ import arrowRightDropCircle from '@iconify/icons-mdi/arrow-right-drop-circle';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-function NextButton(props) {
+const NextButton = props => {
 	const { className, style, onClick } = props;
 	return (
 		<button
@@ -20,9 +20,9 @@ function NextButton(props) {
 			<span className={'sr-only'}>Next slide</span>
 		</button>
 	);
-}
+};
 
-function PrevButton(props) {
+const PrevButton = props => {
 	const { className, style, onClick } = props;
 	return (
 		<button
@@ -34,9 +34,9 @@ function PrevButton(props) {
 			<span className={'sr-only'}>Previous slide</span>
 		</button>
 	);
-}
+};
 
-function Carousel(props) {
+const Carousel = props => {
 	const { content } = props;
 
 	const settings = {
@@ -66,6 +66,6 @@ function Carousel(props) {
 			</Slider>
 		</>
 	);
-}
+};
 
 export default Carousel;

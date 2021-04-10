@@ -3,7 +3,7 @@ import * as Scroll from 'react-scroll';
 import { Icon } from '@iconify/react';
 import arrowCollapseUp from '@iconify/icons-mdi/arrow-collapse-up';
 
-function Footer() {
+const Footer = () => {
 	let ScrollLink = Scroll.Link;
 
 	return (
@@ -27,6 +27,6 @@ function Footer() {
 			</div>
 		</footer>
 	);
-}
+};
 
 export default Footer;

@@ -16,7 +16,7 @@ let validationSchema = Yup.object().shape({
 		.required("is required")
 });
 
-function ContactForm() {
+const ContactForm = () => {
 	return (
 		<Formik
 			initialValues={{
@@ -210,7 +210,11 @@ function ContactForm() {
 							Message
 						</label>
 
-						<ErrorMessage name="message" component="span" className="inline-block text-red-500 uppercase text-xs font-bold ml-1" />
+						<ErrorMessage
+							name="message"
+							component="span"
+							className="inline-block text-red-500 uppercase text-xs font-bold ml-1"
+						/>
 
 						<Field
 							as="textarea"
@@ -235,6 +239,6 @@ function ContactForm() {
 			)}
 		</Formik>
 	);
-}
+};
 
 export default ContactForm;

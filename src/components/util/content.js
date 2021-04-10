@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Content(props) {
+const Content = props => {
 	const { children, className, tag } = props;
 	let TagName = tag || 'div';
 
@@ -12,6 +12,6 @@ function Content(props) {
 			</TagName>
 		</>
 	);
-}
+};
 
 export default Content;

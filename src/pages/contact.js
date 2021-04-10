@@ -4,7 +4,7 @@ import Layout from '../components/layout/layout';
 import Seo from '../components/util/seo';
 import ContactForm from '../components/modules/contact-form';
 
-function ContactPage() {
+const ContactPage = () => {
 	return (
 		<Layout>
 			<Seo
@@ -20,6 +20,6 @@ function ContactPage() {
 			</section>
 		</Layout>
 	);
-}
+};
 
 export default ContactPage;

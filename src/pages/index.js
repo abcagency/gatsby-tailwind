@@ -8,7 +8,7 @@ import Seo from '../components/util/seo';
 import Carousel from '../components/modules/carousel';
 import Content from '../components/util/content';
 
-function IndexPage({ data }) {
+const IndexPage = ({ data }) => {
 	return (
 		<Layout>
 			<Seo
@@ -52,7 +52,7 @@ function IndexPage({ data }) {
 			</section>
 		</Layout>
 	);
-}
+};
 
 export default IndexPage;
 

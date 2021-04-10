@@ -8,7 +8,7 @@ import Link from 'gatsby-plugin-transition-link/AniLink';
 import Layout from '../components/layout/layout';
 import Figure from '../components/modules/figure';
 
-function PostPage({ data }) {
+const PostPage = ({ data }) => {
 	const { title, excerpt, image, content } = data.datoCmsBlogPost;
 	return(
 		<Layout>
@@ -90,7 +90,7 @@ function PostPage({ data }) {
 			</article>
 		</Layout>
 	);
-}
+};
 
 export const query = graphql`
 	query PostQuery($slug: String!) {

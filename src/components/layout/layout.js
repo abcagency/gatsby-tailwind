@@ -4,7 +4,7 @@ import React from 'react';
 import Header from './header';
 import Footer from './footer';
 
-function Layout({ children }) {
+const Layout = ({ children }) => {
 	return (
 		<div className="relative dark:bg-gray-800 dark:text-white" id="top">
 			<Header />
@@ -16,7 +16,7 @@ function Layout({ children }) {
 			<Footer />
 		</div>
 	);
-}
+};
 
 Layout.propTypes = {
 	children: PropTypes.node.isRequired

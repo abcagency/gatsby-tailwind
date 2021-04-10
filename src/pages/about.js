@@ -6,7 +6,7 @@ import Layout from "../components/layout/layout";
 import Figure from "../components/modules/figure";
 import VideoPlayer from "../components/modules/video-player";
 
-function AboutPage() {
+const AboutPage = () => {
 	return (
 		<Layout>
 			<Seo
@@ -52,6 +52,6 @@ function AboutPage() {
 			</div>
 		</Layout>
 	);
-}
+};
 
 export default AboutPage;

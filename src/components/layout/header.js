@@ -3,7 +3,7 @@ import Link from 'gatsby-plugin-transition-link/AniLink';
 import React, { useState } from 'react';
 import * as Scroll from 'react-scroll';
 
-function Header() {
+const Header = () => {
 	let ScrollLink = Scroll.Link;
 	const [isExpanded, toggleExpansion] = useState(false);
 
@@ -82,6 +82,6 @@ function Header() {
 			</div>
 		</header>
 	);
-}
+};
 
 export default Header;

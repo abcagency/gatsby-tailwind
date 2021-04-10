@@ -12,7 +12,7 @@ Responsive video player using react-player
 @aspectRatio: Set player aspect ratio (Default: 16x9)
 */
 
-function VideoPlayer({ url, placeholder, playerOptions, containerClasses, aspectRatio }) {
+const VideoPlayer = ({ url, placeholder, playerOptions, containerClasses, aspectRatio }) => {
 	return (
 		<div className={`block relative w-full overflow-hidden ${containerClasses}`}>
 			{/*
@@ -42,6 +42,6 @@ function VideoPlayer({ url, placeholder, playerOptions, containerClasses, aspect
 			/>
 		</div>
 	);
-}
+};
 
 export default VideoPlayer;

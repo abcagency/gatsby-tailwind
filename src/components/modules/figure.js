@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Figure({ children, title, alt }) {
+const Figure = ({ children, title, alt }) => {
 	return (
 		<>
 			<figure className="border border-gray-200 dark:border-gray-700 my-8">
@@ -13,6 +13,6 @@ function Figure({ children, title, alt }) {
 			</figure>
 		</>
 	);
-}
+};
 
 export default Figure;
