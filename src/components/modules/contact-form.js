@@ -27,6 +27,7 @@ const ContactForm = () => {
 				state: '',
 				favoriteColor: 'pink'
 			}}
+			validateOnChange={false}
 			validationSchema={validationSchema}
 			onSubmit={async (values, { setSubmitting }) => {
 				setTimeout(() => {
@@ -82,8 +83,9 @@ const ContactForm = () => {
 					<div className="grid grid-cols-2 gap-4">
 						<div className="mb-6">
 							<h2 id="transportation-group-title" className="inline-block text-xs uppercase font-bold mb-2">Transportation</h2>
+							
 							<ErrorMessage name="transportation" component="span" className="inline-block text-red-500 uppercase text-xs font-bold ml-1" />
-
+							
 							<div role="group" aria-labelledby="transportation-group-title" className="flex flex-col items-start">
 								<label htmlFor="transportationCar" className="inline-flex items-center mb-3">
 									<Field type="checkbox" id="transportationCar" name="transportation" value="car" className="rounded h-5 w-5 text-indigo-700 border-gray-800 dark:bg-gray-700 focus:dark:bg-white transition-colors" />
@@ -143,10 +145,10 @@ const ContactForm = () => {
 								as="select"
 								name="state"
 								className={`w-full rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
-									touched.name && errors.name ? "border-red-500" : "border-gray-800"
+									touched.state && errors.state ? "border-red-500" : "border-gray-800"
 								}`}
 							>
-								<option>Select a state</option>
+								<option value="">Select a state</option>
 								<option value="AL">Alabama</option>
 								<option value="AK">Alaska</option>
 								<option value="AZ">Arizona</option>
