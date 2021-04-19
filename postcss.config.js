@@ -1,8 +1,7 @@
-// const tailwind = require(`tailwindcss`)
-const tailwind = require(`@tailwindcss/jit`)
-const autoprefixer = require(`autoprefixer`)
-const cssnano = require(`cssnano`)
-const tailwindConfig = require("./tailwind.config.js")
+const tailwind = require(`tailwindcss`);
+const autoprefixer = require(`autoprefixer`);
+const cssnano = require(`cssnano`);
+const tailwindConfig = require("./tailwind.config.js");
 
 module.exports = () => ({
 	plugins: [
@@ -10,6 +9,6 @@ module.exports = () => ({
 		autoprefixer,
 		...(process.env.NODE_ENV === `production`
 			? [cssnano]
-			: []),
-	],
-})
+			: [])
+	]
+});
