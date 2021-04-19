@@ -1,9 +1,10 @@
 // See https://tailwindcss.com/docs/configuration for details
 module.exports = {
+	mode: 'jit',
 	darkMode: 'media',
 	purge: [
 		"./public/**/*.html",
-		"./src/**/*.{js,jsx,ts,tsx,vue}",
+		"./src/**/*.{js,jsx,ts,tsx,vue}"
 	],
 	theme: {
 		extend: {
@@ -14,7 +15,7 @@ module.exports = {
 							"margin-bottom": 0,
 							"margin-top": 0
 						}
-					},
+					}
 				},
 				'sm': {
 					css: {
@@ -22,7 +23,7 @@ module.exports = {
 							"margin-bottom": 0,
 							"margin-top": 0
 						}
-					},
+					}
 				},
 				'md': {
 					css: {
@@ -30,7 +31,7 @@ module.exports = {
 							"margin-bottom": 0,
 							"margin-top": 0
 						}
-					},
+					}
 				},
 				'lg': {
 					css: {
@@ -38,7 +39,7 @@ module.exports = {
 							"margin-bottom": 0,
 							"margin-top": 0
 						}
-					},
+					}
 				},
 				'xl': {
 					css: {
@@ -46,7 +47,7 @@ module.exports = {
 							"margin-bottom": 0,
 							"margin-top": 0
 						}
-					},
+					}
 				},
 				'2xl': {
 					css: {
@@ -54,13 +55,13 @@ module.exports = {
 							"margin-bottom": 0,
 							"margin-top": 0
 						}
-					},
-				},
+					}
+				}
 			}
 		}
 	},
 	plugins: [
 		require("@tailwindcss/forms"),
 		require("@tailwindcss/typography")
-	],
+	]
 };

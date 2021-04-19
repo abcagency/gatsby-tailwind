@@ -31,6 +31,7 @@
 		"react-player": "^2.9.0",
 		"react-scroll": "^1.8.2",
 		"react-slick": "^0.28.1",
+		"react-slider": "^1.1.4",
 		"react-tracking": "^8.1.0",
 		"slick-carousel": "^1.8.1",
 		"use-dark-mode": "^2.3.1",
@@ -59,14 +60,12 @@
 	"devDependencies": {
 		"@babel/eslint-parser": "^7.13.14",
 		"@tailwindcss/forms": "0.2.1",
-		"@tailwindcss/jit": "^0.1.17",
 		"@tailwindcss/typography": "0.4.0",
 		"autoprefixer": "^10.2.5",
 		"babel-eslint": "^10.1.0",
 		"babel-preset-gatsby": "^1.2.0",
 		"cssnano": "4.1.10",
 		"dotenv": "8.2.0",
-		"prettier": "2.2.1",
 		"eslint": "7.22.0",
 		"eslint-config-react-app": "^6.0.0",
 		"eslint-loader": "4.0.2",
@@ -76,7 +75,8 @@
 		"eslint-plugin-react-hooks": "^4.2.0",
 		"gatsby-plugin-eslint": "2.0.8",
 		"postcss": "8.2.8",
-		"tailwindcss": "^2.0.4"
+		"prettier": "2.2.1",
+		"tailwindcss": "^2.1.1"
 	},
 	"repository": {
 		"type": "git",
