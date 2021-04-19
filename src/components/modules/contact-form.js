@@ -1,5 +1,6 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import Slider from 'react-slider';
 import * as Yup from 'yup';
 
 let validationSchema = Yup.object().shape({
@@ -13,7 +14,11 @@ let validationSchema = Yup.object().shape({
 	transportation: Yup.array()
 		.min(1, "Select a transportation type"),
 	state: Yup.string()
+		.required("is required"),
+	distance: Yup.number()
 		.required("is required")
+		.positive()
+		.integer()
 });
 
 const ContactForm = () => {
@@ -25,6 +30,7 @@ const ContactForm = () => {
 				message: '',
 				transportation: [],
 				state: '',
+				distance: 0,
 				favoriteColor: 'pink'
 			}}
 			validateOnChange={false}
@@ -83,9 +89,9 @@ const ContactForm = () => {
 					<div className="grid grid-cols-2 gap-4">
 						<div className="mb-6">
 							<h2 id="transportation-group-title" className="inline-block text-xs uppercase font-bold mb-2">Transportation</h2>
-							
+
 							<ErrorMessage name="transportation" component="span" className="inline-block text-red-500 uppercase text-xs font-bold ml-1" />
-							
+
 							<div role="group" aria-labelledby="transportation-group-title" className="flex flex-col items-start">
 								<label htmlFor="transportationCar" className="inline-flex items-center mb-3">
 									<Field type="checkbox" id="transportationCar" name="transportation" value="car" className="rounded h-5 w-5 text-indigo-700 border-gray-800 dark:bg-gray-700 focus:dark:bg-white transition-colors" />
@@ -201,6 +207,24 @@ const ContactForm = () => {
 								<option value="WI">Wisconsin</option>
 								<option value="WY">Wyoming</option>
 							</Field>
+						</div>
+						<div className="mb-6">
+							<label
+								className="inline-block mb-2 text-xs font-bold uppercase"
+								htmlFor="distance"
+							>
+								Distance
+							</label>
+
+							<Slider
+								max="99"
+								className="py-4"
+								thumbClassName="p-2 w-10 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-900 dark:text-gray-400 transform -translate-y-1/3 text-center"
+								trackClassName={`w-full h-3 rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
+									touched.message && errors.message ? "border-red-500" : "border-gray-800"
+								}`}
+								renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+							/>
 						</div>
 					</div>
 
