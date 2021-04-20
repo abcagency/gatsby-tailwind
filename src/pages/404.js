@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-plugin-transition-link/AniLink';
+import { Link } from 'gatsby';
 import { Icon } from '@iconify/react';
 import Home from '@iconify/icons-mdi/home';
 
@@ -26,7 +26,6 @@ const NotFoundPage = () => {
 					<Link
 						className="inline-block mt-4 px-4 py-2 rounded-md bg-white text-sm font-bold text-indigo-700 no-underline hover:bg-indigo-700 hover:text-white transition-colors"
 						to="/"
-						hex="#1D4ED8"
 					>
 						<Icon icon={Home} height="1.25rem" width="1.25rem" className="inline-block -mt-0.5 mr-1" />
 						Head home

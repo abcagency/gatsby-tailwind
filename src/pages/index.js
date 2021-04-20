@@ -1,6 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import Link from 'gatsby-plugin-transition-link/AniLink';
+import { graphql, Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { Disclosure, Transition } from '@headlessui/react';
 import { Icon } from '@iconify/react';
@@ -37,7 +36,7 @@ const IndexPage = ({ data }) => {
 					{({ open }) => (
 						<>
 							<Disclosure.Button
-								className="flex justify-between w-full p-4 font-bold text-left text-gray-700 dark:text-gray-400 bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 hover:dark:bg-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 transition-colors border-b border-white dark:border-gray-800"
+								className={`flex justify-between w-full p-4 font-bold text-left text-gray-700 dark:text-gray-400 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 hover:bg-gray-200 hover:dark:bg-gray-700 focus:bg-gray-200 focus:dark:bg-gray-700 transition-colors border-b border-white dark:border-gray-800 ${open ? "bg-gray-200 dark:bg-gray-800" : "bg-gray-100 dark:bg-gray-900"}`}
 							>
 								<span>Lorem ipsum dolor sit amet?</span>
 								<Icon
@@ -72,7 +71,7 @@ const IndexPage = ({ data }) => {
 					{({ open }) => (
 						<>
 							<Disclosure.Button
-								className="flex justify-between w-full p-4 font-bold text-left text-gray-700 dark:text-gray-400 bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 hover:dark:bg-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 transition-colors border-b border-white dark:border-gray-800"
+								className={`flex justify-between w-full p-4 font-bold text-left text-gray-700 dark:text-gray-400 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 hover:bg-gray-200 hover:dark:bg-gray-700 focus:bg-gray-200 focus:dark:bg-gray-700 transition-colors border-b border-white dark:border-gray-800 ${open ? "bg-gray-200 dark:bg-gray-800" : "bg-gray-100 dark:bg-gray-900"}`}
 							>
 								<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
 								<Icon
@@ -112,7 +111,6 @@ const IndexPage = ({ data }) => {
 							<Link
 								to={`/posts/${blogPost.slug}`}
 								className="block"
-								hex="#1D4ED8"
 							>
 								<GatsbyImage
 									image={blogPost.image.gatsbyImageData}
