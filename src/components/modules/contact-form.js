@@ -16,9 +16,10 @@ let validationSchema = Yup.object().shape({
 	state: Yup.string()
 		.required("is required"),
 	distance: Yup.number()
+		.min(0)
+		// .positive()
+		// .integer()
 		.required("is required")
-		.positive()
-		.integer()
 });
 
 const ContactForm = () => {
@@ -29,9 +30,9 @@ const ContactForm = () => {
 				email: '',
 				message: '',
 				transportation: [],
+				favoriteColor: 'pink',
 				state: '',
-				distance: 0,
-				favoriteColor: 'pink'
+				distance: 0
 			}}
 			validateOnChange={false}
 			validationSchema={validationSchema}
@@ -53,7 +54,12 @@ const ContactForm = () => {
 								Name
 							</label>
 
-							<ErrorMessage name="name" component="span" className="inline-block text-red-500 uppercase text-xs font-bold ml-1" />
+							<ErrorMessage
+								id="name-error"
+								name="name"
+								component="span"
+								className="inline-block text-red-500 uppercase text-xs font-bold ml-1"
+							/>
 
 							<Field
 								type="text"
@@ -62,6 +68,10 @@ const ContactForm = () => {
 								className={`w-full rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
 									touched.name && errors.name ? "border-red-500" : "border-gray-800"
 								}`}
+								aria-invalid={touched.name && errors.name ? 'true' : null}
+								aria-describedby={touched.name && errors.name ? 'name-error' : null}
+								aria-required="true"
+								disabled={isSubmitting}
 							/>
 						</div>
 
@@ -73,7 +83,12 @@ const ContactForm = () => {
 								Email
 							</label>
 
-							<ErrorMessage name="email" component="span" className="inline-block text-red-500 uppercase text-xs font-bold ml-1" />
+							<ErrorMessage
+								id="email-error"
+								name="email"
+								component="span"
+								className="inline-block text-red-500 uppercase text-xs font-bold ml-1"
+							/>
 
 							<Field
 								type="email"
@@ -82,6 +97,10 @@ const ContactForm = () => {
 								className={`w-full rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
 									touched.email && errors.email ? "border-red-500" : "border-gray-800"
 								}`}
+								aria-invalid={touched.email && errors.email ? 'true' : null}
+								aria-describedby={touched.email && errors.email? 'email-error' : null}
+								aria-required="true"
+								disabled={isSubmitting}
 							/>
 						</div>
 					</div>
@@ -145,7 +164,12 @@ const ContactForm = () => {
 								State
 							</label>
 
-							<ErrorMessage name="state" component="span" className="inline-block text-red-500 uppercase text-xs font-bold ml-1" />
+							<ErrorMessage
+								id="state-error"
+								name="state"
+								component="span"
+								className="inline-block text-red-500 uppercase text-xs font-bold ml-1"
+							/>
 
 							<Field
 								as="select"
@@ -153,6 +177,10 @@ const ContactForm = () => {
 								className={`w-full rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
 									touched.state && errors.state ? "border-red-500" : "border-gray-800"
 								}`}
+								aria-invalid={touched.state  && errors.state ? 'true' : null}
+								aria-describedby={touched.state  && errors.state ? 'state-error' : null}
+								aria-required="true"
+								disabled={isSubmitting}
 							>
 								<option value="">Select a state</option>
 								<option value="AL">Alabama</option>
@@ -208,7 +236,7 @@ const ContactForm = () => {
 								<option value="WY">Wyoming</option>
 							</Field>
 						</div>
-						<div className="mb-6">
+						<div className="mb-6 overflow-hidden">
 							<label
 								className="inline-block mb-2 text-xs font-bold uppercase"
 								htmlFor="distance"
@@ -216,14 +244,27 @@ const ContactForm = () => {
 								Distance
 							</label>
 
+							<ErrorMessage
+								id="distance-error"
+								name="distance"
+								component="span"
+								className="inline-block text-red-500 uppercase text-xs font-bold ml-1"
+							/>
+
 							<Slider
-								max="99"
+								name="distance"
+								type="range"
+								max={99}
 								className="py-4"
 								thumbClassName="p-2 w-10 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-900 dark:text-gray-400 transform -translate-y-1/3 text-center"
 								trackClassName={`w-full h-3 rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
-									touched.message && errors.message ? "border-red-500" : "border-gray-800"
+									touched.distance && errors.distance ? "border-red-500" : "border-gray-800"
 								}`}
 								renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+								aria-invalid={touched.distance && errors.distance ? 'true' : null}
+								aria-describedby={touched.distance && errors.distance ? 'distance-error' : null}
+								aria-required="true"
+								disabled={isSubmitting}
 							/>
 						</div>
 					</div>
@@ -251,6 +292,10 @@ const ContactForm = () => {
 							className={`w-full rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
 								touched.message && errors.message ? "border-red-500" : "border-gray-800"
 							}`}
+							aria-invalid={touched.message  && errors.message ? 'true' : null}
+							aria-describedby={touched.message  && errors.message ? 'state-error' : null}
+							aria-required="true"
+							disabled={isSubmitting}
 						/>
 					</div>
 

@@ -23,7 +23,7 @@ const PostPage = ({ data }) => {
 					</Figure>
 				</div>
 
-				<section className="prose prose-sm md:prose-lg lg:prose-xl prose-indigo mx-auto">
+				<section className="prose prose-sm md:prose-lg lg:prose-xl prose-indigo mx-auto dark:text-white">
 					<StructuredTextStandard content={content} />
 				</section>
 			</article>
