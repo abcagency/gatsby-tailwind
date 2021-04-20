@@ -9,6 +9,7 @@ import Layout from '../components/layout/layout';
 import Seo from '../components/util/seo';
 import Carousel from '../components/modules/carousel';
 import Content from '../components/util/content';
+import Accordion from '../components/modules/accordion';
 
 const IndexPage = ({ data }) => {
 	return (
@@ -32,75 +33,7 @@ const IndexPage = ({ data }) => {
 			<div className="mt-36 max-w-3xl mx-auto">
 				<h2 className="mb-6 text-center text-4xl font-bold text-gray-900 dark:text-gray-400">Frequently Asked Questions</h2>
 
-				<Disclosure>
-					{({ open }) => (
-						<>
-							<Disclosure.Button
-								className={`flex justify-between w-full p-4 font-bold text-left text-gray-700 dark:text-gray-400 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 hover:bg-gray-200 hover:dark:bg-gray-700 focus:bg-gray-200 focus:dark:bg-gray-700 transition-colors border-b border-white dark:border-gray-800 ${open ? "bg-gray-200 dark:bg-gray-800" : "bg-gray-100 dark:bg-gray-900"}`}
-							>
-								<span>Lorem ipsum dolor sit amet?</span>
-								<Icon
-									icon={chevronDown}
-									className={`!transform !translate-y-1 ${open ? "!rotate-180" : ""}`}
-									height="1rem"
-									width="1rem"
-									aria-hidden="true"
-								/>
-							</Disclosure.Button>
-							<Transition
-								show={open}
-								enter="transition duration-100 ease-out"
-								enterFrom="transform scale-95 opacity-0"
-								enterTo="transform scale-100 opacity-100"
-								leave="transition duration-75 ease-out"
-								leaveFrom="transform scale-100 opacity-100"
-								leaveTo="transform scale-95 opacity-0"
-							>
-								<Disclosure.Panel
-									static
-									className="p-4"
-								>
-									Quisque ac vulputate quam. Nullam tempus velit sed vehicula pretium. Donec et auctor magna, at rhoncus magna. In non odio nibh. Duis suscipit velit dui, vitae accumsan turpis faucibus ac. Morbi ut ipsum sit amet mi rutrum ultrices. Nunc quis tellus id diam vehicula suscipit. Nulla a luctus ligula, euismod feugiat mi. Maecenas vestibulum nibh quis enim eleifend, at scelerisque lorem varius. Mauris eu pretium magna, ullamcorper dictum lorem. Mauris ante risus, egestas sit amet ante venenatis, ultrices pulvinar sem. Curabitur a nisi nec justo elementum lacinia eget ac magna.
-								</Disclosure.Panel>
-							</Transition>
-						</>
-					)}
-				</Disclosure>
-
-				<Disclosure>
-					{({ open }) => (
-						<>
-							<Disclosure.Button
-								className={`flex justify-between w-full p-4 font-bold text-left text-gray-700 dark:text-gray-400 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 hover:bg-gray-200 hover:dark:bg-gray-700 focus:bg-gray-200 focus:dark:bg-gray-700 transition-colors border-b border-white dark:border-gray-800 ${open ? "bg-gray-200 dark:bg-gray-800" : "bg-gray-100 dark:bg-gray-900"}`}
-							>
-								<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
-								<Icon
-									icon={chevronDown}
-									className={`!transform !translate-y-1 ${open ? "!rotate-180" : ""}`}
-									height="1rem"
-									width="1rem"
-									aria-hidden="true"
-								/>
-							</Disclosure.Button>
-							<Transition
-								show={open}
-								enter="transition duration-100 ease-out"
-								enterFrom="transform scale-95 opacity-0"
-								enterTo="transform scale-100 opacity-100"
-								leave="transition duration-75 ease-out"
-								leaveFrom="transform scale-100 opacity-100"
-								leaveTo="transform scale-95 opacity-0"
-							>
-								<Disclosure.Panel
-									static
-									className="p-4"
-								>
-									Quisque ac vulputate quam. Nullam tempus velit sed vehicula pretium. Donec et auctor magna, at rhoncus magna. In non odio nibh. Duis suscipit velit dui, vitae accumsan turpis faucibus ac. Morbi ut ipsum sit amet mi rutrum ultrices. Nunc quis tellus id diam vehicula suscipit. Nulla a luctus ligula, euismod feugiat mi. Maecenas vestibulum nibh quis enim eleifend, at scelerisque lorem varius. Mauris eu pretium magna, ullamcorper dictum lorem. Mauris ante risus, egestas sit amet ante venenatis, ultrices pulvinar sem. Curabitur a nisi nec justo elementum lacinia eget ac magna.
-								</Disclosure.Panel>
-							</Transition>
-						</>
-					)}
-				</Disclosure>
+				<Accordion content={data.datoCmsHomepage.accordion} />
 			</div>
 
 			<section className="mt-36 max-w-3xl mx-auto">
@@ -151,6 +84,14 @@ export const query = graphql`
 							layout: FULL_WIDTH
 						)
 					}
+				}
+			}
+			accordion {
+				... on DatoCmsAccordionitem {
+					model { apiKey }
+					id
+					heading
+					content
 				}
 			}
 		}
