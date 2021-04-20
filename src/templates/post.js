@@ -6,7 +6,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout/layout';
 import Figure from '../components/modules/figure';
 
-import StructuredTextStandard from '../components/modules/StructuredTextStandard';
+import StructuredTextStandard from '../components/modules/structured-tex-standard';
 
 const PostPage = ({ data }) => {
 	const { title, excerpt, image, content } = data.datoCmsBlogPost;
