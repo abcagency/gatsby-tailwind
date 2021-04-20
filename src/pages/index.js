@@ -1,9 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { Disclosure, Transition } from '@headlessui/react';
-import { Icon } from '@iconify/react';
-import chevronDown from '@iconify/icons-mdi/chevron-down';
 
 import Layout from '../components/layout/layout';
 import Seo from '../components/util/seo';
