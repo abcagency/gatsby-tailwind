@@ -2,7 +2,6 @@ import React from 'react';
 import { Disclosure, Transition } from '@headlessui/react';
 import { Icon } from '@iconify/react';
 import chevronDown from '@iconify/icons-mdi/chevron-down';
-import { Placeholder } from 'gatsby-plugin-image';
 
 const Accordion = props => {
 	const { content } = props;
@@ -38,7 +37,7 @@ const Accordion = props => {
 									static
 									className="p-4"
 								>
-									<Placeholder dangerouslySetInnerHTML={{ __html: item.content }} />
+									<div dangerouslySetInnerHTML={{ __html: item.content }} />
 								</Disclosure.Panel>
 							</Transition>
 						</>
