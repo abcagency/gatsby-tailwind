@@ -31,7 +31,7 @@ const Header = () => {
 			onPin={() => setPosition(PosMap.PINNED)}
 			onUnfix={() => setPosition(PosMap.DEFAULT)}
 		>
-			<header className="bg-indigo-700 dark:bg-gray-900 dark:text-white shadow-lg">
+			<header className="bg-gray-200 dark:bg-gray-900 dark:text-white shadow-lg">
 				<div className={`flex flex-wrap items-center justify-between container mx-auto p-4 ${position === PosMap.PINNED ? 'md:py-4' : 'md:py-8'}`}>
 					<Link
 						to="/"
