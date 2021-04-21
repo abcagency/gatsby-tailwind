@@ -25,7 +25,6 @@ module.exports = {
 				minify: true
 			}
 		},
-		`gatsby-plugin-transition-link`,
 		`gatsby-plugin-image`,
 		{
 			resolve: `gatsby-source-filesystem`,

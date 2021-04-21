@@ -1,6 +1,6 @@
 import React from 'react';
 import { StructuredText } from 'react-datocms';
-import Link from 'gatsby-plugin-transition-link/AniLink';
+import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Figure from './figure';
 
@@ -15,7 +15,6 @@ const StructuredTextStandard = ({ content }) => {
 					return <Link
 						to={`/posts/${slug}`}
 						className="!text-red-700"
-						hex="#1D4ED8"
 					>
 						{title}
 					</Link>;
@@ -23,7 +22,6 @@ const StructuredTextStandard = ({ content }) => {
 					return <Link
 						to={`/posts/category/${slug}`}
 						className="!text-red-700"
-						hex="#1D4ED8"
 					>
 						{name}
 					</Link>;
@@ -37,7 +35,6 @@ const StructuredTextStandard = ({ content }) => {
 				case 'DatoCmsBlogPost':
 					return <Link
 						to={`/posts/${slug}`}
-						hex="#1D4ED8"
 					>
 						{children}
 					</Link>;
@@ -45,7 +42,6 @@ const StructuredTextStandard = ({ content }) => {
 					return <Link
 						to={`/posts/category/${slug}`}
 						className="!text-red-700"
-						hex="#1D4ED8"
 					>
 						{children}
 					</Link>;
