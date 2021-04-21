@@ -1,10 +1,10 @@
-import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 
-import Seo from "../components/util/seo";
-import Layout from "../components/layout/layout";
-import Figure from "../components/modules/figure";
-import VideoPlayer from "../components/modules/video-player";
+import Seo from '~/components/util/seo';
+import Layout from '~/components/layout/layout';
+import Figure from '~/components/modules/figure';
+import VideoPlayer from '~/components/modules/video-player';
 
 const AboutPage = () => {
 	return (
@@ -13,7 +13,7 @@ const AboutPage = () => {
 				keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
 				title="About"
 			/>
-			
+
 			<div className="bg-gray-100 dark:bg-gray-700 py-6 px-4 mb-6 text-center">
 				<h1 className="text-4xl font-bold mb-3">About</h1>
 			</div>

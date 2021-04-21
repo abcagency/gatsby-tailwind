@@ -3,9 +3,9 @@ import { Link } from 'gatsby';
 import { Icon } from '@iconify/react';
 import Home from '@iconify/icons-mdi/home';
 
-import Seo from '../components/util/seo';
-import Layout from '../components/layout/layout';
-import abductionIllustration from '../images/abduction-illustration.svg';
+import Seo from '~/components/util/seo';
+import Layout from '~/components/layout/layout';
+import abductionIllustration from '~/images/abduction-illustration.svg';
 
 const NotFoundPage = () => {
 	return (

@@ -26,6 +26,13 @@
 	"settings": {
 		"react": {
 			"version": "detect"
+		},
+		"import/resolver": {
+			"alias": [
+				["~/src", "./src"],
+				["~/components", "./src/components"],
+				["~/images", "./src/images"]
+			]
 		}
 	},
 	"extends": [

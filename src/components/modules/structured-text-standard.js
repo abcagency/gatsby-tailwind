@@ -2,7 +2,7 @@ import React from 'react';
 import { StructuredText } from 'react-datocms';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import Figure from './figure';
+import Figure from '~/components/modules/figure';
 
 const StructuredTextStandard = ({ content }) => {
 	return (

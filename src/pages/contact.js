@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Layout from '../components/layout/layout';
-import Seo from '../components/util/seo';
-import ContactForm from '../components/modules/contact-form';
+import Layout from '~/components/layout/layout';
+import Seo from '~/components/util/seo';
+import ContactForm from '~/components/modules/contact-form';
 
 const ContactPage = () => {
 	return (

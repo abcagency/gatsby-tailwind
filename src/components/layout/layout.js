@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Header from './header';
-import Footer from './footer';
+import Header from '~/components/layout/header';
+import Footer from '~/components/layout/footer';
 
 const Layout = ({ children }) => {
 	return (

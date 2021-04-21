@@ -3,10 +3,9 @@ import { HelmetDatoCms } from 'gatsby-source-datocms';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-import Layout from '../components/layout/layout';
-import Figure from '../components/modules/figure';
-
-import StructuredTextStandard from '../components/modules/structured-text-standard';
+import Layout from '~/components/layout/layout';
+import Figure from '~/components/modules/figure';
+import StructuredTextStandard from '~/components/modules/structured-text-standard';
 
 const PostPage = ({ data }) => {
 	const { title, excerpt, image, content } = data.datoCmsBlogPost;

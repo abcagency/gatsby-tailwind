@@ -2,11 +2,11 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-import Layout from '../components/layout/layout';
-import Seo from '../components/util/seo';
-import Carousel from '../components/modules/carousel';
-import Content from '../components/util/content';
-import Accordion from '../components/modules/accordion';
+import Layout from '~/components/layout/layout';
+import Seo from '~/components/util/seo';
+import Carousel from '~/components/modules/carousel';
+import Content from '~/components/util/content';
+import Accordion from '~/components/modules/accordion';
 
 const IndexPage = ({ data }) => {
 	return (
