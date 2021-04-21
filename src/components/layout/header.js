@@ -1,5 +1,5 @@
-import { graphql, useStaticQuery, Link } from 'gatsby';
 import React, { useState } from 'react';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 import * as Scroll from 'react-scroll';
 import Headroom from 'react-headroom';
 import { Icon } from '@iconify/react';

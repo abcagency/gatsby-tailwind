@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Figure = ({ children, title, alt }) => {
+const Figure = ({ children, title, alt, className }) => {
 	return (
-		<figure className="border border-gray-200 dark:border-gray-700 my-8">
+		<figure className={`border border-gray-200 dark:border-gray-700 my-8 ${className}`}>
 			<div className="pt-2 px-2">
 				{children}
 			</div>

@@ -14,14 +14,14 @@ const PostPage = ({ data }) => {
 		<Layout>
 			<article className="px-4">
 				<HelmetDatoCms seo={data.seoMetaTags} />
-				<div className="my-8">
-					<h1 className="mb-4 text-5xl font-bold">{title}</h1>
-					<p className="text-xl text-gray-500">{excerpt}</p>
-
-					<Figure title={image.title} alt={image.alt}>
-						<GatsbyImage image={image.gatsbyImageData} alt={image.alt} />
-					</Figure>
+				<div className="prose prose-sm md:prose-lg lg:prose-xl prose-indigo mx-auto mt-8 mb-4">
+					<h1 className="text-5xl font-bold dark:!text-white">{title}</h1>
+					<p className="text-gray-400">{excerpt}</p>
 				</div>
+
+				<Figure title={image.title} alt={image.alt} className="mb-10">
+					<GatsbyImage image={image.gatsbyImageData} alt={image.alt} />
+				</Figure>
 
 				<section className="prose prose-sm md:prose-lg lg:prose-xl prose-indigo mx-auto dark:text-white">
 					<StructuredTextStandard content={content} />
