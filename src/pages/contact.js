@@ -2,7 +2,7 @@ import React from 'react';
 
 import Layout from '~/components/layout/layout';
 import Seo from '~/components/util/seo';
-import ContactForm from '~/components/modules/contact-form';
+import ContactForm from '~/components/modules/form';
 
 const ContactPage = () => {
 	return (
