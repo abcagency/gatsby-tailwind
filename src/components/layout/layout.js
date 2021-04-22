@@ -6,7 +6,7 @@ import Footer from '~/components/layout/footer';
 
 const Layout = ({ children }) => {
 	return (
-		<div className="relative dark:bg-gray-800 dark:text-white" id="top">
+		<div id="top" className="relative dark:bg-gray-800 dark:text-white">
 			<Header />
 
 			<main>
