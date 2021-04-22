@@ -8,6 +8,9 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			cursor: {
+				grab: "grab"
+			},
 			typography: {
 				DEFAULT: {
 					css: {

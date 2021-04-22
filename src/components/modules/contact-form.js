@@ -16,10 +16,7 @@ let validationSchema = Yup.object().shape({
 	state: Yup.string()
 		.required("is required"),
 	distance: Yup.number()
-		.min(0)
-		// .positive()
-		// .integer()
-		.required("is required")
+		.min(1, "is required")
 });
 
 const ContactForm = () => {
@@ -43,7 +40,7 @@ const ContactForm = () => {
 				}, 1000);
 			}}
 		>
-			{({ touched, errors, isSubmitting }) => (
+			{({ touched, errors, isSubmitting, setFieldValue, setFieldTouched }) => (
 				<Form>
 					<div className="sm:grid grid-cols-2 gap-4">
 						<div className="mb-6">
@@ -251,21 +248,44 @@ const ContactForm = () => {
 								className="inline-block text-red-500 uppercase text-xs font-bold ml-1"
 							/>
 
-							<Slider
-								name="distance"
-								type="range"
-								max={99}
-								className="py-4"
-								thumbClassName="p-2 w-10 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-900 dark:text-gray-400 transform -translate-y-1/3 text-center"
-								trackClassName={`w-full h-3 rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
-									touched.distance && errors.distance ? "border-red-500" : "border-gray-800"
-								}`}
-								renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
-								aria-invalid={touched.distance && errors.distance ? 'true' : null}
-								aria-describedby={touched.distance && errors.distance ? 'distance-error' : null}
-								aria-required="true"
-								disabled={isSubmitting}
-							/>
+							<Field name="distance">
+								{({
+									field,
+									form: { touched, errors },
+									meta
+								}) => (
+									<>
+										<input
+											{...field}
+											name="distance"
+											type="hidden"
+											aria-invalid={touched.distance && errors.distance ? 'true' : null}
+											aria-describedby={touched.distance && errors.distance ? 'distance-error' : null}
+											aria-required="true"
+										/>
+										<Slider
+											type="range"
+											max={99}
+											className="py-4"
+											thumbClassName="p-2 w-10 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-900 dark:text-gray-400 transform -translate-y-1/3 text-center outline-none cursor-grab focus:bg-indigo-700 focus:dark:bg-gray-500 focus:text-white focus:dark:text-gray-800 transition-colors"
+											trackClassName={`h-3 rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
+												meta.touched && meta.errors ? "border-red-500" : "border-gray-800"
+											}`}
+											renderThumb={(props, state) =>
+												<div {...props}>
+													<span
+														className="block rounded-full text-center"
+													>
+														{state.valueNow}
+													</span>
+												</div>
+											}
+											onChange={v => setFieldValue('distance', v)}
+											onAfterChange={() => setFieldTouched('distance')}
+										/>
+									</>
+								)}
+							</Field>
 						</div>
 					</div>
 
