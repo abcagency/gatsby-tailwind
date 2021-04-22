@@ -21,7 +21,15 @@ let validationSchema = Yup.object().shape({
 });
 
 const MyForm = () => {
-	const { register, handleSubmit, setValue, control, trigger, formState:{ errors, isSubmitting } } = useForm({
+	const {
+		register,
+		handleSubmit,
+		setValue,
+		control,
+		trigger,
+		reset,
+		formState:{ errors, isSubmitting }
+	} = useForm({
 		mode: 'onChange',
 		defaultValues: {
 			name: '',
@@ -35,10 +43,10 @@ const MyForm = () => {
 		resolver: yupResolver(validationSchema)
 	});
 
-	const onSubmit = (values, { setSubmitting }) => {
+	const onSubmit = values => {
 		setTimeout(() => {
 			alert(JSON.stringify(values, null, 2));
-			setSubmitting(false);
+			reset();
 		}, 1000);
 	};
 
@@ -165,7 +173,7 @@ const MyForm = () => {
 									value={value}
 									type="radio"
 									name="favoriteColor"
-									className={`rounded-full h-5 w-5 text-${value}-500 border-gray-800 dark:bg-gray-700 focus:dark:bg-white transition-colors`}
+									className="rounded-full h-5 w-5 text-indigo-700 border-gray-800 dark:bg-gray-700 focus:dark:bg-white transition-colors"
 								/>
 								<span className="ml-2 capitalize">{value}</span>
 							</label>
