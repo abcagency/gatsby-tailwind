@@ -17,34 +17,34 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-eslint`,
 		`gatsby-plugin-gatsby-cloud`,
-		{
-			resolve: "gatsby-plugin-google-tagmanager",
-			options: {
-				id: `${siteConfig.analytics.gtmId}`,
+		// {
+		// 	resolve: "gatsby-plugin-google-tagmanager",
+		// 	options: {
+		// 		id: `${siteConfig.analytics.gtmId}`,
 
-				// Include GTM in development.
-				//
-				// Defaults to false meaning GTM will only be loaded in production.
-				includeInDevelopment: false,
+		// 		// Include GTM in development.
+		// 		//
+		// 		// Defaults to false meaning GTM will only be loaded in production.
+		// 		includeInDevelopment: false,
 
-				// datalayer to be set before GTM is loaded
-				// should be an object or a function that is executed in the browser
-				//
-				// Defaults to null
-				defaultDataLayer: { platform: "gatsby" },
+		// 		// datalayer to be set before GTM is loaded
+		// 		// should be an object or a function that is executed in the browser
+		// 		//
+		// 		// Defaults to null
+		// 		defaultDataLayer: { platform: "gatsby" },
 
-				// Specify optional GTM environment details.
-				gtmAuth: `${siteConfig.analytics.gtmAuth}`,
-				gtmPreview: `${siteConfig.analytics.gtmPreview}`,
-				dataLayerName: `${siteConfig.analytics.dataLayerName}`,
+		// 		// Specify optional GTM environment details.
+		// 		gtmAuth: `${siteConfig.analytics.gtmAuth}`,
+		// 		gtmPreview: `${siteConfig.analytics.gtmPreview}`,
+		// 		dataLayerName: `${siteConfig.analytics.dataLayerName}`,
 
-				// Name of the event that is triggered
-				// on every Gatsby route change.
-				//
-				// Defaults to gatsby-route-change
-				routeChangeEventName: `${siteConfig.analytics.routeChangeEventName}`
-			}
-		},
+		// 		// Name of the event that is triggered
+		// 		// on every Gatsby route change.
+		// 		//
+		// 		// Defaults to gatsby-route-change
+		// 		routeChangeEventName: `${siteConfig.analytics.routeChangeEventName}`
+		// 	}
+		// },
 		`gatsby-plugin-image`,
 		{
 			resolve: `gatsby-source-filesystem`,

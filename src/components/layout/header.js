@@ -40,9 +40,9 @@ const Header = () => {
 						<Icon icon={androidDebugBridge}
 							width="1rem"
 							height="1rem"
-							className={`text-indigo-200 ${position === PosMap.PINNED ? 'w-10 h-10' : 'w-20 h-20'}`}
+							className={`text-indigo-700 dark:text-indigo-200 ${position === PosMap.PINNED ? 'w-10 h-10' : 'w-20 h-20'}`}
 						/>
-						<h1 className={`text-white font-bold no-underline ${position === PosMap.PINNED ? 'text-lg' : 'text-2xl'}`}>
+						<h1 className={`text-gray-800 dark:text-white font-bold no-underline ${position === PosMap.PINNED ? 'text-lg' : 'text-2xl'}`}>
 							{site.siteMetadata.title}
 						</h1>
 					</Link>
@@ -77,7 +77,7 @@ const Header = () => {
 							}
 						].map(link => (
 							<Link
-								className="block mt-4 text-indigo-200 no-underline md:inline-block md:mt-0 md:ml-6 border-b-2 border-transparent hover:text-white transition-colors"
+								className="block mt-4 text-gray-800 dark:text-indigo-200 no-underline md:inline-block md:mt-0 md:ml-6 border-b-2 border-transparent hover:dark:text-white hover:text-indigo-700 transition-colors"
 								key={link.title}
 								to={link.route}
 							>
@@ -85,7 +85,7 @@ const Header = () => {
 							</Link>
 						))}
 						<ScrollLink
-							className="block mt-4 text-indigo-200 no-underline md:inline-block md:mt-0 md:ml-6 border-b-2 border-transparent transition-colors"
+							className="block mt-4 text-gray-800 dark:text-indigo-200 no-underline md:inline-block md:mt-0 md:ml-6 border-b-2 border-transparent transition-colors hover:dark:text-white hover:text-indigo-700 "
 							activeClass="!text-white !border-white"
 							href="#carousel"
 							to="carousel"
