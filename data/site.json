@@ -1,0 +1,39 @@
+{
+	"siteTitle": "Gatsby Starter Tailwind",
+	"siteTitleShort": "Gatsby Tailwind",
+	"siteDescription": "Gatsby starter styled with Tailwind",
+	"author": "@abc_Creative",
+	"siteUrl": "https://gatsbytailwind.gatsbyjs.io/",
+	"siteLogo": "src/images/tailwind-icon.png",
+	"analytics": {
+		"gtmId": "GOOGLE_TAGMANAGER_ID",
+		"gtmAuth": "GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
+		"gtmPreview": "GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
+		"dataLayerName": "ATA_LAYER_NAME",
+		"routeChangeEventName": "ROUTE_CHANGE_EVENT_NAME"
+	},
+	"social": [
+		{
+			"platform": "Facebook",
+			"label": "Like us on Facebook",
+			"url": "https://www.facebook.com/abcCreativeIntelligence",
+			"icon": "facebook"
+		},
+		{
+			"platform": "Instagram",
+			"label": "Follow us on Instagram",
+			"url": "https://www.instagram.com/abc_creative/",
+			"icon": "instagram"
+		},
+		{
+			"platform": "Twitter",
+			"label": "Follow us on Twitter",
+			"url": "https://twitter.com/abc_Creative",
+			"icon": "twitter"
+		}
+	],
+	"copyright": {
+		"name": "AB&C",
+		"url": "https://abccreative.com"
+	}
+}
