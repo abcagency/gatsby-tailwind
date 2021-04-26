@@ -12,8 +12,8 @@ const IndexPage = ({ data }) => {
 	return (
 		<Layout>
 			<Seo
+				title=""
 				keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-				title="Home"
 			/>
 
 			<div className="bg-gray-100 dark:bg-gray-700 py-20 px-4 text-center">
