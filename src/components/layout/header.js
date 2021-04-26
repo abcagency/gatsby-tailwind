@@ -5,7 +5,7 @@ import Headroom from 'react-headroom';
 import { Icon } from '@iconify/react';
 import androidDebugBridge from '@iconify/icons-mdi/android-debug-bridge';
 
-const Header = () => {
+function Header() {
 	let ScrollLink = Scroll.Link;
 	const [isExpanded, toggleExpansion] = useState(false);
 	const [position, setPosition] = useState(false);
@@ -102,6 +102,6 @@ const Header = () => {
 			</header>
 		</Headroom>
 	);
-};
+}
 
 export default Header;
