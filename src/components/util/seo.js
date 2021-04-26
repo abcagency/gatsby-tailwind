@@ -17,6 +17,7 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
 	`);
 
 	const defaultTitle = site.siteMetadata?.title;
+	const pageTitle = title || defaultTitle;
 	const metaDescription = description || site.siteMetadata.description;
 
 	return (
@@ -33,7 +34,7 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
 				},
 				{
 					property: 'og:title',
-					content: title
+					content: pageTitle
 				},
 				{
 					property: 'og:description',
@@ -53,7 +54,7 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
 				},
 				{
 					name: 'twitter:title',
-					content: title
+					content: pageTitle
 				},
 				{
 					name: 'twitter:description',
