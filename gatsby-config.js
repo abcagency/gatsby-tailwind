@@ -138,6 +138,14 @@ module.exports = {
 			}
 		},
 		{
+			resolve: 'gatsby-plugin-robots-txt',
+			options: {
+				host: `${siteConfig.siteUrl}`,
+				sitemap: `${siteConfig.siteUrl}sitemap.xml`,
+				policy: [{ userAgent: '*', allow: '/' }]
+			}
+		},
+		{
 			resolve: `gatsby-source-datocms`,
 			options: {
 				apiToken: process.env.DATO_API_TOKEN,
