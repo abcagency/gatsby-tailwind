@@ -16,6 +16,7 @@ module.exports = {
 	},
 	plugins: [
 		`gatsby-plugin-eslint`,
+		`gatsby-plugin-remove-trailing-slashes`,
 		`gatsby-plugin-gatsby-cloud`,
 		// {
 		// 	resolve: "gatsby-plugin-google-tagmanager",
