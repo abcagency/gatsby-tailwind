@@ -6,8 +6,7 @@ function SkipLink(props) {
 	return (
 		<a
 			href={to}
-			// sr-only focus:not-sr-only
-			className={`inline-block py-2 px-6 bg-gray-900 text-white font-bold text-center rounded transition-colors hover:bg-gray-700 ${className}`}
+			className={`sr-only focus:not-sr-only inline-block py-2 px-6 bg-gray-900 text-white font-bold text-center rounded transition-colors hover:bg-gray-700 ${className}`}
 		>
 			{children}
 		</a>
