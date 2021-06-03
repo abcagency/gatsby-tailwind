@@ -5,7 +5,7 @@ import Header from '~/components/layout/header';
 import Footer from '~/components/layout/footer';
 import SkipLink from '~/components/modules/navigation/skip-link';
 
-function Layout({ children }) {
+const Layout = ({ children }) => {
 	return (
 		<div id="top" className="relative dark:bg-gray-800 dark:text-white">
 			<SkipLink />
@@ -18,7 +18,7 @@ function Layout({ children }) {
 			<Footer />
 		</div>
 	);
-}
+};
 
 Layout.propTypes = {
 	children: PropTypes.node.isRequired

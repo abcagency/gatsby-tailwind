@@ -18,7 +18,7 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
 
 	const defaultTitle = site.siteMetadata?.title;
 	const pageTitle = title || defaultTitle;
-	const metaDescription = description || site.siteMetadata.description;
+	const metaDescription = description || site.siteMetadata?.description;
 
 	return (
 		<Helmet
@@ -27,50 +27,39 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
 			}}
 			title={title || defaultTitle}
 			titleTemplate={title ? `%s | ${defaultTitle}` : null}
-			meta={[
-				{
-					name: 'description',
-					content: metaDescription
-				},
-				{
-					property: 'og:title',
-					content: pageTitle
-				},
-				{
-					property: 'og:description',
-					content: metaDescription
-				},
-				{
-					property: 'og:type',
-					content: 'website'
-				},
-				{
-					name: 'twitter:card',
-					content: 'summary'
-				},
-				{
-					name: 'twitter:creator',
-					content: site.siteMetadata.author
-				},
-				{
-					name: 'twitter:title',
-					content: pageTitle
-				},
-				{
-					name: 'twitter:description',
-					content: metaDescription
-				}
-			]
-				.concat(
-					keywords.length > 0
-						? {
-							name: 'keywords',
-							content: keywords.join(', ')
-						}
-						: []
-				)
-				.concat(meta)}
-		/>
+		>
+			<meta property="description" content={metaDescription} />
+			{keywords.length > 0
+				? (
+					<meta property="keywords" content={`${keywords.join(', ')}`} />
+				) : null
+			}
+
+			<meta property="og:title" content={pageTitle} />
+			<meta property="og:description" content={metaDescription} />
+			{site.siteMetadata?.image &&
+				<meta property="og:image" content={site.siteMetadata?.image} />
+			}
+			<meta property="og:type" content="website" />
+
+			<meta property="twitter:card" content="summary" />
+			<meta property="twitter:creator" content={site.siteMetadata?.author} />
+			<meta property="twitter:title" content={pageTitle} />
+			<meta property="twitter:description" content={metaDescription} />
+
+			<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+			<script>
+				{`
+					setTimeout(() => {
+						try {
+							Weglot.initialize({
+								api_key: 'wg_5c2552292c35131fb65327a70282cb054'
+							});
+						} catch {}
+					}, 1000);
+				`}
+			</script>
+		</Helmet>
 	);
 };
 

@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
-import * as Scroll from 'react-scroll';
 import Headroom from 'react-headroom';
 import { Icon } from '@iconify/react';
-import androidDebugBridge from '@iconify/icons-mdi/android-debug-bridge';
+import Firefox from '@iconify/icons-mdi/firefox';
 
-function Header() {
-	let ScrollLink = Scroll.Link;
+const Header = () => {
 	const [isExpanded, toggleExpansion] = useState(false);
 	const [position, setPosition] = useState(false);
 
@@ -32,15 +30,15 @@ function Header() {
 			onUnfix={() => setPosition(PosMap.DEFAULT)}
 		>
 			<header className="bg-gray-200 dark:bg-gray-900 dark:text-white shadow-lg">
-				<div className={`flex flex-wrap items-center justify-between container mx-auto p-4 ${position === PosMap.PINNED ? 'md:py-4' : 'md:py-8'}`}>
+				<div className={`flex flex-wrap items-center justify-between container mx-auto p-4 ${position === PosMap.PINNED ? 'md:py-4' : 'md:py-6'}`}>
 					<Link
 						to="/"
 						className="flex items-center"
 					>
-						<Icon icon={androidDebugBridge}
+						<Icon icon={Firefox}
 							width="1rem"
 							height="1rem"
-							className={`text-indigo-700 dark:text-indigo-200 ${position === PosMap.PINNED ? 'w-10 h-10' : 'w-20 h-20'}`}
+							className={`text-indigo-700 dark:text-indigo-200 mr-1 ${position === PosMap.PINNED ? 'w-10 h-10' : 'w-12 h-12'}`}
 						/>
 						<h1 className={`text-gray-800 dark:text-white font-bold no-underline ${position === PosMap.PINNED ? 'text-lg' : 'text-2xl'}`}>
 							{site.siteMetadata.title}
@@ -77,31 +75,18 @@ function Header() {
 							}
 						].map(link => (
 							<Link
-								className="block mt-4 text-gray-800 dark:text-indigo-200 no-underline md:inline-block md:mt-0 md:ml-6 border-b-2 border-transparent hover:dark:text-white hover:text-indigo-700 transition-colors"
+								className="block mt-4 text-gray-800 dark:text-indigo-200 no-underline md:inline-block md:mt-0 md:ml-6 border-b-2 border-transparent dark:hover:text-white hover:text-indigo-700 transition-colors"
 								key={link.title}
 								to={link.route}
 							>
 								{link.title}
 							</Link>
 						))}
-						<ScrollLink
-							className="block mt-4 text-gray-800 dark:text-indigo-200 no-underline md:inline-block md:mt-0 md:ml-6 border-b-2 border-transparent transition-colors hover:dark:text-white hover:text-indigo-700 "
-							activeClass="!text-white !border-white"
-							href="#carousel"
-							to="carousel"
-							spy={true}
-							hashSpy={true}
-							smooth={true}
-							offset={-100}
-							duration={250}
-						>
-							Carousel
-						</ScrollLink>
 					</nav>
 				</div>
 			</header>
 		</Headroom>
 	);
-}
+};
 
 export default Header;

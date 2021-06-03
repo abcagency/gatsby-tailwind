@@ -12,7 +12,7 @@ const NextButton = props => {
 	const { className, style, onClick } = props;
 	return (
 		<button
-			className={`${className} !right-1.5 z-10 opacity-60 hover:focus:!opacity-95 transition-opacity`}
+			className={`${className} !right-3.5 z-10 opacity-60 hover:!opacity-95 focus:!opacity-95 transition-opacity`}
 			style={{ ...style, display: 'block' }}
 			onClick={onClick}
 		>
@@ -26,7 +26,7 @@ const PrevButton = props => {
 	const { className, style, onClick } = props;
 	return (
 		<button
-			className={`${className} !left-1.5 z-10 opacity-60 hover:focus:opacity-95 transition-opacity`}
+			className={`${className} !left-1.5 z-10 opacity-60 hover:!opacity-95 focus:!opacity-95 transition-opacity`}
 			style={{ ...style, display: 'block' }}
 			onClick={onClick}
 		>

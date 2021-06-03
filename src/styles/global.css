@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Responsive Font Sizing */
+:root {
+	--fluid-type-min: 1rem;
+	--fluid-type-target: 0.33vw;
+	--fluid-type-max: 1.5rem;
+}
+
+@layer base {
+	html {
+		font-size: clamp(
+			var(--fluid-type-min),
+			calc(1rem + var(--fluid-type-target)),
+			var(--fluid-type-max)
+		);
+	}
+}

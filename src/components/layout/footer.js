@@ -6,7 +6,7 @@ import arrowCollapseUp from '@iconify/icons-mdi/arrow-collapse-up';
 import NavSocial from '~/components/modules/navigation/social';
 import site from '~/data/site.json';
 
-function Footer() {
+const Footer = () => {
 	let ScrollLink = Scroll.Link;
 
 	return (
@@ -34,6 +34,6 @@ function Footer() {
 			</div>
 		</footer>
 	);
-}
+};
 
 export default Footer;

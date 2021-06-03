@@ -81,7 +81,7 @@ const MyForm = () => {
 						type="text"
 						name="name"
 						placeholder="First and Last Name"
-						className={`w-full rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
+						className={`w-full rounded-md dark:bg-gray-700 dark:focus:bg-white dark:focus:text-gray-900 transition-colors ${
 							errors.name ? "border-red-500" : "border-gray-800"
 						}`}
 						aria-invalid={errors.name ? 'true' : null}
@@ -114,7 +114,7 @@ const MyForm = () => {
 						type="email"
 						name="email"
 						placeholder="user@domain.com"
-						className={`w-full rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
+						className={`w-full rounded-md dark:bg-gray-700 dark:focus:bg-white dark:focus:text-gray-900 transition-colors ${
 							errors.email ? "border-red-500" : "border-gray-800"
 						}`}
 						aria-invalid={errors.email ? 'true' : null}
@@ -150,7 +150,7 @@ const MyForm = () => {
 									id={`transportation${value}`}
 									value={value}
 									type="checkbox"
-									className="rounded h-5 w-5 text-indigo-700 border-gray-800 dark:bg-gray-700 focus:dark:bg-white transition-colors"
+									className="rounded h-5 w-5 text-indigo-700 border-gray-800 dark:bg-gray-700 dark:focus:bg-white transition-colors"
 								/>
 								<span className="ml-2">{value}</span>
 							</label>
@@ -173,7 +173,7 @@ const MyForm = () => {
 									value={value}
 									type="radio"
 									name="favoriteColor"
-									className="rounded-full h-5 w-5 text-indigo-700 border-gray-800 dark:bg-gray-700 focus:dark:bg-white transition-colors"
+									className="rounded-full h-5 w-5 text-indigo-700 border-gray-800 dark:bg-gray-700 dark:focus:bg-white transition-colors"
 								/>
 								<span className="ml-2 capitalize">{value}</span>
 							</label>
@@ -203,7 +203,7 @@ const MyForm = () => {
 
 					<select
 						{...register(`state`)}
-						className={`w-full rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
+						className={`w-full rounded-md dark:bg-gray-700 dark:focus:bg-white dark:focus:text-gray-900 transition-colors ${
 							errors.state ? "border-red-500" : "border-gray-800"
 						}`}
 						aria-invalid={errors.state ? 'true' : null}
@@ -299,8 +299,8 @@ const MyForm = () => {
 								<Slider
 									max={99}
 									className="py-4"
-									thumbClassName={`p-2 w-10 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-900 dark:text-gray-400 transform -translate-y-1/3 text-center outline-none cursor-grab focus:bg-indigo-700 focus:dark:bg-gray-500 focus:text-white focus:dark:text-gray-800 transition-colors ${errors.distance && "!text-red-500"}`}
-									trackClassName="h-3 rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors"
+									thumbClassName={`p-2 w-10 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-900 dark:text-gray-400 transform -translate-y-1/3 text-center outline-none cursor-grab focus:bg-indigo-700 dark:focus:bg-gray-500 focus:text-white dark:focus:text-gray-800 transition-colors ${errors.distance && "!text-red-500"}`}
+									trackClassName="h-3 rounded-md dark:bg-gray-700 dark:focus:bg-white dark:focus:text-gray-900 transition-colors"
 									renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
 									onChange={v => setValue('distance', v)}
 									onAfterChange={() => trigger('distance')}
@@ -334,7 +334,7 @@ const MyForm = () => {
 					id="message"
 					placeholder="Say something..."
 					rows="8"
-					className={`w-full rounded-md dark:bg-gray-700 focus:dark:bg-white focus:dark:text-gray-900 transition-colors ${
+					className={`w-full rounded-md dark:bg-gray-700 dark:focus:bg-white dark:focus:text-gray-900 transition-colors ${
 						errors.message ? "border-red-500" : "border-gray-800"
 					}`}
 					aria-invalid={errors.message ? 'true' : null}

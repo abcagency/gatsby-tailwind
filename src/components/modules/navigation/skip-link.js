@@ -1,8 +1,6 @@
 import React from 'react';
 
-function SkipLink(props) {
-	const { to, className, children } = props;
-
+const SkipLink = ({ to, className, children }) => {
 	return (
 		<a
 			href={to}
@@ -11,7 +9,7 @@ function SkipLink(props) {
 			{children}
 		</a>
 	);
-}
+};
 
 SkipLink.defaultProps = {
 	children: 'Skip to content',

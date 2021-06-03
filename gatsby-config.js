@@ -12,7 +12,8 @@ module.exports = {
 		title: `${siteConfig.siteTitle}`,
 		description: `${siteConfig.siteDescription}`,
 		author: `${siteConfig.author}`,
-		siteUrl: `${siteConfig.siteUrl}`
+		siteUrl: `${siteConfig.siteUrl}`,
+		image: `${siteConfig.siteUrl}/${siteConfig.siteImage}`
 	},
 	plugins: [
 		`gatsby-plugin-eslint`,
@@ -32,18 +33,8 @@ module.exports = {
 		// 		// should be an object or a function that is executed in the browser
 		// 		//
 		// 		// Defaults to null
-		// 		defaultDataLayer: { platform: "gatsby" },
+		// 		defaultDataLayer: { platform: "gatsby" }
 
-		// 		// Specify optional GTM environment details.
-		// 		gtmAuth: `${siteConfig.analytics.gtmAuth}`,
-		// 		gtmPreview: `${siteConfig.analytics.gtmPreview}`,
-		// 		dataLayerName: `${siteConfig.analytics.dataLayerName}`,
-
-		// 		// Name of the event that is triggered
-		// 		// on every Gatsby route change.
-		// 		//
-		// 		// Defaults to gatsby-route-change
-		// 		routeChangeEventName: `${siteConfig.analytics.routeChangeEventName}`
 		// 	}
 		// },
 		`gatsby-plugin-image`,
@@ -62,6 +53,15 @@ module.exports = {
 			}
 		},
 		{
+			// Put SVGs used in React components in images/inline and process them with svg-react-loader
+			resolve: 'gatsby-plugin-react-svg',
+			options: {
+				rule: {
+					include: /inline/
+				}
+			}
+		},
+		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				name: `${siteConfig.siteTitle}`,
@@ -69,7 +69,7 @@ module.exports = {
 				start_url: `/`,
 				background_color: fullConfig.theme.colors.white,
 				theme_color: fullConfig.theme.colors.indigo[`700`],
-				display: `minimal-ui`,
+				display: `browser`,
 				icon: `${siteConfig.siteLogo}`
 			}
 		},

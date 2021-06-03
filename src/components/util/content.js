@@ -1,13 +1,12 @@
 import React from 'react';
 
-const Content = props => {
-	const { children, className, tag } = props;
+const Content = ({ children, className, tag }) => {
 	let TagName = tag || 'div';
 
 	return (
 		<>
 			<TagName
-				className={`prose prose-sm md:prose-lg lg:prose-xl prose-indigo mx-auto ${className}`}>
+				className={`prose prose-sm md:prose-md lg:prose-lg xl:prose-xl prose-indigo mx-auto ${className}`}>
 				{children}
 			</TagName>
 		</>
