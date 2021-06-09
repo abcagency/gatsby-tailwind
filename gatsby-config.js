@@ -83,79 +83,13 @@ module.exports = {
 		`gatsby-plugin-offline`,
 		`gatsby-plugin-postcss`,
 		`gatsby-plugin-react-helmet`,
-		{
-			resolve: `gatsby-plugin-use-dark-mode`,
-			options: {
-				classNameDark: `dark-mode`,
-				classNameLight: `light-mode`,
-				storageKey: `darkMode`,
-				minify: true
-			}
-		},
 		`gatsby-plugin-sharp`,
-		{
-			resolve: `gatsby-plugin-sitemap`,
-			options: {
-				query: `
-					{
-						site {
-							siteMetadata {
-								siteUrl
-							}
-						}
-
-						allSitePage {
-							nodes {
-								path
-							}
-						}
-				}`,
-				serialize: ({ site, allSitePage }) =>
-					allSitePage.nodes.map(node => {
-						switch (node.path) {
-						case '':
-						case ' ':
-						case '/':
-							return {
-								url: `${site.siteMetadata.siteUrl}${node.path}`,
-								changefreq: `daily`,
-								priority: 1
-							};
-						default:
-							if (node.path.indexOf('posts/') >= 0) {
-								return {
-									url: `${site.siteMetadata.siteUrl}${node.path}`,
-									changefreq: `weekly`,
-									priority: 0.8
-								};
-							}
-							return {
-								url: `${site.siteMetadata.siteUrl}${node.path}`,
-								changefreq: `monthly`,
-								priority: 0.5
-							};
-						}
-					})
-			}
-		},
 		{
 			resolve: 'gatsby-plugin-robots-txt',
 			options: {
 				host: `${siteConfig.siteUrl}`,
 				sitemap: `${siteConfig.siteUrl}sitemap.xml`,
 				policy: [{ userAgent: '*', allow: '/' }]
-			}
-		},
-		{
-			resolve: `gatsby-source-datocms`,
-			options: {
-				apiToken: process.env.DATO_API_TOKEN,
-				environment: `main`,
-				previewMode: false,
-				disableLiveReload: false,
-				localeFallbacks: {
-					it: ['en']
-				}
 			}
 		},
 		`gatsby-transformer-sharp`
