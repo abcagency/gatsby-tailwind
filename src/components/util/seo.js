@@ -46,19 +46,6 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
 			<meta property="twitter:creator" content={site.siteMetadata?.author} />
 			<meta property="twitter:title" content={pageTitle} />
 			<meta property="twitter:description" content={metaDescription} />
-
-			<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-			<script>
-				{`
-					setTimeout(() => {
-						try {
-							Weglot.initialize({
-								api_key: 'wg_5c2552292c35131fb65327a70282cb054'
-							});
-						} catch {}
-					}, 1000);
-				`}
-			</script>
 		</Helmet>
 	);
 };
