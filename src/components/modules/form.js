@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Slider from 'react-slider';
@@ -28,9 +28,9 @@ const MyForm = () => {
 		control,
 		trigger,
 		reset,
-		formState:{ errors, isSubmitting }
+		formState:{ errors }
 	} = useForm({
-		mode: 'onChange',
+		mode: 'onBlur',
 		defaultValues: {
 			name: '',
 			email: '',
@@ -43,10 +43,14 @@ const MyForm = () => {
 		resolver: yupResolver(validationSchema)
 	});
 
+	const [isSubmitting, setIsSubmitting] = useState(false);
+
 	const onSubmit = values => {
+		setIsSubmitting(true);
 		setTimeout(() => {
 			alert(JSON.stringify(values, null, 2));
 			reset();
+			setIsSubmitting(false);
 		}, 1000);
 	};
 
