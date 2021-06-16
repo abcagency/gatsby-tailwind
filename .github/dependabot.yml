@@ -10,8 +10,5 @@ updates:
     # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: "daily"
-		# Specify labels for npm pull requests
-		labels:
-			- "dependencies"
 		# Allow up to 10 open pull requests for npm dependencies
 		open-pull-requests-limit: 10
