@@ -7,6 +7,7 @@
 A minimal starter template using Gatsby and Tailwind.
 
 ![Repo Size](https://img.shields.io/github/repo-size/badges/shields.svg?style=for-the-badge)
+![Dependabot Status](https://img.shields.io/badge/Dependabot-Enabled-0366d6?style=for-the-badge&logo=dependabot)
 [![License: 0BSD](https://img.shields.io/badge/license-0BSD-blue.svg?style=for-the-badge)](http://unlicense.org/)
 ![Follow AB&C on Twitter](https://img.shields.io/twitter/follow/abc_Creative.svg?label=Follow+AB%26C&style=for-the-badge&logo=twitter)
 
