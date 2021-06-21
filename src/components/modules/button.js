@@ -19,11 +19,13 @@ const Button = ({ as = 'link', to, type, size, variant, children, className, ...
 	};
 
 	switch (as.toLowerCase()) {
-	case 'link':
+	case 'a':
 		return (
-			<Link
-				to={to}
-				className={`
+			<a
+				href={to}
+				target="_blank"
+				rel="nofollow noreferrer"
+				className={`!no-underline
 					${size ? ButtonSize[size] : Defaults.size}
 					${Defaults.variant}
 					${variant ? ButtonVariant[variant] : ''}
@@ -32,7 +34,7 @@ const Button = ({ as = 'link', to, type, size, variant, children, className, ...
 				{...rest}
 			>
 				{children}
-			</Link>
+			</a>
 		);
 	case 'button':
 		return (
@@ -51,11 +53,9 @@ const Button = ({ as = 'link', to, type, size, variant, children, className, ...
 		);
 	default:
 		return (
-			<a
-				href={to}
-				target="_blank"
-				rel="nofollow noreferrer"
-				className={`!no-underline
+			<Link
+				to={to}
+				className={`
 					${size ? ButtonSize[size] : Defaults.size}
 					${Defaults.variant}
 					${variant ? ButtonVariant[variant] : ''}
@@ -64,7 +64,7 @@ const Button = ({ as = 'link', to, type, size, variant, children, className, ...
 				{...rest}
 			>
 				{children}
-			</a>
+			</Link>
 		);
 	}
 };
