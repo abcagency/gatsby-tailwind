@@ -28,10 +28,10 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
 			title={title || defaultTitle}
 			titleTemplate={title ? `%s | ${defaultTitle}` : null}
 		>
-			<meta property="description" content={metaDescription} />
+			<meta name="description" content={metaDescription} />
 			{keywords.length > 0
 				? (
-					<meta property="keywords" content={`${keywords.join(', ')}`} />
+					<meta name="keywords" content={`${keywords.join(', ')}`} />
 				) : null
 			}
 
@@ -42,10 +42,10 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
 			}
 			<meta property="og:type" content="website" />
 
-			<meta property="twitter:card" content="summary" />
-			<meta property="twitter:creator" content={site.siteMetadata?.author} />
-			<meta property="twitter:title" content={pageTitle} />
-			<meta property="twitter:description" content={metaDescription} />
+			<meta name="twitter:card" content="summary" />
+			<meta name="twitter:creator" content={site.siteMetadata?.author} />
+			<meta name="twitter:title" content={pageTitle} />
+			<meta name="twitter:description" content={metaDescription} />
 		</Helmet>
 	);
 };
