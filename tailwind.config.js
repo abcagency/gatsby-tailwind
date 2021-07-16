@@ -4,7 +4,8 @@ module.exports = {
 	darkMode: 'media',
 	purge: [
 		'./public/**/*.html',
-		'./src/**/*.{js,jsx,ts,tsx,vue}'
+		'./src/**/*.{js,jsx,ts,tsx,vue}',
+		'./data/**/*.{js,jsx,ts,tsx,vue}'
 	],
 	theme: {
 		extend: {
