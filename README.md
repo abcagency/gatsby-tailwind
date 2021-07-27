@@ -73,6 +73,23 @@ npm run develop
 npm run build
 ```
 
+## Upgrade `package.json` package versions
+
+Install [npm-check-updates](https://www.npmjs.com/package/npm-check-updates):
+
+```sh
+npm i -g npm-check-updates
+```
+
+Upgrade a project's package file:
+
+```sh
+# Inside of project root folder
+
+ncu -u    # Upgrade package.json
+npm i     # Update installed packages and package-lock.json
+```
+
 ## Contributors
 
 <!-- markdownlint-disable -->
