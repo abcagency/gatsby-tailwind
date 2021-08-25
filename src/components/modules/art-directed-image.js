@@ -10,7 +10,6 @@ function ArtDirectedImage({ primaryImage, altImages, alt, className }) {
 	));
 
 	const images = withArtDirection(getImage(primaryImage), alternates);
-	console.log(alternates);
 	return (
 		<GatsbyImage
 			image={images}
