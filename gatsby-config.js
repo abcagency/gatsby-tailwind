@@ -1,10 +1,10 @@
-require(`dotenv`).config({
+require('dotenv').config({
 	path: `.env.${process.env.NODE_ENV}`
 });
 
-const siteConfig = require(`./data/site.json`);
-const resolveConfig = require(`tailwindcss/resolveConfig`);
-const tailwindConfig = require(`./tailwind.config.js`);
+const siteConfig = require('./data/site.json');
+const resolveConfig = require('tailwindcss/resolveConfig');
+const tailwindConfig = require('./tailwind.config.js');
 const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
@@ -16,11 +16,17 @@ module.exports = {
 		image: `${siteConfig.url}/${siteConfig.image}`
 	},
 	plugins: [
-		`gatsby-plugin-eslint`,
-		`gatsby-plugin-remove-trailing-slashes`,
-		`gatsby-plugin-gatsby-cloud`,
+		{
+			resolve: 'gatsby-plugin-eslint'
+		},
+		{
+			resolve: 'gatsby-plugin-remove-trailing-slashes'
+		},
+		{
+			resolve: 'gatsby-plugin-gatsby-cloud'
+		},
 		// {
-		// 	resolve: "gatsby-plugin-google-tagmanager",
+		// 	resolve: 'gatsby-plugin-google-tagmanager',
 		// 	options: {
 		// 		id: `${siteConfig.analytics.gtmId}`,
 
@@ -33,22 +39,24 @@ module.exports = {
 		// 		// should be an object or a function that is executed in the browser
 		// 		//
 		// 		// Defaults to null
-		// 		defaultDataLayer: { platform: "gatsby" }
+		// 		defaultDataLayer: { platform: 'gatsby' }
 
 		// 	}
 		// },
-		`gatsby-plugin-image`,
 		{
-			resolve: `gatsby-source-filesystem`,
+			resolve: 'gatsby-plugin-image'
+		},
+		{
+			resolve: 'gatsby-source-filesystem',
 			options: {
-				name: `data`,
+				name: 'data',
 				path: `${__dirname}/data`
 			}
 		},
 		{
-			resolve: `gatsby-source-filesystem`,
+			resolve: 'gatsby-source-filesystem',
 			options: {
-				name: `images`,
+				name: 'images',
 				path: `${__dirname}/src/images`
 			}
 		},
@@ -66,24 +74,32 @@ module.exports = {
 			options: {
 				name: `${siteConfig.title}`,
 				short_name: `${siteConfig.titleShort}`,
-				start_url: `/`,
+				start_url: '/',
 				background_color: fullConfig.theme.colors.white,
-				theme_color: fullConfig.theme.colors.indigo[`700`],
-				display: `browser`,
+				theme_color: fullConfig.theme.colors.indigo['700'],
+				display: 'browser',
 				icon: `${siteConfig.logo}`
 			}
 		},
 		{
 			resolve: `gatsby-plugin-nprogress`,
 			options: {
-				color: fullConfig.theme.colors.indigo[`700`],
+				color: fullConfig.theme.colors.indigo['700'],
 				showSpinner: false
 			}
 		},
-		`gatsby-plugin-offline`,
-		`gatsby-plugin-postcss`,
-		`gatsby-plugin-react-helmet`,
-		`gatsby-plugin-sharp`,
+		{
+			resolve: 'gatsby-plugin-offline'
+		},
+		{
+			resolve: 'gatsby-plugin-postcss'
+		},
+		{
+			resolve: 'gatsby-plugin-react-helmet'
+		},
+		{
+			resolve: 'gatsby-plugin-sharp'
+		},
 		{
 			resolve: 'gatsby-plugin-robots-txt',
 			options: {
@@ -92,6 +108,8 @@ module.exports = {
 				policy: [{ userAgent: '*', allow: '/' }]
 			}
 		},
-		`gatsby-transformer-sharp`
+		{
+			resolve: 'gatsby-transformer-sharp'
+		}
 	]
 };
