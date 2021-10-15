@@ -7,6 +7,7 @@
 A minimal starter template using Gatsby and Tailwind.
 
 ![Repo Size](https://img.shields.io/github/repo-size/badges/shields.svg?style=for-the-badge)
+![Dependabot Status](https://img.shields.io/badge/Dependabot-Enabled-0366d6?style=for-the-badge&logo=dependabot)
 [![License: 0BSD](https://img.shields.io/badge/license-0BSD-blue.svg?style=for-the-badge)](http://unlicense.org/)
 ![Follow AB&C on Twitter](https://img.shields.io/twitter/follow/abc_Creative.svg?label=Follow+AB%26C&style=for-the-badge&logo=twitter)
 
@@ -70,6 +71,23 @@ npm run develop
 
 ```sh
 npm run build
+```
+
+## Upgrade `package.json` package versions
+
+Install [npm-check-updates](https://www.npmjs.com/package/npm-check-updates):
+
+```sh
+npm i -g npm-check-updates
+```
+
+Upgrade a project's package file:
+
+```sh
+# Inside of project root folder
+
+ncu -u    # Upgrade package.json
+npm i     # Update installed packages and package-lock.json
 ```
 
 ## Contributors

@@ -1,11 +1,11 @@
 {
-	"siteTitle": "Gatsby Starter Tailwind",
-	"siteTitleShort": "Gatsby Tailwind",
-	"siteDescription": "Gatsby starter styled with Tailwind",
+	"title": "Gatsby Starter Tailwind",
+	"titleShort": "Gatsby Tailwind",
+	"description": "Gatsby starter styled with Tailwind",
 	"author": "@abc_Creative",
-	"siteUrl": "https://gatsbytailwind.gatsbyjs.io/",
-	"siteLogo": "src/images/tailwind-icon.png",
-	"siteImage": "",
+	"url": "https://gatsbytailwind.gatsbyjs.io/",
+	"logo": "src/images/tailwind-icon.png",
+	"image": "",
 	"analytics": {
 		"gtmId": "GOOGLE_TAGMANAGER_ID",
 		"gtmAuth": "GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",

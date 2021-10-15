@@ -9,11 +9,11 @@ const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
 	siteMetadata: {
-		title: `${siteConfig.siteTitle}`,
-		description: `${siteConfig.siteDescription}`,
+		title: `${siteConfig.title}`,
+		description: `${siteConfig.description}`,
 		author: `${siteConfig.author}`,
-		siteUrl: `${siteConfig.siteUrl}`,
-		image: `${siteConfig.siteUrl}/${siteConfig.siteImage}`
+		url: `${siteConfig.url}`,
+		image: `${siteConfig.url}/${siteConfig.image}`
 	},
 	plugins: [
 		`gatsby-plugin-eslint`,
@@ -64,13 +64,13 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `${siteConfig.siteTitle}`,
-				short_name: `${siteConfig.siteTitleShort}`,
+				name: `${siteConfig.title}`,
+				short_name: `${siteConfig.titleShort}`,
 				start_url: `/`,
 				background_color: fullConfig.theme.colors.white,
 				theme_color: fullConfig.theme.colors.indigo[`700`],
 				display: `browser`,
-				icon: `${siteConfig.siteLogo}`
+				icon: `${siteConfig.logo}`
 			}
 		},
 		{
@@ -87,8 +87,8 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-robots-txt',
 			options: {
-				host: `${siteConfig.siteUrl}`,
-				sitemap: `${siteConfig.siteUrl}sitemap.xml`,
+				host: `${siteConfig.url}`,
+				sitemap: `${siteConfig.url}sitemap.xml`,
 				policy: [{ userAgent: '*', allow: '/' }]
 			}
 		},
