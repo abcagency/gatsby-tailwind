@@ -70,7 +70,7 @@ module.exports = {
 			}
 		},
 		{
-			resolve: `gatsby-plugin-manifest`,
+			resolve: 'gatsby-plugin-manifest',
 			options: {
 				name: `${siteConfig.title}`,
 				short_name: `${siteConfig.titleShort}`,
@@ -82,7 +82,7 @@ module.exports = {
 			}
 		},
 		{
-			resolve: `gatsby-plugin-nprogress`,
+			resolve: 'gatsby-plugin-nprogress',
 			options: {
 				color: fullConfig.theme.colors.indigo['700'],
 				showSpinner: false
