@@ -22,7 +22,7 @@
 		},
 		"requireConfigFile": false
 	},
-	"plugins": ["graphql", "react-hooks"],
+	"plugins": ["graphql", "react-hooks", "jsx-a11y"],
 	"settings": {
 		"react": {
 			"version": "detect"
@@ -41,7 +41,6 @@
 		"eslint:recommended",
 		// https://github.com/yannickcr/eslint-plugin-react#recommended
 		"plugin:react/recommended",
-		"react-app",
 		// https://github.com/benmosher/eslint-plugin-import
 		"plugin:import/recommended"
 	],

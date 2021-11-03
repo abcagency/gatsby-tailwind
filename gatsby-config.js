@@ -7,6 +7,16 @@ const resolveConfig = require('tailwindcss/resolveConfig');
 const tailwindConfig = require('./tailwind.config.js');
 const fullConfig = resolveConfig(tailwindConfig);
 
+const path = require('path');
+const gatsbyEslintRequiredRules = path.join(
+	process.cwd(),
+	'node_modules',
+	'gatsby',
+	'dist',
+	'utils',
+	'eslint-rules'
+);
+
 module.exports = {
 	siteMetadata: {
 		title: `${siteConfig.title}`,
@@ -17,7 +27,15 @@ module.exports = {
 	},
 	plugins: [
 		{
-			resolve: 'gatsby-plugin-eslint'
+			resolve: 'gatsby-plugin-eslint',
+			options: {
+				// Gatsby required rules directory
+				rulePaths: [gatsbyEslintRequiredRules],
+				// Default settings that may be ommitted or customized
+				stages: ['develop'],
+				extensions: ['js', 'jsx', 'ts', 'tsx'],
+				exclude: ['node_modules', 'bower_components', '.cache', 'public']
+			}
 		},
 		{
 			resolve: 'gatsby-plugin-remove-trailing-slashes'
