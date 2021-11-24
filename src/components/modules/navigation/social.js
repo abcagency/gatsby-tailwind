@@ -6,7 +6,7 @@ import twitter from '@iconify/icons-fa-brands/twitter';
 
 import site from '~/data/site.json';
 
-function NavSocial() {
+const NavSocial = () => {
 	const socials = site.social;
 
 	return (
@@ -38,6 +38,6 @@ function NavSocial() {
 			})}
 		</nav>
 	);
-}
+};
 
 export default NavSocial;
