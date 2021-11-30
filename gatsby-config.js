@@ -23,7 +23,7 @@ module.exports = {
 		description: `${siteConfig.description}`,
 		author: `${siteConfig.author}`,
 		url: `${siteConfig.url}`,
-		image: `${siteConfig.url}/${siteConfig.image}`
+		image: `${siteConfig.url}${siteConfig.image}`
 	},
 	plugins: [
 		{
