@@ -1,8 +1,6 @@
 // See https://tailwindcss.com/docs/configuration for details
 module.exports = {
-	mode: 'jit',
-	darkMode: 'media',
-	purge: [
+	content: [
 		'./src/**/*.{js,jsx,ts,tsx,vue}',
 		'./data/**/*.{js,jsx,ts,tsx,vue}'
 	],
@@ -66,6 +64,7 @@ module.exports = {
 	plugins: [
 		require('@tailwindcss/forms'),
 		require('@tailwindcss/typography'),
-		require('@tailwindcss/aspect-ratio')
+		require('@tailwindcss/aspect-ratio'),
+		require('@tailwindcss/line-clamp')
 	]
 };

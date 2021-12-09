@@ -29,7 +29,7 @@ const Button = ({ as = 'link', to, type, size, variant, children, className, ...
 					${size ? ButtonSize[size] : Defaults.size}
 					${Defaults.variant}
 					${variant ? ButtonVariant[variant] : ''}
-					${className}
+					${className ?? ''}
 				`}
 				{...rest}
 			>
@@ -44,7 +44,7 @@ const Button = ({ as = 'link', to, type, size, variant, children, className, ...
 					${size ? ButtonSize[size] : Defaults.size}
 					${Defaults.variant}
 					${variant ? ButtonVariant[variant] : ''}
-					${className}
+					${className ?? ''}
 				`}
 				{...rest}
 			>
@@ -59,7 +59,7 @@ const Button = ({ as = 'link', to, type, size, variant, children, className, ...
 					${size ? ButtonSize[size] : Defaults.size}
 					${Defaults.variant}
 					${variant ? ButtonVariant[variant] : ''}
-					${className}
+					${className ?? ''}
 				`}
 				{...rest}
 			>
