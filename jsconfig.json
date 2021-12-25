@@ -5,6 +5,7 @@
 			"~/data": ["data"],
 			"~/src": ["src"],
 			"~/components": ["src/components"],
+			"~/hooks": ["src/hooks"],
 			"~/images": ["src/images"]
 		}
 	}
