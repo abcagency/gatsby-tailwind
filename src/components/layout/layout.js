@@ -7,7 +7,7 @@ import SkipLink from '~/components/modules/navigation/skip-link';
 
 const Layout = ({ children }) => {
 	return (
-		<div id="top" className="relative dark:bg-gray-800 dark:text-white">
+		<div id="top" className="relative">
 			<SkipLink />
 			<Header />
 

@@ -29,7 +29,7 @@ const Header = () => {
 			onPin={() => setPosition(PosMap.PINNED)}
 			onUnfix={() => setPosition(PosMap.DEFAULT)}
 		>
-			<header className="bg-gray-200 dark:bg-gray-900 dark:text-white shadow-lg">
+			<header className="bg-gray-200 shadow-lg">
 				<div className={`flex flex-wrap items-center justify-between container mx-auto p-4 ${position === PosMap.PINNED ? 'md:py-4' : 'md:py-6'}`}>
 					<Link
 						to="/"
@@ -38,9 +38,9 @@ const Header = () => {
 						<Icon icon={Firefox}
 							width="1rem"
 							height="1rem"
-							className={`text-indigo-700 dark:text-indigo-200 mr-1 ${position === PosMap.PINNED ? 'w-10 h-10' : 'w-12 h-12'}`}
+							className={`text-indigo-700 mr-1 ${position === PosMap.PINNED ? 'w-10 h-10' : 'w-12 h-12'}`}
 						/>
-						<h1 className={`text-gray-800 dark:text-white font-bold no-underline ${position === PosMap.PINNED ? 'text-lg' : 'text-2xl'}`}>
+						<h1 className={`text-gray-800 font-bold no-underline ${position === PosMap.PINNED ? 'text-lg' : 'text-2xl'}`}>
 							{site.siteMetadata.title}
 						</h1>
 					</Link>
@@ -75,7 +75,7 @@ const Header = () => {
 							}
 						].map(link => (
 							<Link
-								className="block mt-4 text-gray-800 dark:text-indigo-200 no-underline md:inline-block md:mt-0 md:ml-6 border-b-2 border-transparent dark:hover:text-white hover:text-indigo-700 transition-colors"
+								className="block mt-4 text-gray-800 no-underline md:inline-block md:mt-0 md:ml-6 border-b-2 border-transparent hover:text-indigo-700 transition-colors"
 								key={link.title}
 								to={link.route}
 							>

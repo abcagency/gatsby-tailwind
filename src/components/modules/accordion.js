@@ -13,7 +13,7 @@ const Accordion = props => {
 					{({ open }) => (
 						<>
 							<Disclosure.Button
-								className={`flex justify-between w-full p-4 font-bold text-left text-gray-700 dark:text-gray-400 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 hover:bg-gray-200 dark:hover:bg-gray-700 focus:bg-gray-200 dark:focus:bg-gray-700 transition-colors border-b border-white dark:border-gray-800 ${open ? "bg-gray-200 dark:bg-gray-700" : "bg-gray-100 dark:bg-gray-900"}`}
+								className={`flex justify-between w-full p-4 font-bold text-left text-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 hover:bg-gray-200 focus:bg-gray-200 transition-colors border-b border-white ${open ? "bg-gray-200" : "bg-gray-100"}`}
 							>
 								<span>{item.heading}</span>
 								<Icon
