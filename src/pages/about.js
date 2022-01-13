@@ -5,6 +5,7 @@ import Seo from '~/components/util/seo';
 import Layout from '~/components/layout/layout';
 import Figure from '~/components/modules/figure';
 import VideoPlayer from '~/components/modules/video-player';
+import Carousel from '~/components/modules/carousel';
 
 const AboutPage = () => {
 	return (
@@ -28,6 +29,35 @@ const AboutPage = () => {
 						placeholder="blurred"
 					/>
 				</Figure>
+
+				<section className="max-w-3xl mx-auto my-20 px-4">
+					<Carousel name="test">
+						<div>
+							<img src="https://picsum.photos/id/10/1920/1080" alt="" />
+						</div>
+						<div>
+							<img src="https://picsum.photos/id/1000/1920/1080" alt="" />
+						</div>
+						<div>
+							<img src="https://picsum.photos/id/1001/1920/1080" alt="" />
+						</div>
+						<div>
+							<img src="https://picsum.photos/id/10/1920/1080" alt="" />
+						</div>
+						<div>
+							<img src="https://picsum.photos/id/1002/1920/1080" alt="" />
+						</div>
+						<div>
+							<img src="https://picsum.photos/id/1003/1920/1080" alt="" />
+						</div>
+						<div>
+							<img src="https://picsum.photos/id/1015/1920/1080" alt="" />
+						</div>
+						<div>
+							<img src="https://picsum.photos/id/1016/1920/1080" alt="" />
+						</div>
+					</Carousel>
+				</section>
 
 				<section className="prose prose-sm md:prose-lg lg:prose-xl prose-indigo mx-auto">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat ultrices nunc, id tempor erat luctus in. Aliquam euismod convallis dignissim. Mauris ac tristique metus. Praesent id faucibus arcu, cursus pretium nisi. Nam et turpis sed arcu porttitor pretium. Proin varius commodo arcu ut iaculis. Vestibulum congue rhoncus sem iaculis sodales. Donec ipsum lacus, sodales quis sapien ac, dictum facilisis nibh. Morbi eget porttitor ipsum. Phasellus vitae lacus nunc. Maecenas turpis ligula, hendrerit vitae leo auctor, finibus interdum sapien. Nam molestie, augue in ornare imperdiet, turpis mauris ultricies magna, et sagittis nulla dui vitae libero. In dignissim nisi non erat dapibus auctor. Praesent mattis felis eget tellus facilisis, eget pharetra risus malesuada. Sed eleifend tristique leo, non ultrices velit pellentesque at. Praesent lobortis ac odio sed viverra.</p>

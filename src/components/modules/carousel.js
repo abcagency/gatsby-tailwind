@@ -1,71 +1,112 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import Slider from 'react-slick';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { A11y, Keyboard, Navigation, Pagination, Scrollbar } from 'swiper';
 import { Icon } from '@iconify/react';
 import arrowLeftDropCircle from '@iconify/icons-mdi/arrow-left-drop-circle';
 import arrowRightDropCircle from '@iconify/icons-mdi/arrow-right-drop-circle';
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
-const NextButton = props => {
-	const { className, style, onClick } = props;
+const NextButton = () => {
 	return (
 		<button
-			className={`${className} !right-3.5 z-10 opacity-60 hover:!opacity-95 focus:!opacity-95 transition-opacity`}
-			style={{ ...style, display: 'block' }}
-			onClick={onClick}
+			className="next-btn absolute top-1/2 right-3.5 z-10 -translate-y-1/2 opacity-60 hover:opacity-95 focus:opacity-95 transition-opacity"
 		>
-			<Icon icon={arrowRightDropCircle} height="1.5rem" width="1.5rem" color="#fff" />
-			<span className={'sr-only'}>Next slide</span>
+			<Icon
+				icon={arrowRightDropCircle}
+				height="1rem"
+				width="1rem"
+				className="text-white h-6 w-6"
+			/>
+			<span className="sr-only">Next slide</span>
 		</button>
 	);
 };
 
-const PrevButton = props => {
-	const { className, style, onClick } = props;
+const PrevButton = () => {
 	return (
 		<button
-			className={`${className} !left-1.5 z-10 opacity-60 hover:!opacity-95 focus:!opacity-95 transition-opacity`}
-			style={{ ...style, display: 'block' }}
-			onClick={onClick}
+			className="prev-btn absolute top-1/2 left-1.5 z-10 -translate-y-1/2 opacity-60 hover:opacity-95 focus:opacity-95 transition-opacity"
 		>
-			<Icon icon={arrowLeftDropCircle} height="1.5rem" width="1.5rem" color="#fff" />
-			<span className={'sr-only'}>Previous slide</span>
+			<Icon
+				icon={arrowLeftDropCircle}
+				height="1rem"
+				width="1rem"
+				className="text-white h-6 w-6"
+			/>
+			<span className="sr-only">Previous slide</span>
 		</button>
 	);
 };
 
-const Carousel = props => {
-	const { content } = props;
+const Carousel = ({
+	name,
+	children,
+	className,
+	...carouselSettings
+}) => {
+	SwiperCore.use([
+		A11y,
+		Keyboard,
+		Navigation,
+		Pagination,
+		Scrollbar
+	]);
 
 	const settings = {
-		dots: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		nextArrow: <NextButton />,
-		prevArrow: <PrevButton />
+		autoHeight: true,
+		keyboard: {
+			'enabled': true
+		},
+		loop: true,
+		navigation: {
+			nextEl:'.next-btn',
+			prevEl: 'prev-btn'
+		},
+		pagination: {
+			clickable: true
+		},
+		scrollbar: {
+			draggable: true
+		},
+		slidesPerView: 1,
+		breakpoints: {
+			640: {
+				slidesPerView: 2
+			},
+			768: {
+				slidesPerView: 3
+			},
+			1024: {
+				slidesPerView: 4
+			}
+		}
 	};
 
 	return (
-		<>
-			<style>{`.slick-arrow::before { display: none; visibility: hidden; }`}</style>
-			<Slider {...settings}>
-				{content.map(slide => (
-					<div key={slide.id}>
-						{
-							<>
-								<h2 className="text-lg text-center p-2 bg-gray-800 text-white">{slide.title}</h2>
-								<GatsbyImage image={slide.image.gatsbyImageData} alt="" />
-							</>
-						}
-					</div>
-				))}
-			</Slider>
-		</>
+		<Swiper
+			className={className ?? ''}
+			{...settings}
+			{...carouselSettings}
+		>
+			{children.map((slide, i) => (
+				<SwiperSlide key={`${name}-carousel-${i}`}>
+					{slide}
+				</SwiperSlide>
+			))}
+			<PrevButton />
+			<NextButton />
+		</Swiper>
 	);
+};
+
+Carousel.propTypes = {
+	name: PropTypes.node.isRequired,
+	children: PropTypes.node.isRequired
 };
 
 export default Carousel;

@@ -10,6 +10,7 @@ const IndexPage = () => {
 				title=""
 				keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
 			/>
+
 		</Layout>
 	);
 };
