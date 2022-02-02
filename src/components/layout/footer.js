@@ -1,7 +1,6 @@
 import React from 'react';
 import * as Scroll from 'react-scroll';
 import { Icon } from '@iconify/react';
-import arrowCollapseUp from '@iconify/icons-mdi/arrow-collapse-up';
 
 import NavSocial from '~/components/modules/navigation/social';
 import site from '~/data/site.json';
@@ -28,7 +27,7 @@ const Footer = () => {
 						duration={250}
 					>
 						<span className="sr-only">To the top!</span>
-						<Icon icon={arrowCollapseUp} height="1rem" width="1rem" />
+						<Icon icon="mdi:arrow-collapse-up" className="w-4 h-4" />
 					</ScrollLink>
 				</div>
 			</div>

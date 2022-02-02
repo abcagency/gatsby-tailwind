@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import Headroom from 'react-headroom';
 import { Icon } from '@iconify/react';
-import Firefox from '@iconify/icons-mdi/firefox';
 
 const Header = () => {
 	const [isExpanded, toggleExpansion] = useState(false);
@@ -35,9 +34,8 @@ const Header = () => {
 						to="/"
 						className="flex items-center"
 					>
-						<Icon icon={Firefox}
-							width="1rem"
-							height="1rem"
+						<Icon
+							icon="mdi:firefox"
 							className={`text-indigo-700 mr-1 ${position === PosMap.PINNED ? 'w-10 h-10' : 'w-12 h-12'}`}
 						/>
 						<h1 className={`text-gray-800 font-bold no-underline ${position === PosMap.PINNED ? 'text-lg' : 'text-2xl'}`}>

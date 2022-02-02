@@ -1,8 +1,5 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import facebook from '@iconify/icons-fa-brands/facebook';
-import instagram from '@iconify/icons-fa-brands/instagram';
-import twitter from '@iconify/icons-fa-brands/twitter';
 
 import site from '~/data/site.json';
 
@@ -15,11 +12,11 @@ const NavSocial = () => {
 				function Icons(param) {
 					switch(param) {
 					case 'facebook':
-						return <Icon icon={facebook} height="1rem" width="1rem" />;
+						return <Icon icon="fa-brands:facebook-f" className="w-4 h-4" />;
 					case 'instagram':
-						return <Icon icon={instagram} height="1rem" width="1rem" />;
+						return <Icon icon="fa-brands:instagram" className="w-4 h-4" />;
 					case 'twitter':
-						return <Icon icon={twitter} height="1rem" width="1rem" />;
+						return <Icon icon="fa-brands:twitter" className="w-4 h-4" />;
 					default:
 						return '';
 					}

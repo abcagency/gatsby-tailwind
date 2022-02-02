@@ -3,8 +3,6 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { A11y, Keyboard, Navigation, Pagination, Scrollbar } from 'swiper';
 import { Icon } from '@iconify/react';
-import arrowLeftDropCircle from '@iconify/icons-mdi/arrow-left-drop-circle';
-import arrowRightDropCircle from '@iconify/icons-mdi/arrow-right-drop-circle';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -17,9 +15,7 @@ const NextButton = () => {
 			className="next-btn absolute top-1/2 right-3.5 z-10 -translate-y-1/2 opacity-60 hover:opacity-95 focus:opacity-95 transition-opacity"
 		>
 			<Icon
-				icon={arrowRightDropCircle}
-				height="1rem"
-				width="1rem"
+				icon="mdi:arrow-right-drop-circle"
 				className="text-white h-6 w-6"
 			/>
 			<span className="sr-only">Next slide</span>
@@ -33,9 +29,7 @@ const PrevButton = () => {
 			className="prev-btn absolute top-1/2 left-1.5 z-10 -translate-y-1/2 opacity-60 hover:opacity-95 focus:opacity-95 transition-opacity"
 		>
 			<Icon
-				icon={arrowLeftDropCircle}
-				height="1rem"
-				width="1rem"
+				icon="mdi:arrow-left-drop-circle"
 				className="text-white h-6 w-6"
 			/>
 			<span className="sr-only">Previous slide</span>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Disclosure, Transition } from '@headlessui/react';
 import { Icon } from '@iconify/react';
-import chevronDown from '@iconify/icons-mdi/chevron-down';
 
 const Accordion = props => {
 	const { content } = props;
@@ -17,10 +16,8 @@ const Accordion = props => {
 							>
 								<span>{item.heading}</span>
 								<Icon
-									icon={chevronDown}
-									className={`!transform !translate-y-1 ${open ? "!rotate-180" : ""}`}
-									height="1rem"
-									width="1rem"
+									icon="mdi:chevron-down"
+									className={`w-4 h-4 !transform !translate-y-1 ${open ? "!rotate-180" : ""}`}
 									aria-hidden="true"
 								/>
 							</Disclosure.Button>
