@@ -74,7 +74,7 @@ module.exports = {
 			options: {
 				name: 'images',
 				path: `${__dirname}/src/images`,
-				ignore: [`${__dirname}/src/images/inline/**/*`]
+				ignore: [`${__dirname}/src/images/**/*.svg`]
 			}
 		},
 		{
