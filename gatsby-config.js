@@ -18,6 +18,7 @@ const gatsbyEslintRequiredRules = path.join(
 );
 
 module.exports = {
+	trailingSlash: 'never',
 	siteMetadata: {
 		title: `${siteConfig.title}`,
 		description: `${siteConfig.description}`,
@@ -36,9 +37,6 @@ module.exports = {
 				extensions: ['js', 'jsx', 'ts', 'tsx'],
 				exclude: ['node_modules', 'bower_components', '.cache', 'public']
 			}
-		},
-		{
-			resolve: 'gatsby-plugin-remove-trailing-slashes'
 		},
 		{
 			resolve: 'gatsby-plugin-gatsby-cloud'
@@ -75,7 +73,8 @@ module.exports = {
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				name: 'images',
-				path: `${__dirname}/src/images`
+				path: `${__dirname}/src/images`,
+				ignore: [`${__dirname}/src/images/inline/**/*`]
 			}
 		},
 		{
