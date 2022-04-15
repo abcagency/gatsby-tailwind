@@ -24,7 +24,7 @@ const NavSocial = () => {
 				return (
 					<a
 						key={`${index}`}
-						className=" hover:text-gray-900 transition-colors px-4 py-5"
+						className="px-4 py-5 transition-colors hover:text-gray-900 focus:text-gray-900"
 						href={data.url}
 					>
 						<span className="sr-only">{data.label}</span>
