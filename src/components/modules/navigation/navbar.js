@@ -20,7 +20,7 @@ const Navbar = ({ position }) => {
 	return (
 		<div
 			className={`
-				flex flex-wrap items-center justify-between container mx-auto p-4
+				flex flex-wrap items-center justify-between container p-4
 				${position === 'PINNED' ? 'md:py-4' : 'md:py-6'}
 			`}
 		>

@@ -15,7 +15,7 @@ const ContactPage = () => {
 				<h1 className="text-4xl font-bold mb-3">Contact</h1>
 			</div>
 
-			<section className="container px-4 mx-auto">
+			<section className="container px-4">
 				<ContactForm />
 			</section>
 		</Layout>

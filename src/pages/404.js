@@ -10,7 +10,7 @@ const NotFoundPage = () => {
 	return (
 		<Layout>
 			<Seo title="404: Not found" />
-			<div className="container mx-auto">
+			<div className="container">
 				<img
 					alt="Ghost getting abducted by aliens"
 					className="block mx-auto w-1/2"
