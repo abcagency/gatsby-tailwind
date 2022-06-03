@@ -82,6 +82,9 @@
 				"allowNamespace": true
 			}
 		],
+		// Gatsby's required rules https://www.gatsbyjs.com/plugins/gatsby-plugin-eslint/
+		"no-anonymous-exports-page-templates": "warn",
+    	"limited-exports-page-templates": "warn",
 		// https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/master/docs/rules
 		"jsx-a11y/accessible-emoji": 1,
 		"jsx-a11y/alt-text": 1,
