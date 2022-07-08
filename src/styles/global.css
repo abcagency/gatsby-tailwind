@@ -7,3 +7,9 @@
 		@apply text-450;
 	}
 }
+
+@layer components {
+	.track * {
+		@apply pointer-events-none;
+	}
+}
