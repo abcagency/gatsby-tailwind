@@ -2,8 +2,20 @@ import React from 'react';
 import { Disclosure, Transition } from '@headlessui/react';
 import { Icon } from '@iconify/react';
 
+import trackEvent from '~/hooks/useEventTracker';
+
 const Accordion = props => {
 	const { content } = props;
+
+	const OpenStateTracker = ({ open, action, label }) => {
+		useEffect(() => {
+			if (open) {
+				trackEvent('Engagement', action, label);
+			}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+		}, [open]);
+		return null;
+	};
 
 	return (
 		<>
@@ -11,6 +23,7 @@ const Accordion = props => {
 				<Disclosure key={item.id}>
 					{({ open }) => (
 						<>
+							<OpenStateTracker open={open} action="Open Accordion" label={item.heading} />
 							<Disclosure.Button
 								className={`flex justify-between w-full p-4 font-bold text-left text-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 hover:bg-gray-200 focus:bg-gray-200 transition-colors border-b border-white ${open ? "bg-gray-200" : "bg-gray-100"}`}
 							>
