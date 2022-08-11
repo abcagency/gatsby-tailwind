@@ -6,10 +6,13 @@ import Seo from '~/components/util/seo';
 import Layout from '~/components/layout/layout';
 import abductionIllustration from '~/images/abduction-illustration.svg';
 
-const NotFoundPage = () => {
+const NotFoundPage = ({ location }) => {
 	return (
-		<Layout>
-			<Seo title="404: Not found" />
+		<Layout location={location}>
+			<Seo
+				location={location}
+				title="404: Not found"
+			/>
 			<div className="container">
 				<img
 					alt="Ghost getting abducted by aliens"

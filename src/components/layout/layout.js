@@ -5,11 +5,11 @@ import Header from '~/components/layout/header';
 import Footer from '~/components/layout/footer';
 import SkipLink from '~/components/modules/navigation/skip-link';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
 	return (
 		<div id="top" className="relative">
 			<SkipLink />
-			<Header />
+			<Header location={location} />
 
 			<main id="start-of-content">
 				{children}

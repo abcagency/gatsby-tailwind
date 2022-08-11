@@ -3,7 +3,7 @@ import Headroom from 'react-headroom';
 
 import Navbar from '~/components/modules/navigation/navbar';
 
-const Header = () => {
+const Header = ({ location }) => {
 	const [position, setPosition] = useState(false);
 
 	const PosMap = {

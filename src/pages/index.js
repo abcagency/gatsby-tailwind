@@ -7,12 +7,13 @@ import Section from '~/components/modules/section';
 
 import useSectionTracker from '~/hooks/useSectionTracker';
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
 	const setCurrentSection = useSectionTracker();
 
 	return (
-		<Layout>
+		<Layout location={location}>
 			<Seo
+				location={location}
 				title=""
 				keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
 			/>

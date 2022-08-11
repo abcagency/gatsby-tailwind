@@ -3,7 +3,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 
-const SEO = ({ description, lang, keywords, title }) => {
+import site from '~/data/site.json';
+
+const SEO = ({ location, description, lang, keywords, title }) => {
 	const { site } = useStaticQuery(graphql`
 		query DefaultSEOQuery {
 			site {
@@ -47,6 +49,19 @@ const SEO = ({ description, lang, keywords, title }) => {
 			<meta name="twitter:creator" content={site.siteMetadata?.author} />
 			<meta name="twitter:title" content={pageTitle} />
 			<meta name="twitter:description" content={metaDescription} />
+			<script type="application/ld+json">
+				{`
+						{
+							"@context": "https://schema.org",
+							"@type": "WebPage",
+							"url": "${process.env.HOST}${location?.pathname}",
+							"legalName": "${site.title}",
+							"name": "${pageTitle}",
+							"about": "${metaDescription}",
+							"brand": "${site.title}"
+						}
+				`}
+			</script>
 		</Helmet>
 	);
 };
