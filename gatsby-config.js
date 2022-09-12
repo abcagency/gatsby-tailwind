@@ -24,7 +24,7 @@ module.exports = {
 		description: `${siteConfig.description}`,
 		author: `${siteConfig.author}`,
 		url: `${siteConfig.url}`,
-		image: `${siteConfig.url}${siteConfig.image}`
+		image: `https://${process.env.HOST}/${siteConfig.image}`
 	},
 	plugins: [
 		{
@@ -107,9 +107,6 @@ module.exports = {
 		},
 		{
 			resolve: 'gatsby-plugin-postcss'
-		},
-		{
-			resolve: 'gatsby-plugin-react-helmet'
 		},
 		{
 			resolve: 'gatsby-plugin-sharp'

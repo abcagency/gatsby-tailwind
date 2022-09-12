@@ -1,20 +1,25 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import Seo from '~/components/util/seo';
+import PageHead from '~/components/util/page-head';
 import Layout from '~/components/layout/layout';
 import Figure from '~/components/modules/figure';
 import VideoPlayer from '~/components/modules/video-player';
 import Carousel from '~/components/modules/carousel';
 
+export function Head({ location }) {
+	return (
+		<PageHead
+			location={location}
+			title="About"
+			keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+		/>
+	);
+}
+
 const AboutPage = () => {
 	return (
 		<Layout>
-			<Seo
-				keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-				title="About"
-			/>
-
 			<div className="bg-gray-100 py-6 px-4 mb-6 text-center">
 				<h1 className="text-4xl font-bold mb-3">About</h1>
 			</div>

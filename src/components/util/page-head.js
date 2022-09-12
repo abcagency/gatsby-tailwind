@@ -1,13 +1,15 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 
-import site from '~/data/site.json';
-
-const SEO = ({ location, description, lang, keywords, title }) => {
+const PageHead = ({
+	location,
+	description,
+	keywords,
+	title
+}) => {
 	const { site } = useStaticQuery(graphql`
-		query DefaultSEOQuery {
+		query DefaultPageHeadQuery {
 			site {
 				siteMetadata {
 					title
@@ -24,13 +26,8 @@ const SEO = ({ location, description, lang, keywords, title }) => {
 	const metaDescription = description || site.siteMetadata?.description;
 
 	return (
-		<Helmet
-			htmlAttributes={{
-				lang
-			}}
-			title={title || defaultTitle}
-			titleTemplate={title ? `%s | ${defaultTitle}` : null}
-		>
+		<>
+			<title>{title ? `${title} | ${defaultTitle}` : defaultTitle}</title>
 			<meta name="description" content={metaDescription} />
 			{keywords.length > 0
 				? (
@@ -54,30 +51,28 @@ const SEO = ({ location, description, lang, keywords, title }) => {
 						{
 							"@context": "https://schema.org",
 							"@type": "WebPage",
-							"url": "${process.env.HOST}${location?.pathname}",
-							"legalName": "${site.title}",
+							"url": "https://${process.env.HOST}${location?.pathname}",
+							"legalName": "${defaultTitle}",
 							"name": "${pageTitle}",
 							"about": "${metaDescription}",
-							"brand": "${site.title}"
+							"brand": "${defaultTitle}"
 						}
 				`}
 			</script>
-		</Helmet>
+		</>
 	);
 };
 
-SEO.defaultProps = {
-	lang: 'en',
+PageHead.defaultProps = {
 	keywords: [],
 	meta: []
 };
 
-SEO.propTypes = {
+PageHead.propTypes = {
 	description: PropTypes.string,
 	keywords: PropTypes.arrayOf(PropTypes.string),
-	lang: PropTypes.string,
 	meta: PropTypes.array,
 	title: PropTypes.string.isRequired
 };
 
-export default SEO;
+export default PageHead;

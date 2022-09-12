@@ -1,23 +1,27 @@
 import React from 'react';
 
 import Layout from '~/components/layout/layout';
-import Seo from '~/components/util/seo';
+import PageHead from '~/components/util/page-head';
 import PageNav from '~/components/modules/navigation/page';
 import Section from '~/components/modules/section';
 
 import useSectionTracker from '~/hooks/useSectionTracker';
+
+export function Head({ location }) {
+	return (
+		<PageHead
+			location={location}
+			title=""
+			keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+		/>
+	);
+}
 
 const IndexPage = ({ location }) => {
 	const setCurrentSection = useSectionTracker();
 
 	return (
 		<Layout location={location}>
-			<Seo
-				location={location}
-				title=""
-				keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-			/>
-
 			<PageNav
 				anchors={[
 					{

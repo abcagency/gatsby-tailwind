@@ -2,17 +2,22 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { Icon } from '@iconify/react';
 
-import Seo from '~/components/util/seo';
+import PageHead from '~/components/util/page-head';
 import Layout from '~/components/layout/layout';
 import abductionIllustration from '~/images/abduction-illustration.svg';
+
+export function Head({ location }) {
+	return (
+		<PageHead
+			location={location}
+			title="404: Not found"
+		/>
+	);
+}
 
 const NotFoundPage = ({ location }) => {
 	return (
 		<Layout location={location}>
-			<Seo
-				location={location}
-				title="404: Not found"
-			/>
 			<div className="container">
 				<img
 					alt="Ghost getting abducted by aliens"
