@@ -90,7 +90,6 @@ const Button = forwardRef((props, ref) => {
 			<a
 				href={to}
 				target="_blank"
-				rel="nofollow noreferrer"
 				className={`!no-underline
 					${size ? ButtonSize[size] : Defaults.size}
 					${Defaults.variant}

@@ -12,7 +12,7 @@ const Footer = () => {
 		<footer className="px-4 py-1 mt-4 bg-gray-100 text-gray-700 text-center text-xs">
 			<div className="container flex justify-between items-center">
 				<p className="m-0">
-					© {new Date().getFullYear()}. <a href={`${site.copyright.url}`} target="_blank" rel="noreferrer noopener">{site.copyright.name}</a>
+					© {new Date().getFullYear()}. <a href={`${site.copyright.url}`} target="_blank">{site.copyright.name}</a>
 				</p>
 
 				<div className="flex">

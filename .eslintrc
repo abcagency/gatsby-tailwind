@@ -82,6 +82,7 @@
 				"allowNamespace": true
 			}
 		],
+		"react/jsx-no-target-blank": 0,
 		// Gatsby's required rules https://www.gatsbyjs.com/plugins/gatsby-plugin-eslint/
 		"no-anonymous-exports-page-templates": "warn",
     	"limited-exports-page-templates": "warn",
