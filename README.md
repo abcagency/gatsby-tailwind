@@ -62,6 +62,12 @@ Run the project in development mode:
 npm run develop
 ```
 
+📳 If you'd like to test the project on another device on your network, run:
+
+```sh
+npm run develop:local
+```
+
 ## Format and lint
 
 - `npm run analyze` - See what ESLint can fix
