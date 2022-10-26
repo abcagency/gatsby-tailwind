@@ -1,4 +1,5 @@
-const path = require('path');
+import path from 'path';
+import { CreateWebpackConfigArgs } from 'gatsby';
 
 // BROWSERSTACK:
 // Hostname restrictions in local server configuration
@@ -6,7 +7,7 @@ const path = require('path');
 
 // Absolute imports
 // https://www.gatsbyjs.com/docs/how-to/custom-configuration/add-custom-webpack-config/#absolute-imports
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ actions }: CreateWebpackConfigArgs) => {
 	actions.setWebpackConfig({
 		devServer: {
 			disableHostCheck: true

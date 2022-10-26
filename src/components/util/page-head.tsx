@@ -1,13 +1,19 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
+
+export type PageHeadProps = {
+	location: Location;
+	description: string;
+	keywords: Array<string>;
+	title: Required<string>;
+};
 
 const PageHead = ({
 	location,
 	description,
 	keywords,
 	title
-}) => {
+}: PageHeadProps) => {
 	const { site } = useStaticQuery(graphql`
 		query DefaultPageHeadQuery {
 			site {
@@ -15,7 +21,7 @@ const PageHead = ({
 					title
 					description
 					author
-					image
+					ogImage
 				}
 			}
 		}
@@ -37,8 +43,8 @@ const PageHead = ({
 
 			<meta property="og:title" content={pageTitle} />
 			<meta property="og:description" content={metaDescription} />
-			{site.siteMetadata?.image &&
-				<meta property="og:image" content={site.siteMetadata?.image} />
+			{site.siteMetadata?.ogImage &&
+				<meta property="og:image" content={site.siteMetadata?.ogImage} />
 			}
 			<meta property="og:type" content="website" />
 
@@ -66,13 +72,6 @@ const PageHead = ({
 PageHead.defaultProps = {
 	keywords: [],
 	meta: []
-};
-
-PageHead.propTypes = {
-	description: PropTypes.string,
-	keywords: PropTypes.arrayOf(PropTypes.string),
-	meta: PropTypes.array,
-	title: PropTypes.string.isRequired
 };
 
 export default PageHead;

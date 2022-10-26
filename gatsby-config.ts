@@ -1,13 +1,16 @@
-require('dotenv').config({
+import dotenv from 'dotenv';
+
+dotenv.config({
 	path: `.env.${process.env.NODE_ENV}`
 });
 
-const siteConfig = require('./data/site.json');
-const resolveConfig = require('tailwindcss/resolveConfig');
-const tailwindConfig = require('./tailwind.config.js');
+import path from 'path';
+import siteConfig from './data/site.json';
+import resolveConfig from 'tailwindcss/resolveConfig';
+import tailwindConfig from './tailwind.config.js';
+
 const fullConfig = resolveConfig(tailwindConfig);
 
-const path = require('path');
 const gatsbyEslintRequiredRules = path.join(
 	process.cwd(),
 	'node_modules',
@@ -18,13 +21,14 @@ const gatsbyEslintRequiredRules = path.join(
 );
 
 module.exports = {
+	graphqlTypegen: true,
 	trailingSlash: 'never',
 	siteMetadata: {
 		title: `${siteConfig.title}`,
 		description: `${siteConfig.description}`,
 		author: `${siteConfig.author}`,
 		url: `${siteConfig.url}`,
-		image: `https://${process.env.HOST}/${siteConfig.image}`
+		ogImage: `https://${process.env.HOST}/${siteConfig.ogImage}`
 	},
 	plugins: [
 		{

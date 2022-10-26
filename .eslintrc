@@ -8,47 +8,59 @@
 		"browser": true,
 		"node": true
 	},
-	// https://github.com/babel/babel-eslint
-	// "parser": "babel-eslint",
-	"parser": "@babel/eslint-parser",
+	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
+		"parserOptions": {
+			"project": "./tsconfig.json"
+		},
 		"ecmaVersion": 2020,
 		"sourceType": "module",
 		"ecmaFeatures": {
 			"jsx": true
 		},
-		"babelOptions": {
-			"presets": ["babel-preset-gatsby"]
-		},
 		"requireConfigFile": false
 	},
-	"plugins": ["graphql", "react-hooks", "jsx-a11y"],
+	"plugins": [
+		"import",
+		"@typescript-eslint",
+		"graphql",
+		"react",
+		"react-hooks",
+		"jsx-a11y"
+	],
 	"settings": {
 		"react": {
 			"version": "detect"
 		},
 		"import/resolver": {
-			"alias": [
-				["~/data", "./data"],
-				["~/src", "./src"],
-				["~/components", "./src/components"],
-				["~/hooks", "./src/hooks"],
-				["~/images", "./src/images"]
-			]
+			"alias": {
+				"map": [
+					["~/data", "./data"],
+					["~/src", "./src"],
+					["~/components", "./src/components"],
+					["~/hooks", "./src/hooks"],
+					["~/images", "./src/images"]
+				],
+				"extensions": [
+					".ts",
+					".tsx",
+					".js",
+					".jsx",
+					".json"
+				]
+			}
 		}
 	},
 	"extends": [
-		// https://eslint.org/docs/rules/
 		"eslint:recommended",
-		// https://github.com/yannickcr/eslint-plugin-react#recommended
 		"plugin:react/recommended",
-		// https://github.com/benmosher/eslint-plugin-import
-		"plugin:import/recommended"
+		"plugin:import/recommended",
+		"plugin:@typescript-eslint/recommended"
 	],
 	"rules": {
 		// https://eslint.org/docs/2.0.0/rules/strict
 		"strict": 0,
-		"no-unused-vars": "warn",
+		// "no-unused-vars": "warn",
 		"semi": [
 			"error",
 			"always"
@@ -176,6 +188,17 @@
 		"jsx-a11y/scope": 1,
 		"jsx-a11y/tabindex-no-positive": 1,
 		"react-hooks/rules-of-hooks": 2,
-		"react-hooks/exhaustive-deps": 1
-	}
+		"react-hooks/exhaustive-deps": 1,
+		"@typescript-eslint/explicit-function-return-type": 0,
+		"@typescript-eslint/no-unused-vars": 1
+	},
+	"overrides": [
+		// Override some TypeScript rules just for .js files
+		{
+		  "files": ["*.js"],
+		  "rules": {
+			 "@typescript-eslint/no-var-requires": 0
+		  }
+		}
+	 ]
 }

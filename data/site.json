@@ -5,7 +5,7 @@
 	"author": "@abc_Creative",
 	"url": "https://gatsbytailwind.gatsbyjs.io/",
 	"logo": "src/images/tailwind-icon.png",
-	"image": "",
+	"ogImage": "og.png",
 	"analytics": {
 		"gtmId": "GOOGLE_TAGMANAGER_ID",
 		"gtmAuth": "GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",

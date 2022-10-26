@@ -6,7 +6,7 @@ import NavSocial from '~/components/modules/navigation/social';
 import site from '~/data/site.json';
 
 const Footer = () => {
-	let ScrollLink = Scroll.Link;
+	const ScrollLink = Scroll.Link;
 
 	return (
 		<footer className="px-4 py-1 mt-4 bg-gray-100 text-gray-700 text-center text-xs">

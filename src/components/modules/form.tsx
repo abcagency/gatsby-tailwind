@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import Slider from 'react-slider';
 import * as Yup from 'yup';
 
-let validationSchema = Yup.object().shape({
+const validationSchema = Yup.object().shape({
 	name: Yup.string()
 		.required("is required"),
 	email: Yup.string()

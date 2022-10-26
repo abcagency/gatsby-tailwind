@@ -4,7 +4,11 @@ import { Icon } from '@iconify/react';
 
 import routes from '~/data/routes.json';
 
-const Navbar = ({ position }) => {
+export type NavbarProps = {
+	position: string;
+};
+
+const Navbar = ({ position }: NavbarProps) => {
 	const [isExpanded, toggleExpansion] = useState(false);
 
 	const { site } = useStaticQuery(graphql`

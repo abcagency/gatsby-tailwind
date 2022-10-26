@@ -1,7 +1,9 @@
+/** @type {import('tailwindcss').Config} */
 // See https://tailwindcss.com/docs/configuration for details
 module.exports = {
 	content: [
-		'./src/**/*.{js,jsx,ts,tsx,vue}',
+		'./src/components/**/*.{js,jsx,ts,tsx,vue}',
+		'./src/pages/**/*.{js,jsx,ts,tsx,vue}',
 		'./data/**/*.{js,jsx,ts,tsx,vue}'
 	],
 	theme: {

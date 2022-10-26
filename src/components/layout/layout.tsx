@@ -1,11 +1,18 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import Header from '~/components/layout/header';
 import Footer from '~/components/layout/footer';
 import SkipLink from '~/components/modules/navigation/skip-link';
 
-const Layout = ({ children, location }) => {
+export type LayoutProps = {
+	location: Location;
+	children: Required<ReactNode>;
+};
+
+const Layout = ({
+	children,
+	location
+}: LayoutProps) => {
 	return (
 		<div id="top" className="relative">
 			<SkipLink />
@@ -18,10 +25,6 @@ const Layout = ({ children, location }) => {
 			<Footer />
 		</div>
 	);
-};
-
-Layout.propTypes = {
-	children: PropTypes.node.isRequired
 };
 
 export default Layout;

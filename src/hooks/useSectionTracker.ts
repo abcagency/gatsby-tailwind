@@ -10,7 +10,7 @@ let first = true;
 const useSectionTracker = () => {
 	const [lastSection, setLastSection] = useState('');
 	const [isAtTop, setIsAtTop] = useState(true);
-	const sections = new Array();
+	const sections = [];
 	let timeout = null;
 
 	// If we're near the top, clear the hash, set state, clear timeout
