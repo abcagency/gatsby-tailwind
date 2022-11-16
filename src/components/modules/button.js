@@ -1,7 +1,8 @@
 import React, { forwardRef } from 'react';
 import { Link } from 'gatsby';
-import { Icon } from '@iconify/react';
 import * as Scroll from 'react-scroll';
+
+import Icon from '~/components/modules/icon';
 
 const IconPlacement = Object.freeze({
 	BEFORE: 'before',
@@ -49,11 +50,9 @@ const Button = forwardRef((props, ref) => {
 	const linkVariant = variant === 'link';
 
 	const ButtonIcon = <Icon
-		icon={icon}
-		className={`
-			${linkVariant ? 'w-3.5 h-3.5' : 'w-4 h-4'}
-			${iconClassName ?? ''}
-		`}
+		iconImage={icon}
+		sizeClasses={linkVariant ? 'w-3.5 h-3.5' : 'w-4 h-4'}
+		className={iconClassName ?? ''}
 	/>;
 
 	const ButtonBody =

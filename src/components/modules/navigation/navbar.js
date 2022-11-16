@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
-import { Icon } from '@iconify/react';
+
+import Icon from '~/components/modules/icon';
 
 import routes from '~/data/routes.json';
 
@@ -29,11 +30,9 @@ const Navbar = ({ position }) => {
 				className="flex items-center"
 			>
 				<Icon
-					icon="mdi:firefox"
-					className={`
-						text-indigo-700 mr-1
-						${position === 'PINNED' ? 'w-10 h-10' : 'w-12 h-12'}
-					`}
+					iconImage="mdi:firefox"
+					sizeClasses={position === 'PINNED' ? 'w-10 h-10' : 'w-12 h-12'}
+					className="text-indigo-700 mr-1"
 				/>
 				<h1
 					className={`

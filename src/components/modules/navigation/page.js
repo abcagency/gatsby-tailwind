@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import * as Scroll from 'react-scroll';
-import { Icon } from '@iconify/react';
+
+import Icon from '~/components/modules/icon';
 
 import { globalContext } from '~/components/util/provider';
 
@@ -38,8 +39,8 @@ const NavPage = ({ anchors }) => {
 			>
 				<span className="sr-only">To the top!</span>
 				<Icon
-					icon="mdi:arrow-collapse-up"
-					className="w-4 h-4"
+					iconImage="mdi:arrow-collapse-up"
+					sizeClasses="w-4 h-4"
 				/>
 			</ScrollLink>
 			{anchors.map(anchor => (

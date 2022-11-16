@@ -1,8 +1,9 @@
 import React from 'react';
 import * as Scroll from 'react-scroll';
-import { Icon } from '@iconify/react';
 
 import NavSocial from '~/components/modules/navigation/social';
+import Icon from '~/components/modules/icon';
+
 import site from '~/data/site.json';
 
 const Footer = () => {
@@ -27,7 +28,10 @@ const Footer = () => {
 						duration={250}
 					>
 						<span className="sr-only">To the top!</span>
-						<Icon icon="mdi:arrow-collapse-up" className="w-4 h-4" />
+						<Icon
+							iconImage="mdi:arrow-collapse-up"
+							sizeClasses="w-4 h-4"
+						/>
 					</ScrollLink>
 				</div>
 			</div>

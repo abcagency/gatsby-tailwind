@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Icon } from '@iconify/react';
 
 import PageHead from '~/components/util/page-head';
 import Layout from '~/components/layout/layout';
+import Icon from '~/components/modules/icon';
+
 import abductionIllustration from '~/images/abduction-illustration.svg';
 
 export function Head({ location }) {
@@ -34,7 +35,11 @@ const NotFoundPage = ({ location }) => {
 						className="inline-block mt-4 px-4 py-2 rounded-md bg-white text-sm font-bold text-indigo-700 no-underline hover:bg-indigo-700 hover:text-white transition-colors"
 						to="/"
 					>
-						<Icon icon="mdi:home" className="inline-block w-5 h-5 -mt-0.5 mr-1" />
+						<Icon
+							iconImage="mdi:home"
+							sizeClasses="w-5 h-5"
+							className="inline-block align-middle -mt-0.5 mr-1"
+						/>
 						Head home
 					</Link>
 				</div>
