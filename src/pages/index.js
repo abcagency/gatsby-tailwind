@@ -26,15 +26,15 @@ const IndexPage = ({ location }) => {
 				anchors={[
 					{
 						id: 'intro',
-						name: 'Intro'
+						name: 'being smoke-free iss'
 					},
 					{
 						id: 'foo',
-						name: 'Foo'
+						name: 'being smoke-free isa'
 					},
 					{
 						id: 'bar',
-						name: 'Bar'
+						name: 'being smoke-free is'
 					}
 				]}
 			/>

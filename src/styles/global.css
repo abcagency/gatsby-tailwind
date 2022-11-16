@@ -12,4 +12,13 @@
 	.track * {
 		@apply pointer-events-none;
 	}
+
+	#page-nav {
+		-webkit-overflow-scrolling: touch;
+  		-ms-overflow-style: -ms-autohiding-scrollbar;
+	}
+
+	#page-nav::-webkit-scrollbar {
+		display: none;
+	}
 }
