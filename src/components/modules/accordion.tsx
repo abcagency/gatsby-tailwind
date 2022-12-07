@@ -4,8 +4,12 @@ import { Icon } from '@iconify/react';
 
 import trackEvent from '~/hooks/useEventTracker';
 
-const Accordion = props => {
-	const { content } = props;
+export interface Props {
+	items: object[];
+}
+
+const Accordion = (props: Props) => {
+	const { items } = props;
 
 	const OpenStateTracker = ({ open, action, label }) => {
 		useEffect(() => {
@@ -19,15 +23,15 @@ const Accordion = props => {
 
 	return (
 		<>
-			{content.map(item => (
+			{items.map(item => (
 				<Disclosure key={item.id}>
 					{({ open }) => (
 						<>
-							<OpenStateTracker open={open} action="Open Accordion" label={item.heading} />
+							<OpenStateTracker open={open} action="Open Accordion" label={item.title} />
 							<Disclosure.Button
 								className={`flex justify-between w-full p-4 font-bold text-left text-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 hover:bg-gray-200 focus:bg-gray-200 transition-colors border-b border-white ${open ? "bg-gray-200" : "bg-gray-100"}`}
 							>
-								<span>{item.heading}</span>
+								<span>{item.title}</span>
 								<Icon
 									icon="mdi:chevron-down"
 									className={`w-4 h-4 !transform !translate-y-1 ${open ? "!rotate-180" : ""}`}
@@ -47,7 +51,7 @@ const Accordion = props => {
 									static
 									className="p-4"
 								>
-									<div dangerouslySetInnerHTML={{ __html: item.content }} />
+									{item.content}
 								</Disclosure.Panel>
 							</Transition>
 						</>
