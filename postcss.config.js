@@ -1,7 +1,7 @@
-const tailwind = require(`tailwindcss`);
-const autoprefixer = require(`autoprefixer`);
+const tailwind = require('tailwindcss');
+const autoprefixer = require('autoprefixer');
 const presetEnv = require('postcss-preset-env');
-const tailwindConfig = require("./tailwind.config.js");
+const tailwindConfig = require('./tailwind.config.js');
 
 module.exports = () => ({
 	plugins: [
