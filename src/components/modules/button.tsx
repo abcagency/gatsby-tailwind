@@ -1,7 +1,8 @@
 import React, { forwardRef } from 'react';
 import { Link } from 'gatsby';
-import { Icon } from '@iconify/react';
 import * as Scroll from 'react-scroll';
+
+import Icon from '~/components/modules/icon';
 
 const IconPlacement = Object.freeze({
 	BEFORE: 'before',
@@ -25,7 +26,7 @@ const Button = forwardRef((props, ref) => {
 		...rest
 	} = props;
 
-	let ScrollLink = Scroll.Link;
+	const ScrollLink = Scroll.Link;
 
 	const Defaults = {
 		size: 'py-2 px-6',
@@ -36,11 +37,12 @@ const Button = forwardRef((props, ref) => {
 	const ButtonVariant = {
 		primary: 'bg-blue-600 text-white hover:bg-blue-800 focus:bg-blue-800',
 		secondary: 'bg-pink-600 text-white hover:bg-pink-800 focus:bg-pink-800',
+		white: 'bg-white text-blue-600 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white',
 		link: `normal-case text-blue-600 font-normal [font-size:inherit] !p-0 ${hasUnderline ? underlineClasses : ''}`
 	};
 
 	const ButtonSize = {
-		sm: 'py-1 px-4 text-sm',
+		sm: 'py-1.5 px-4 text-sm',
 		lg: 'py-4 px-10 text-lg'
 	};
 
@@ -48,13 +50,14 @@ const Button = forwardRef((props, ref) => {
 
 	const linkVariant = variant === 'link';
 
-	const ButtonIcon = <Icon
-		icon={icon}
-		className={`
-			${linkVariant ? 'w-3.5 h-3.5' : 'w-4 h-4'}
-			${iconClassName ?? ''}
-		`}
-	/>;
+	const ButtonIcon =
+		<Icon
+			iconImage={icon}
+			sizeClasses={linkVariant ? 'w-3.5 h-3.5' : 'w-4 h-4'}
+			className={`
+				${iconClassName ?? ''}
+			`}
+		/>;
 
 	const ButtonBody =
 		<>

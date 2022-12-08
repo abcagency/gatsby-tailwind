@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import trackEvent from '~/hooks/useEventTracker';
 
+export interface ISection {
+	id: string;
+	active: boolean;
+	threshold: number;
+}
+
 const isBrowser = typeof window !== 'undefined';
 
 const ignore = ["intro"];
@@ -10,8 +16,9 @@ let first = true;
 const useSectionTracker = () => {
 	const [lastSection, setLastSection] = useState('');
 	const [isAtTop, setIsAtTop] = useState(true);
-	const sections = [];
-	let timeout = null;
+	const sections:ISection[] = [];
+	// let timeout: number | null = null;
+	let timeout: ReturnType<typeof setTimeout>;
 
 	// If we're near the top, clear the hash, set state, clear timeout
 	if (isBrowser) {
@@ -27,19 +34,19 @@ const useSectionTracker = () => {
 	}
 
 	// Allows a blank hash or ensures there is a # in the hash and replaces current state
-	const setHash = hash => {
+	const setHash = (hash: string) => {
 		if (hash !== ' ' && hash.indexOf('#') === -1) {
 			hash = `#${hash}`;
 		}
 		if (window.history.replaceState) {
-			window.history.replaceState(null, null, hash);
+			window.history.replaceState(null, '', hash);
 		} else {
 			window.location.replace(hash);
 		}
 	};
 
 	// Called when a section is intersecting
-	const setCurrentSection = (id, ratio, threshold) => {
+	const setCurrentSection = (id: string, ratio: number, threshold: number) => {
 		// If we're mostly visible, we're entirely visible
 		const newThreshold = ratio > 0.95 ? 1 : threshold;
 		let found = false;

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 import Header from '~/components/layout/header';
 import Footer from '~/components/layout/footer';
@@ -6,7 +6,7 @@ import SkipLink from '~/components/modules/navigation/skip-link';
 
 export type LayoutProps = {
 	location: Location;
-	children: Required<ReactNode>;
+	children: Required<JSX.Element>;
 };
 
 const Layout = ({

@@ -7,13 +7,13 @@ export type HeaderProps = {
 	location: Location;
 };
 
-const Header = ({ location }: HeaderProps) => {
-	const [position, setPosition] = useState(false);
+const PosMap = {
+	PINNED: 'PINNED',
+	DEFAULT: 'DEFAULT'
+};
 
-	const PosMap = {
-		PINNED: 'PINNED',
-		DEFAULT: 'DEFAULT'
-	};
+const Header = ({ location }: HeaderProps) => {
+	const [position, setPosition] = useState(PosMap.PINNED);
 
 	return (
 		<Headroom
@@ -22,7 +22,10 @@ const Header = ({ location }: HeaderProps) => {
 			onUnfix={() => setPosition(PosMap.DEFAULT)}
 		>
 			<header className="bg-gray-200 shadow-lg">
-				<Navbar position={position} />
+				<Navbar
+					position={position}
+					location={location}
+				/>
 			</header>
 		</Headroom>
 	);

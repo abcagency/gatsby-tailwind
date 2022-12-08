@@ -1,6 +1,22 @@
 import React from 'react';
 import { InView } from 'react-intersection-observer';
 
+export type SectionProps = {
+	children: string;
+	className: Location;
+	setCurrentSection: (sectionName: string, intersectionRatio: number, intersectionRatioHeight: number) => void;
+};
+
+export type Entry = {
+	intersectionRatio: number;
+	target: {
+		id: string;
+	};
+	boundingClientRect: {
+		height: number;
+	};
+};
+
 const isBrowser = typeof window !== 'undefined';
 
 const Section = ({
@@ -8,8 +24,8 @@ const Section = ({
 	className,
 	setCurrentSection,
 	...props
-}) => {
-	const onChange = (inView, entry) => {
+}: SectionProps) => {
+	const onChange = (inView: boolean, entry: Entry) => {
 		if (inView) {
 			if (entry.intersectionRatio > 0 && setCurrentSection) {
 				setCurrentSection(entry.target.id, entry.intersectionRatio, entry.intersectionRatio * entry.boundingClientRect.height / (isBrowser ? window.innerHeight : 1));

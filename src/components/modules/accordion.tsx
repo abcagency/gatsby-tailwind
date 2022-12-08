@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import { Disclosure, Transition } from '@headlessui/react';
-import { Icon } from '@iconify/react';
+
+import Icon from '~/components/modules/icon';
 
 import trackEvent from '~/hooks/useEventTracker';
 
-export interface Props {
+export interface AccordionProps {
 	items: object[];
 }
 
-const Accordion = (props: Props) => {
+const Accordion = (props: AccordionProps) => {
 	const { items } = props;
 
 	const OpenStateTracker = ({ open, action, label }) => {
@@ -33,8 +34,9 @@ const Accordion = (props: Props) => {
 							>
 								<span>{item.title}</span>
 								<Icon
-									icon="mdi:chevron-down"
-									className={`w-4 h-4 !transform !translate-y-1 ${open ? "!rotate-180" : ""}`}
+									iconImage="mdi:chevron-down"
+									sizeClasses="w-4 h-4"
+									className={`!transform !translate-y-1 ${open ? "!rotate-180" : ""}`}
 									aria-hidden="true"
 								/>
 							</Disclosure.Button>

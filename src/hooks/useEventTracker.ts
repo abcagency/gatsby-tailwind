@@ -4,7 +4,12 @@ if (isBrowser) {
 	window.dataLayer = window.dataLayer || [];
 }
 
-const trackEvent = (category, action, label, value) => {
+const trackEvent = (
+	category: string,
+	action: string,
+	label: string,
+	value: string
+) => {
 	if (isBrowser && window.dataLayer) {
 		window.dataLayer.push({
 			'event': 'eventTracking',

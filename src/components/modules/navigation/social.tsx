@@ -1,5 +1,6 @@
 import React from 'react';
-import { Icon } from '@iconify/react';
+
+import Icon from '~/components/modules/icon';
 
 import site from '~/data/site.json';
 
@@ -9,14 +10,23 @@ const NavSocial = () => {
 	return (
 		<nav className="flex justify-self-end">
 			{socials.map((data, index) => {
-				function Icons(param) {
+				function Icons(param: string) {
 					switch(param) {
 					case 'facebook':
-						return <Icon icon="fa-brands:facebook-f" className="w-4 h-4" />;
+						return <Icon
+							iconImage="fa-brands:facebook-f"
+							sizeClasses="w-4 h-4"
+						/>;
 					case 'instagram':
-						return <Icon icon="fa-brands:instagram" className="w-4 h-4" />;
+						return <Icon
+							iconImage="fa-brands:instagram"
+							sizeClasses="w-4 h-4"
+						/>;
 					case 'twitter':
-						return <Icon icon="fa-brands:twitter" className="w-4 h-4" />;
+						return <Icon
+							iconImage="fa-brands:twitter"
+							sizeClasses="w-4 h-4"
+						/>;
 					default:
 						return '';
 					}

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Icon } from '@iconify/react';
 
 import PageHead from '~/components/util/page-head';
 import Layout from '~/components/layout/layout';
+import Button from '~/components/modules/button';
+import Icon from '~/components/modules/icon';
+
 import abductionIllustration from '~/images/abduction-illustration.svg';
 
 export function Head({ location }) {
@@ -30,13 +32,16 @@ const NotFoundPage = ({ location }) => {
 						Looks like this page is a ghost that got abducted by aliens...
 					</h2>
 
-					<Link
-						className="inline-block mt-4 px-4 py-2 rounded-md bg-white text-sm font-bold text-indigo-700 no-underline hover:bg-indigo-700 hover:text-white transition-colors"
+					<Button
 						to="/"
+						variant="white"
+						icon="mdi:home"
+						iconPlacement="before"
+						size="sm"
+						className="mt-4 normal-case"
 					>
-						<Icon icon="mdi:home" className="inline-block w-5 h-5 -mt-0.5 mr-1" />
 						Head home
-					</Link>
+					</Button>
 				</div>
 			</div>
 		</Layout>

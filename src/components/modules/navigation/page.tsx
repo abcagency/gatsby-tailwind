@@ -1,15 +1,26 @@
 import React, { useEffect, useContext } from 'react';
 import * as Scroll from 'react-scroll';
-import { Icon } from '@iconify/react';
+
+import Icon from '~/components/modules/icon';
 
 import { globalContext } from '~/components/util/provider';
 
-const NavPage = ({ anchors }) => {
+export interface IAnchor {
+	id: string;
+	name: string;
+	hidden?: boolean;
+}
+
+export type NavPageProps = {
+	anchors: IAnchor[];
+};
+
+const NavPage = ({ anchors }: NavPageProps) => {
 	const context = useContext(globalContext);
 	const ScrollLink = Scroll.Link;
 
 	useEffect(() => {
-		let activeNav = document.querySelectorAll(`#page-nav a[href="#${context.activeSection}"]`);
+		let activeNav = document.querySelectorAll(`#page-nav a[href="#${context?.activeSection}"]`);
 		if (activeNav.length !== 1) {
 			activeNav = document.querySelectorAll(`#page-nav a[href="#top"]`);
 		}
@@ -25,7 +36,7 @@ const NavPage = ({ anchors }) => {
 	return (
 		<nav
 			id="page-nav"
-			className="md:flex md:items-center md:justify-center md:gap-6 w-full md:w-auto sticky top-0 z-30 p-1 py-2 bg-white border-b border-gray-200"
+			className="lg:flex whitespace-nowrap overflow-x-auto overflow-y-hidden justify-center items-center sticky top-0 z-30 p-1 py-2 bg-white border-b border-gray-200"
 		>
 			<ScrollLink
 				href="#top"
@@ -33,13 +44,14 @@ const NavPage = ({ anchors }) => {
 				smooth={true}
 				offset={0}
 				duration={0}
-				onClick={() => {context.setActiveSection(''); }}
-				className="block md:inline-block px-4 py-2 md:p-2 text-gray-800 no-underline transition-colors hover:text-indigo-700 focus:text-indigo-700"
+				onClick={() => {context?.setActiveSection(''); }}
+				className="group inline-block px-4 py-1.5 font-bold text-gray-800 transition hover:text-indigo-700 focus:text-indigo-700 align-middle"
 			>
 				<span className="sr-only">To the top!</span>
 				<Icon
-					icon="mdi:arrow-collapse-up"
-					className="w-4 h-4"
+					iconImage="mdi:arrow-collapse-up"
+					sizeClasses="w-3 h-3"
+					className="transition group-hover:translate-y-[-0.125rem] group-focus:translate-y-[-0.125rem]"
 				/>
 			</ScrollLink>
 			{anchors.map(anchor => (
@@ -53,10 +65,10 @@ const NavPage = ({ anchors }) => {
 					smooth={true}
 					offset={-75}
 					duration={250}
-					onClick={() => { context.setActiveSection(anchor.id); }}
+					onClick={() => { context?.setActiveSection(anchor.id); }}
 					className={`
-						block md:inline-block px-4 py-2 md:p-2 no-underline transition-colors hover:text-indigo-700 focus:text-indigo-700
-						${context && context.activeSection === anchor.id ? 'text-indigo-700' : 'text-gray-800'}
+						inline-block px-4 py-1 mr-2 text-sm rounded-full transition-colors hover:bg-indigo-700 hover:text-white focus:bg-indigo-700 focus:text-white
+						${context && context.activeSection === anchor.id ? 'bg-indigo-800 text-white' : 'text-gray-800'}
 						${anchor.hidden ? 'hidden' : ''}
 					`}
 				>

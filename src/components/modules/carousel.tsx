@@ -2,12 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { A11y, Keyboard, Navigation, Pagination, Scrollbar } from 'swiper';
-import { Icon } from '@iconify/react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+
+import Icon from '~/components/modules/icon';
 
 const NextButton = () => {
 	return (
@@ -15,8 +16,9 @@ const NextButton = () => {
 			className="next-btn absolute top-1/2 right-3.5 z-10 -translate-y-1/2 opacity-60 hover:opacity-95 focus:opacity-95 transition-opacity"
 		>
 			<Icon
-				icon="mdi:arrow-right-drop-circle"
-				className="text-white h-6 w-6"
+				iconImage="mdi:arrow-right-drop-circle"
+				sizeClasses="h-6 w-6"
+				className="text-white"
 			/>
 			<span className="sr-only">Next slide</span>
 		</button>
@@ -29,8 +31,9 @@ const PrevButton = () => {
 			className="prev-btn absolute top-1/2 left-1.5 z-10 -translate-y-1/2 opacity-60 hover:opacity-95 focus:opacity-95 transition-opacity"
 		>
 			<Icon
-				icon="mdi:arrow-left-drop-circle"
-				className="text-white h-6 w-6"
+				iconImage="mdi:arrow-left-drop-circle"
+				sizeClasses="h-6 w-6"
+				className="text-white"
 			/>
 			<span className="sr-only">Previous slide</span>
 		</button>
