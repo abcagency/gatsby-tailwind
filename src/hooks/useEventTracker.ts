@@ -5,10 +5,10 @@ if (isBrowser) {
 }
 
 const trackEvent = (
-	category: string,
-	action: string,
-	label: string,
-	value: string
+	category?: string,
+	action?: string,
+	label?: string,
+	value?: string
 ) => {
 	if (isBrowser && window.dataLayer) {
 		window.dataLayer.push({
