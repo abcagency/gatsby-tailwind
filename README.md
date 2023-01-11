@@ -39,6 +39,12 @@ A minimal starter template using Gatsby and Tailwind.
 - [TailwindCSS](https://tailwindcss.com/)
 - [HeadlessUI](https://headlessui.dev/)
 - [Iconify](https://iconify.design/)
+- [LocatorJS](https://www.locatorjs.com/)
+
+### LocatorJS
+
+Hold down `⌥ Option` and move with the cursor around the page.
+Click an element to open the file in your editor.
 
 ## Get started
 
