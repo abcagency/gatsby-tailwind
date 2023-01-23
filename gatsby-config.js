@@ -24,7 +24,7 @@ module.exports = {
 		description: `${siteConfig.description}`,
 		author: `${siteConfig.author}`,
 		url: `${siteConfig.url}`,
-		image: `https://${process.env.HOST}/${siteConfig.image}`
+		image: `${process.env.HOST}/${siteConfig.image}`
 	},
 	plugins: [
 		{

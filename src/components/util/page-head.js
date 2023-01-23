@@ -51,7 +51,7 @@ const PageHead = ({
 						{
 							"@context": "https://schema.org",
 							"@type": "WebPage",
-							"url": "https://${process.env.HOST}${location?.pathname}",
+							"url": "${process.env.HOST}${location?.pathname}",
 							"legalName": "${defaultTitle}",
 							"name": "${pageTitle}",
 							"about": "${metaDescription}",
