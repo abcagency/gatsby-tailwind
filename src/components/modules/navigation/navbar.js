@@ -30,9 +30,9 @@ const Navbar = ({ position }) => {
 				className="flex items-center"
 			>
 				<Icon
-					iconImage="mdi:firefox"
+					iconImage="mdi:robot"
 					sizeClasses={position === 'PINNED' ? 'w-10 h-10' : 'w-12 h-12'}
-					className="text-indigo-700 mr-1"
+					className="mr-1"
 				/>
 				<h1
 					className={`
