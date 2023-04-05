@@ -63,6 +63,18 @@ module.exports = {
 			resolve: 'gatsby-plugin-image'
 		},
 		{
+			resolve: 'gatsby-plugin-sharp',
+			options: {
+				defaults: {
+					quality: 85,
+					breakpoints: [640, 768, 1024, 1280, 1536]
+				}
+			}
+		},
+		{
+			resolve: 'gatsby-transformer-sharp'
+		},
+		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				name: 'data',
@@ -109,18 +121,12 @@ module.exports = {
 			resolve: 'gatsby-plugin-postcss'
 		},
 		{
-			resolve: 'gatsby-plugin-sharp'
-		},
-		{
 			resolve: 'gatsby-plugin-robots-txt',
 			options: {
 				host: `${siteConfig.url}`,
 				sitemap: null,
 				policy: [{ userAgent: '*', allow: '/' }]
 			}
-		},
-		{
-			resolve: 'gatsby-transformer-sharp'
 		}
 	]
 };
