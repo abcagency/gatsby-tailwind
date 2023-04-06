@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Button from '~/components/modules/button';
-
 const Card = ({
 	className,
 	image,
@@ -63,23 +61,6 @@ export const CardTitle = ({
 	);
 };
 
-export const CardButton = ({
-	children,
-	className,
-	onClick
-}) => {
-	return (
-		<Button
-			as="button"
-			variant="primary"
-			className={className ?? ''}
-			onClick={onClick}
-		>
-			{children}
-		</Button>
-	);
-};
-
 export const CardFooter = ({
 	children
 }) => {
@@ -91,7 +72,6 @@ export const CardFooter = ({
 };
 
 Card.Image = CardImage;
-Card.Button = CardButton;
 Card.Info = CardInfo;
 Card.Title = CardTitle;
 Card.Footer = CardFooter;
