@@ -9,8 +9,9 @@ const IconContained = ({
 	...iconProps
 }) => {
 	return (
-		<div
+		<span
 			className={`
+				inline-block
 				${className ?? ''}
 				${sizeClasses ?? ''}
 			`}
@@ -23,7 +24,7 @@ const IconContained = ({
 				`}
 				{...iconProps}
 			/>
-		</div>
+		</span>
 	);
 };
 
