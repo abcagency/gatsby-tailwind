@@ -24,11 +24,11 @@ const Accordion = props => {
 				<Disclosure key={item.id}>
 					{({ open }) => (
 						<>
-							<OpenStateTracker open={open} action="Open Accordion" label={item.heading} />
+							<OpenStateTracker open={open} action="Open Accordion" label={item.title} />
 							<Disclosure.Button
 								className={`flex justify-between w-full p-4 font-bold text-left text-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 hover:bg-gray-200 focus:bg-gray-200 transition-colors border-b border-white ${open ? "bg-gray-200" : "bg-gray-100"}`}
 							>
-								<span>{item.heading}</span>
+								<span>{item.title}</span>
 								<Icon
 									icon="mdi:chevron-down"
 									sizeClasses="w-4 h-4"
