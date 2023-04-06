@@ -49,7 +49,7 @@ const Accordion = props => {
 									static
 									className="p-4"
 								>
-									<div dangerouslySetInnerHTML={{ __html: item.content }} />
+									{item.content}
 								</Disclosure.Panel>
 							</Transition>
 						</>
