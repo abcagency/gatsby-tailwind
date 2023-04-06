@@ -50,7 +50,7 @@ const Button = forwardRef((props, ref) => {
 	const linkVariant = variant === 'link';
 
 	const ButtonIcon = <Icon
-		iconImage={icon}
+		icon={icon}
 		sizeClasses={linkVariant ? 'w-3.5 h-3.5' : 'w-4 h-4'}
 		className={iconClassName ?? ''}
 	/>;
