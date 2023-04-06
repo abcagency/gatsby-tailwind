@@ -11,7 +11,7 @@ const IconContained = ({
 	return (
 		<span
 			className={`
-				inline-block
+				inline-block align-middle
 				${className ?? ''}
 				${sizeClasses ?? ''}
 			`}
