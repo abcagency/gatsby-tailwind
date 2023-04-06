@@ -26,6 +26,9 @@ module.exports = {
 		url: `${siteConfig.url}`,
 		image: `${process.env.HOST}/${siteConfig.image}`
 	},
+	flags: {
+		DEV_SSR: true
+	},
 	plugins: [
 		{
 			resolve: 'gatsby-plugin-eslint',
