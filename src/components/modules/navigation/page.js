@@ -39,7 +39,7 @@ const NavPage = ({ anchors }) => {
 			>
 				<span className="sr-only">To the top!</span>
 				<Icon
-					iconImage="mdi:arrow-collapse-up"
+					icon="mdi:arrow-collapse-up"
 					sizeClasses="w-3 h-3"
 					className="transition group-hover:translate-y-[-0.125rem] group-focus:translate-y-[-0.125rem]"
 				/>

@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 const IconContained = ({
 	className,
 	sizeClasses,
-	iconImage,
+	icon,
 	iconClasses,
 	...iconProps
 }) => {
@@ -16,7 +16,7 @@ const IconContained = ({
 			`}
 		>
 			<Icon
-				icon={iconImage}
+				icon={icon}
 				className={`
 					${iconClasses ?? ''}
 					${sizeClasses ?? ''}

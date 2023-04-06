@@ -16,7 +16,7 @@ const NextButton = () => {
 			className="next-btn absolute top-1/2 right-3.5 z-10 -translate-y-1/2 opacity-60 hover:opacity-95 focus:opacity-95 transition-opacity"
 		>
 			<Icon
-				iconImage="mdi:arrow-right-drop-circle"
+				icon="mdi:arrow-right-drop-circle"
 				sizeClasses="w-6 h-6"
 				className="text-white"
 			/>
@@ -31,7 +31,7 @@ const PrevButton = () => {
 			className="prev-btn absolute top-1/2 left-1.5 z-10 -translate-y-1/2 opacity-60 hover:opacity-95 focus:opacity-95 transition-opacity"
 		>
 			<Icon
-				iconImage="mdi:arrow-left-drop-circle"
+				icon="mdi:arrow-left-drop-circle"
 				sizeClasses="w-6 h-6"
 				className="text-white"
 			/>

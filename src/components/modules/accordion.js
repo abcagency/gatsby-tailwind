@@ -30,7 +30,7 @@ const Accordion = props => {
 							>
 								<span>{item.heading}</span>
 								<Icon
-									iconImage="mdi:chevron-down"
+									icon="mdi:chevron-down"
 									sizeClasses="w-4 h-4"
 									className={`transition-transform !transform !translate-y-1 ${open ? "!rotate-180" : ""}`}
 									aria-hidden="true"

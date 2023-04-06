@@ -29,7 +29,7 @@ const Footer = () => {
 					>
 						<span className="sr-only">To the top!</span>
 						<Icon
-							iconImage="mdi:arrow-collapse-up"
+							icon="mdi:arrow-collapse-up"
 							sizeClasses="w-4 h-4"
 						/>
 					</ScrollLink>
