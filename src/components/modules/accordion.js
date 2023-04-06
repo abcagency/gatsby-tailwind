@@ -6,7 +6,7 @@ import Icon from '~/components/modules/icon';
 import trackEvent from '~/hooks/useEventTracker';
 
 const Accordion = props => {
-	const { content } = props;
+	const { items } = props;
 
 	const OpenStateTracker = ({ open, action, label }) => {
 		useEffect(() => {
@@ -20,7 +20,7 @@ const Accordion = props => {
 
 	return (
 		<>
-			{content.map(item => (
+			{items.map(item => (
 				<Disclosure key={item.id}>
 					{({ open }) => (
 						<>
