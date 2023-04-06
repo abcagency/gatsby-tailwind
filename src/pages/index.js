@@ -64,7 +64,7 @@ const IndexPage = ({ location }) => {
 						}
 						footer={
 							<Card.Footer>
-								<Button.Btn onClick={console.log('navigated')}>
+								<Button.Btn onClick={() => console.log('navigated')}>
 									<Button.Body>
 										Cool button
 										<Button.Icon icon="akar-icons:rock-on" />
