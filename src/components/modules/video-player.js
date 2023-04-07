@@ -18,7 +18,7 @@ const VideoPlayer = ({
 	aspectRatio = "16x9",
 	playerClasses,
 	className,
-	autoPlay = false,
+	autoPlay = true,
 	...playerOptions
 }) => {
 	const [isReady, setIsReady] = useState(false);
